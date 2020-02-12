@@ -1,0 +1,44 @@
+
+/*COLOR CSS HYCOST*/
+
+.hy-color-1 {
+	color: #5E8C31 !important;
+}
+
+.hy-color-2 {
+	color: #80BE42 !important;
+}
+
+.hy-color-3 {
+	color: #F4FAED !important;
+}
+
+.hy-color-4 {
+	color: #EBFADA !important;
+}
+
+.hy-wh > h5, .hy-wh > h6 {
+	color: #fff !important;
+}
+
+/*Background COLOR CSS Hycost*/
+
+.hy-b-color-1 {
+	background-color: #5E8C31 !important;
+}
+
+.hy-b-color-2 {
+	background-color: #80BE42 !important;
+}
+
+.hy-b-color-3 {
+	background-color: #F4FAED !important;
+}
+
+.hy-b-color-4 {
+	background-color: #EBFADA !important;
+}
+
+.hy-b-color-5 {
+	background-color: #f8fff1 !important;
+}

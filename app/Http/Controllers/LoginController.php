@@ -11,20 +11,17 @@ class LoginController extends Controller
 {
   public function getLogin()
   {
-    return view('login');
+    return view('home-login');
+  }
+
+  public function getRegis()
+  {
+    return view('home-regis');
   }
 
   public function postLogin(Request $request)
   {
 
-      // Validate the form data
-    // $this->validate($request, [
-    //   'email' => 'required|email',
-    //   'password' => 'required'
-    // ]);
-
-      // Attempt to log the user in
-      // Passwordnya pake bcrypt
     if (Auth::guard('admin')->attempt(['username' => $request->email, 'password' => $request->password])) {
         // if successful, then redirect to their intended location
       return redirect()->intended('/admin');

@@ -1,8 +1,9 @@
 <?php
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home-landing-page');
 });
+Route::get('/regis', 'LoginController@getRegis')->middleware('guest');
 
 // hanya untuk tamu yg belum auth
 Route::get('/login', 'LoginController@getLogin')->middleware('guest');
