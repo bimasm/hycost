@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGuruTable extends Migration
+class CreateStafTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateGuruTable extends Migration
      */
     public function up()
     {
-        Schema::create('guru', function (Blueprint $table) {
+        Schema::create('staf', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_sekolah')->unsigned();
-            $table->foreign('id_sekolah')->references('id')->on('sekolah')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
             $table->string('nama');
             $table->string('username');
             $table->string('password');
@@ -34,6 +30,6 @@ class CreateGuruTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('guru');
+        Schema::dropIfExists('staf');
     }
 }

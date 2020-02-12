@@ -21,7 +21,8 @@ Login | Hycost
 							<p class="grey-text">Buat akun baru anda</p>
 							<br>
 						</div>
-						<form action="" method="">
+						<form action="/regis" method="post">
+							@csrf
 							<div class="input-field hy-infield">
 								<input id="nama" type="text" class="validate hy-input" name="nama">
 								<label class="hy-label" for="nama">Nama</label>

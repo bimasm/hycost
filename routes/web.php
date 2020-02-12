@@ -7,21 +7,18 @@ Route::get('/regis', 'LoginController@getRegis')->middleware('guest');
 
 // hanya untuk tamu yg belum auth
 Route::get('/login', 'LoginController@getLogin')->middleware('guest');
-Route::post('/login', 'LoginController@postLogin');
+Route::post('/login', 'LoginController@postLogin')->name('login');
+Route::post('/regis', 'LoginController@register')->name('regis');
 Route::get('/logout', 'LoginController@logout');
 
 Route::get('/admin', function() {
   return view('admin');
 })->middleware('auth:admin');
 
-Route::get('/siswa', function() {
-  return view('siswa');
-})->middleware('auth:siswa');
+Route::get('/staf', function() {
+  return view('staf');
+})->middleware('auth:staf');
 
-Route::get('/adminsekolah', function() {
-  return view('adminsekolah');
-})->middleware('auth:adminsekolah');
-
-Route::get('/guru', function() {
-  return view('guru');
-})->middleware('auth:guru');
+Route::get('/user', function() {
+  return view('user');
+})->middleware('auth:user');

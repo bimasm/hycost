@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 use App\Admin;
 use App\User;
 use Auth;
@@ -25,15 +27,12 @@ class LoginController extends Controller
     if (Auth::guard('admin')->attempt(['username' => $request->email, 'password' => $request->password])) {
         // if successful, then redirect to their intended location
       return redirect()->intended('/admin');
-    } else if (Auth::guard('siswa')->attempt(['email' => $request->email, 'password' => $request->password])) {
-      return redirect()->intended('/siswa');
-    } else if (Auth::guard('adminsekolah')->attempt(['username' => $request->email, 'password' => $request->password])) {
+    } else if (Auth::guard('staf')->attempt(['username' => $request->email, 'password' => $request->password])) {
+      return redirect()->intended('/staf');
+    } else if (Auth::guard('user')->attempt(['email' => $request->email, 'password' => $request->password])) {
         // if successful, then redirect to their intended location
-      return redirect()->intended('/adminsekolah');
-    } else if (Auth::guard('guru')->attempt(['username' => $request->email, 'password' => $request->password])) {
-        // if successful, then redirect to their intended location
-      return redirect()->intended('/guru');
-    } else{
+      return redirect()->intended('/user');
+    }else{
     	return redirect('/login');
     }
 
@@ -43,15 +42,25 @@ class LoginController extends Controller
   {
     if (Auth::guard('admin')->check()) {
       Auth::guard('admin')->logout();
-    } elseif (Auth::guard('siswa')->check()) {
-      Auth::guard('siswa')->logout();
-    } elseif (Auth::guard('guru')->check()) {
-      Auth::guard('guru')->logout();
-    } elseif (Auth::guard('adminsekolah')->check()) {
-      Auth::guard('adminsekolah')->logout();
+    } elseif (Auth::guard('staf')->check()) {
+      Auth::guard('staf')->logout();
+    } elseif (Auth::guard('user')->check()) {
+      Auth::guard('user')->logout();
     }
 
     return redirect('/login');
 
   }
+  public function register(Request $request)
+    {
+        $user = new User();
+        
+        $user->nama=$request->nama;
+        $user->email=$request->email;
+        $user->password=Hash::make($request->password);
+        
+        $user->save();
+        return redirect()->route('login');
+
+    }
 }

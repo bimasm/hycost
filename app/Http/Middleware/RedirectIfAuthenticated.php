@@ -21,17 +21,13 @@ class RedirectIfAuthenticated
 
       return redirect('/admin');
 
-    } else if (Auth::guard('siswa')->check()) {
+    } else if (Auth::guard('staf')->check()) {
 
-      return redirect('/siswa');
+      return redirect('/staf');
       
-    } else if (Auth::guard('guru')->check()) {
+    } else if (Auth::guard('user')->check()) {
 
-      return redirect('/guru');
-      
-    } else if (Auth::guard('adminsekolah')->check()) {
-
-      return redirect('/adminsekolah');
+      return redirect('/user');
       
     }
 

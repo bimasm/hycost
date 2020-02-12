@@ -23,7 +23,8 @@ Login | Hycost
 							<br>
 						</div>
 
-						<form action="" method="">
+						<form action="/login" method="post">
+							@csrf
 							<div class="input-field hy-infield">
 								<input id="email" type="text" class="validate hy-input" name="email">
 								<label class="hy-label" for="email">Email</label>
