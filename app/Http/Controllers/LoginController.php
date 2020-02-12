@@ -25,13 +25,14 @@ class LoginController extends Controller
   {
 
     if (Auth::guard('admin')->attempt(['username' => $request->email, 'password' => $request->password])) {
-        // if successful, then redirect to their intended location
       return redirect()->intended('/admin');
+
     } else if (Auth::guard('staf')->attempt(['username' => $request->email, 'password' => $request->password])) {
       return redirect()->intended('/staf');
+
     } else if (Auth::guard('user')->attempt(['email' => $request->email, 'password' => $request->password])) {
-        // if successful, then redirect to their intended location
       return redirect()->intended('/user');
+      
     }else{
     	return redirect('/login');
     }
@@ -52,15 +53,15 @@ class LoginController extends Controller
 
   }
   public function register(Request $request)
-    {
-        $user = new User();
-        
-        $user->nama=$request->nama;
-        $user->email=$request->email;
-        $user->password=Hash::make($request->password);
-        
-        $user->save();
-        return redirect()->route('login');
+  {
+    $user = new User();
 
-    }
+    $user->nama=$request->nama;
+    $user->email=$request->email;
+    $user->password=Hash::make($request->password);
+
+    $user->save();
+    return redirect()->route('login');
+
+  }
 }

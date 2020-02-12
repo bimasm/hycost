@@ -40,12 +40,12 @@
   @yield('nav-user')
   @yield('footer-user')
 
-  @yield('staff')
   @yield('nav-staff')
+  @yield('content-staff')
   @yield('footer-staff')
 
-  @yield('admin')
   @yield('nav-admin')
+  @yield('content-admin')
   @yield('footer-admin')
 
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -160,6 +160,8 @@
       });
 
     })
+
+    $('.dropdown-trigger').dropdown();
   </script>
 </body>
 </html>

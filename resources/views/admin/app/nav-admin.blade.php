@@ -8,18 +8,10 @@
           <i class="material-icons col-menu">menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
-          <li><a class="button-collapse hy-nav-a" href="#beranda">Beranda</a></li>
+          {{-- <li><a class="button-collapse hy-nav-a" href="#beranda">Beranda</a></li>
           <li><a class="button-collapse hy-nav-a" href="#tentang">Tentang Kami</a></li>
-          <li><a class="button-collapse hy-nav-a" href="#fitur">Fitur</a></li>
-
-          @if (Auth::guard('user'))
-          @auth('user')
-          <li><a class="dropdown-trigger btn hy-btn-bor-ijo-nav" href="#" data-target="dropdown1">{{ Auth::guard('user')->user()->nama }}</a></li>
-          @else
-          <li><a href="/login" class="waves-effect waves-light btn hy-btn-bor-ijo-nav">Sign In</a></li>
-          @endauth
-          @endif
-
+          <li><a class="button-collapse hy-nav-a" href="#fitur">Fitur</a></li> --}}
+          <li><a class="dropdown-trigger btn hy-btn-bor-ijo-nav" href="#" data-target="dropdown1">{{ Auth::guard('admin')->user()->nama }}</a></li>
         </ul>
       </div>
     </nav>
@@ -38,7 +30,7 @@
       </div>
 
       <div class="center drop-name">
-        <b><p>{{ Auth::guard('user')->user()->nama }}</p></b>
+        <b><p>{{ Auth::guard('admin')->user()->nama }}</p></b>
       </div>
     </div>
 

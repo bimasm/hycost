@@ -13,7 +13,7 @@
 }
 
 .hy-btn-bor-ijo-nav:hover {
-	background-color: #80BE42;
+	background-color: #80BE42 !important;;
 	color: #fff;
 	box-shadow: none;
 }
@@ -29,7 +29,7 @@
 }
 
 .hy-btn-bor-wh-nav:hover {
-	background-color: #fff;
+	background-color: #fff !important;;
 	color: #80BE42;
 	box-shadow: none;
 }
@@ -45,13 +45,17 @@
 }
 
 .hy-btn-bor-ijo:hover {
-	background-color: #80BE42;
+	background-color: #80BE42 !important;;
 	color: #fff;
 	box-shadow: none;
 }
 
 .hy-btn-full {
 	width: 100%;
+}
+
+.hy-btn-bor-ijo-nav.btn:focus {
+	background-color: transparent;
 }
 /*--- END ------------------------------------------------------------------------------------ Button ---*/
 
@@ -365,3 +369,22 @@ input[type=password]:not(.browser-default):focus:not([readonly])+label.hy-label 
 	margin-right: 10px;
 }
 /*--- END ------------------------------------------------------------------------------------ Input ---*/
+
+
+
+.drop-akun{
+	color: #989a9c;
+	padding: 20px 20px 0 20px;
+}
+
+.drop-akun-icon{
+	font-size: 30px;
+}
+
+.drop-name{
+	margin-top: -20px;
+}
+
+.drop-dat{
+	margin-top: -50px;
+}

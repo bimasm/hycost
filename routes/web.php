@@ -12,13 +12,13 @@ Route::post('/regis', 'LoginController@register')->name('regis');
 Route::get('/logout', 'LoginController@logout');
 
 Route::get('/admin', function() {
-  return view('admin');
+  return view('admin.admin-dashboard');
 })->middleware('auth:admin');
 
 Route::get('/staf', function() {
-  return view('staf');
+  return view('staff.staff-dashboard');
 })->middleware('auth:staf');
 
 Route::get('/user', function() {
-  return view('user');
+  return view('home-landing-page');
 })->middleware('auth:user');

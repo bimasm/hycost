@@ -5427,15 +5427,16 @@ button.btn-floating {
 }
 
 .dropdown-content {
+    border-radius: 8px;
     background-color: #fff;
     margin: 0;
     display: none;
-    min-width: 100px;
+    min-width: 200px;
     overflow-y: auto;
     opacity: 0;
     position: absolute;
     left: 0;
-    top: 0;
+    top: -5em;
     z-index: 9999;
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0
