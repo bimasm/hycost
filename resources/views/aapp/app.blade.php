@@ -36,9 +36,10 @@
   @yield('content-landing-page')
   @yield('footer-landing-page')
 
-  @yield('user')
   @yield('nav-user')
-  @yield('footer-user')
+  @yield('sidenav-user')
+  @yield('content-user')
+  
 
   @yield('nav-staff')
   @yield('content-staff')

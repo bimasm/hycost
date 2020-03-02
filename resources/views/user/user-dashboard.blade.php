@@ -1,14 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-</head>
-<body>
-	<h2>User Page {{ Auth::guard('user')->user()->nama }}</h2>
-	<br>
-	<a href="/logout">Logout {{ Auth::guard('user')->user()->nama }} ??</a>
-</body>
-</html>
+@extends('aapp.app')
+
+@section('title')
+Dashboard User
+@endsection
+
+@section('nav-user')
+@include('user.app.nav-user')  
+@endsection
+
+@section('sidenav-user')
+@include('user.app.side-nav')
+@endsection
+
+@section('content-user')
+test
+@endsection

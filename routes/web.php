@@ -33,4 +33,6 @@ Route::get('/staf', function() {
 //-- Start ---------------------------------------------------------------------------------------- User
 Route::get('/user', 'UserController@User_Dashboard')
 ->name('UserDashboard')->middleware('auth:user');
+
+
 //-- End ---------------------------------------------------------------------------------------- /User
