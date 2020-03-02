@@ -49,32 +49,32 @@ return [
 
         'admin' => [
           'driver' => 'session',
-          'provider' => 'admin',
+          'provider' => 'admins',
         ],
 
         'admin-api' => [
             'driver' => 'token',
-            'provider' => 'admin',
+            'provider' => 'admins',
         ],
 
         'staf' => [
           'driver' => 'session',
-          'provider' => 'staf',
+          'provider' => 'stafs',
         ],
 
         'staf-api' => [
             'driver' => 'token',
-            'provider' => 'staf',
+            'provider' => 'stafs',
         ],
 
         'user' => [
           'driver' => 'session',
-          'provider' => 'user',
+          'provider' => 'users',
         ],
 
         'user-api' => [
             'driver' => 'token',
-            'provider' => 'user',
+            'provider' => 'users',
         ],
 
         
@@ -98,17 +98,17 @@ return [
     */
 
     'providers' => [
-        'admin' => [
+        'admins' => [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
         ],
 
-        'staf' => [
+        'stafs' => [
             'driver' => 'eloquent',
             'model' => App\Staf::class,
         ],
 
-        'user' => [
+        'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],

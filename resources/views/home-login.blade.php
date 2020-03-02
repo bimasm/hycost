@@ -1,7 +1,7 @@
 @extends('aapp.app')
 
 @section('title')
-Login | Hycost
+Masuk | Hycost
 @endsection
 
 @section('content-landing-page')
@@ -18,7 +18,7 @@ Login | Hycost
 				<div class="card hy-card-shad">
 					<div class="card-content">
 						<div class="center">
-							<h5 class="hy-color-2">Sign In</h5>
+							<h5 class="hy-color-2">Masuk</h5>
 							<p class="grey-text">Masukkan Email dan Password anda</p>
 							<br>
 						</div>
@@ -34,10 +34,10 @@ Login | Hycost
 								<label class="hy-label" for="password">Password</label>
 							</div>
 							<div class="input-field">
-								<button type="submit" class="waves-effect waves-light btn hy-btn-bor-ijo-nav hy-btn-full">Sign In</button>
+								<button type="submit" class="waves-effect waves-light btn hy-btn-bor-ijo-nav hy-btn-full">Masuk</button>
 							</div>
 							<div class="center">
-								<a href="/regis" class="hy-color-2">Sign Up</a>
+								<a href="/regis" class="hy-color-2">Daftar</a>
 							</div>
 						</form>
 

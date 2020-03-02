@@ -13,7 +13,7 @@
               </a>
             </li>
             <li>
-              <a href="#!" target="_blank">
+              <a href="https://www.instagram.com/hy.cost/?hl=id" target="_blank">
                 <i class="fab fa-instagram"></i>
               </a>
             </li>
@@ -27,11 +27,11 @@
                 <i class="fab fa-whatsapp"></i>
               </a>
             </li>
-            <li>
-              <a href="#!" target="_blank">
-                <i class="fab fa-line"></i>
-              </a>
-            </li>
+            <!--<li>-->
+            <!--  <a href="#!" target="_blank">-->
+            <!--    <i class="fab fa-line"></i>-->
+            <!--  </a>-->
+            <!--</li>-->
           </ul>
         </div>
       </div>
