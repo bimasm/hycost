@@ -50,12 +50,16 @@
   @yield('footer-admin')
 
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script type="text/javascript" src="{{asset('asset/js/materialize.min.js')}}"></script>
 
   @yield('js-plus')
 
   <script>
+    $(document).ready(function(){
+      $('.collapsible').collapsible();
+    });
+    
     $(document).ready(function() {
       $(".carousel.carousel-slider").carousel({
         dist: 0,
@@ -163,6 +167,10 @@
     })
 
     $('.dropdown-trigger').dropdown();
+
+    $(document).ready(function(){
+      $('select').formSelect();
+    });
   </script>
 </body>
 </html>

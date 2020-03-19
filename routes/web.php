@@ -31,8 +31,9 @@ Route::get('/staf', function() {
 
 
 //-- Start ---------------------------------------------------------------------------------------- User
-Route::get('/user', 'UserController@User_Dashboard')
-->name('UserDashboard')->middleware('auth:user');
+Route::get('/user', 'UserController@User_Dashboard_Forum')
+->name('UserDashboardForum')->middleware('auth:user');
 
-
+Route::get('/post', 'UserController@User_SemuaPost_Forum')
+->name('UserPostSemuaForum')->middleware('auth:user');
 //-- End ---------------------------------------------------------------------------------------- /User

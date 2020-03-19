@@ -39,7 +39,7 @@ class LoginController extends Controller
     return redirect()->intended('/staf');
 
   } else if (Auth::guard('user')->attempt(['email' => $request->email, 'password' => $request->password])) {
-    return redirect()->route('UserDashboard');
+    return redirect()->route('UserDashboardForum');
     
   } else{
    return redirect('/login');

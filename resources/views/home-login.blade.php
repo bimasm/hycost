@@ -11,7 +11,7 @@ Masuk | Hycost
 		<div class="row">
 			<div class="col s12 m12 l12">
 				<div class="center">
-					<img src="asset/img/hy-logo.png" style="width: 200px">
+					<a href="{{url('/')}}"><img src="{{asset('asset/img/hy-logo.png')}}" style="width: 200px"></a>
 					<br>
 					<br>
 				</div>
