@@ -8,13 +8,14 @@
           <i class="material-icons col-menu">menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
-            
-            @if(request()->routeIs('login-page','regis'))
-            <li><a class="button-collapse hy-nav-a" href="/">Beranda</a></li>
-            @else
+
+          @if(request()->routeIs('login-page','regis'))
+          <li><a class="button-collapse hy-nav-a" href="/">Beranda</a></li>
+          @else
           <li><a class="button-collapse hy-nav-a" href="#beranda">Beranda</a></li>
           <li><a class="button-collapse hy-nav-a" href="#tentang">Tentang Kami</a></li>
           <li><a class="button-collapse hy-nav-a" href="#fitur">Fitur</a></li>
+          <li><a class="button-collapse hy-nav-a" href="#!">Forum</a></li>
           <li><a href="/login" class="waves-effect waves-light btn hy-btn-bor-ijo-nav">Masuk</a></li>
           @endif
         </ul>

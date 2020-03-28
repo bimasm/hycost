@@ -9,11 +9,17 @@
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+  {{-- style --}}
   <link rel="stylesheet" type="text/css" href="{{asset('asset/css/materialize.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('asset/css/animation.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('asset/css/style.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('asset/css/hy-color.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('asset/font-awesome/css/font-awesome.min.css')}}">
+
+  {{-- datatable --}}
+  <link rel="stylesheet" type="text/css" href="{{asset('asset/css/dataTable.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('asset/css/dataTable-Button.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('asset/css/dataTable-Select.css')}}">
 
   @yield('css-plus')
 
@@ -49,13 +55,26 @@
   @yield('content-admin')
   @yield('footer-admin')
 
+  {{-- style --}}
+  @include('sweetalert::alert')
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript" src="{{asset('asset/js/materialize.min.js')}}"></script>
+
+  {{-- datatable --}}
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" src="{{asset('asset/js/dataTables.checkboxes.js')}}"></script>
 
   @yield('js-plus')
 
   <script>
+    $(document).ready(function(){
+      $('.collapsible').collapsible();
+    });
+    
     $(document).ready(function() {
       $(".carousel.carousel-slider").carousel({
         dist: 0,
@@ -163,6 +182,18 @@
     })
 
     $('.dropdown-trigger').dropdown();
+
+    $(document).ready(function(){
+      $('select:not(.swal2-select)').formSelect();
+    });
+
+    $(document).ready(function(){
+      $('.modal').modal();
+    });
+
+    $(document).ready(function(){
+      $('.fixed-action-btn').floatingActionButton();
+    });
   </script>
 </body>
 </html>
