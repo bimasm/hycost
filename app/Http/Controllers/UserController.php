@@ -17,4 +17,19 @@ class UserController extends Controller
     {
     	return view('user.user-post-semua-forum');
     }
+
+    public function User_AddNewPost_Forum()
+    {
+    	return view('user.user-add-newpost-forum');
+    }
+
+    public function User_SemuaKomentar_Forum()
+    {
+        return view('user.user-komentar-semua-forum');
+    }
+
+    public function User_Setting()
+    {
+        return view('user.user-setting');
+    }
 }

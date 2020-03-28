@@ -1,7 +1,7 @@
 @extends('aapp.app')
 
 @section('title')
-Post Forum User
+Komentar Forum User
 @endsection
 
 @section('nav-user')
@@ -28,59 +28,44 @@ Post Forum User
 		<div class="container cont-hy-dash">
 
 			{{-- Start Header --}}
-			<div class="row bread-hy-cont animated fadeIn faster">
-				<div class="col s12 m12 l5">
+			<div class="row bread-hy-cont animated fadeIn faster valign-wrapper-hy">
+				<div class="col s12 m12 l6">
 					{{--  Start Breadcumb --}}
 					@include('user.app.breadcumb')
 					{{--  End Breadcumb --}}
 				</div>
-				<div class="col s12 m12 l7">
-					<div class="row valign-wrapper-hy">
-
-						<div class="col s12 m12 l8">
-
-							{{-- Start Search On Web --}}
-							<div class="search-cont web-res">
-								<div class="nav-wrapper">
-									<form>
-										<div class="input-field">
-											<input id="myInputTextField" type="search" placeholder="Cari disini" required>
-											<label class="label-icon" for="search">
-												<i class="material-icons">search</i>
-											</label>
-											<i class="material-icons">close</i>
-										</div>
-									</form>
+				<div class="col s12 m12 l6 valign">
+					{{-- Start Search On Web --}}
+					<div class="search-cont web-res">
+						<div class="nav-wrapper">
+							<form>
+								<div class="input-field">
+									<input id="myInputTextField" type="search" placeholder="Cari disini" required>
+									<label class="label-icon" for="search">
+										<i class="material-icons">search</i>
+									</label>
+									<i class="material-icons">close</i>
 								</div>
-							</div>
-							{{-- End Search On Web --}}
-
-							{{-- Start Search On Mobile --}}
-							<div class="search-cont mobile-res">
-								<div class="nav-wrapper">
-									<form>
-										<div class="input-field">
-											<input id="myInputTextField2" type="search" placeholder="Cari disini" required>
-											<label class="label-icon" for="search">
-												<i class="material-icons">search</i>
-											</label>
-											<i class="material-icons">close</i>
-										</div>
-									</form>
-								</div>
-							</div>
-							{{-- End Search On Mobile --}}
-						</div>
-
-						<div class="col s12 m12 l4 valign">
-							{{-- Start Add New Post Web --}}
-							<div class="web-res">
-								<a href="{{route('UserPostAddNewPost')}}" class="waves-effect waves-light btn hy-b-color-7"><i class="material-icons left">add</i>Post Baru</a>
-							</div>
-							{{-- End Add New Post Web --}}
+							</form>
 						</div>
 					</div>
-					
+					{{-- End Search On Web --}}
+
+					{{-- Start Search On Mobile --}}
+					<div class="search-cont mobile-res">
+						<div class="nav-wrapper">
+							<form>
+								<div class="input-field">
+									<input id="myInputTextField2" type="search" placeholder="Cari disini" required>
+									<label class="label-icon" for="search">
+										<i class="material-icons">search</i>
+									</label>
+									<i class="material-icons">close</i>
+								</div>
+							</form>
+						</div>
+					</div>
+					{{-- End Search On Mobile --}}
 				</div>
 			</div>
 			{{-- End Header --}}
@@ -104,11 +89,6 @@ Post Forum User
 										<i class="material-icons left">delete</i>Hapus
 									</button>
 								</li>
-								<li>
-									<button id="status" href="#modal1" class='waves-effect btn-flat hy-btn-flat modal-trigger'>
-										<i class="material-icons left">edit</i>Edit
-									</button>
-								</li>
 							</ul>
 						</div>
 					</div>
@@ -128,9 +108,9 @@ Post Forum User
 								<thead>
 									<tr>
 										<th style="width: 8%"></th>
-										<th>Judul</th>
-										<th>Tag</th>
-										<th>Status</th>
+										<th>User</th>
+										<th>Komentar</th>
+										<th>Post</th>
 										<th>Tanggal</th>
 										<th>Link</th>
 									</tr>
@@ -196,7 +176,7 @@ Post Forum User
 			"<'row'<'col s12 m12 l5'><'col s12 m12 l7'p>>",
 
 			"ajax": {
-				"url": "{{asset('asset/js/tabel-post.js')}}"
+				"url": "{{asset('asset/js/tabel-komentar.js')}}"
 			},
 
 			"columnDefs": [
@@ -215,22 +195,39 @@ Post Forum User
 					'selectAllRender': '<div class="checkbox"><input type="checkbox" class="filled-in"><span style="top:5px"></span></div>'
 				}
 			},
-			{ "targets": 1,"data": "judul" },
-			{ "targets": 2,"data": "tag" },
-			{ "targets": 3,"data": "status" },
+			{ 
+				"targets": 1,
+				"data": "user",
+				render: function (data, type, row, meta) {
+					
+					return '<ul class="collection collect-table">'+
+					'<li class="collection-item avatar">'+
+					'<img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">'+
+					'<a href="#!"><span class="title">'+data+'</span></a>'+
+					'</li>'+
+					'</ul>';
+				},
+			},
+			{ "targets": 2,"data": "komentar" },
+			{ "targets": 3,"data": "post" },
 			{ "targets": 4,"data": "tanggal" },
 			{
 				"targets": -1,
 				"data": null,
-				"defaultContent": "<button class='waves-effect btn-flat hy-btn-flat'>Preview</button>"
+				"defaultContent": "<button class='waves-effect btn-flat hy-btn-flat'>View</button>"
 			}
 			],
 
+			rowCallback: function(row, data, index) {
+				if (data.status == "belum") {
+					$(row).addClass("tabel-belum");
+				}
+			},
+
 			select: false,
-			
+
 			'order': [[1, 'dsc']]
 		} );
-
 
 		$('#example tbody').on( 'click', 'button', function () { /////////////////////////////////// link
 			var data = table.row( $(this).parents('tr') ).data();
@@ -270,7 +267,7 @@ Post Forum User
 		return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
 		'<tr style="border: 0;">'+
 		'<td>Tag</td>'+
-		'<td>'+d.tag+'</td>'+
+		'<td>'+d.post+'</td>'+
 		'</tr>'+
 		'<tr style="border: 0;">'+
 		'<td>Tanggal</td>'+
@@ -301,7 +298,7 @@ Post Forum User
 			"<'row'<'col s12 m12 l5'><'col s12 m12 l7'p>>",
 
 			"ajax": {
-				"url": "{{asset('asset/js/tabel-post.js')}}"
+				"url": "{{asset('asset/js/tabel-komentar.js')}}"
 			},
 
 			"columnDefs": [
@@ -312,8 +309,8 @@ Post Forum User
 				"data":           null,
 				"defaultContent": ''
 			},
-			{ "targets": 1,"data": "judul" },
-			{ "targets": 2,"data": "status" },
+			{ "targets": 1,"data": "user" },
+			{ "targets": 2,"data": "komentar" },
 			],
 
 			'order': [[1, 'dsc']]
@@ -365,7 +362,6 @@ Post Forum User
 {{-- jquery checkbox triger button --}}
 <script>
 	$(document).ready(function () {
-		var xx = document.getElementById("status");
 		var xy = document.getElementById("hapus");
 		var xz = document.getElementById("datacek");
 
@@ -380,15 +376,12 @@ Post Forum User
 			var countCheckedCheckboxes = $('#example').find('td input[type="checkbox"]:checked').length;
 
 			if (countCheckedCheckboxes == 1) {
-				xx.style.display = "block";
 				xy.style.display = "block";
 				xz.style.display = "block";
 			} else if (countCheckedCheckboxes >= 2) {
-				xx.style.display = "none";
 				xy.style.display = "block";
 				xz.style.display = "block";
 			} else {
-				xx.style.display = "none";
 				xy.style.display = "none";
 				xz.style.display = "none";
 			}

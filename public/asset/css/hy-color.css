@@ -21,6 +21,10 @@
 	color: #202124 !important;
 }
 
+.hy-color-6 {
+	color: #343434 !important;
+}
+
 .hy-wh > h5, .hy-wh > h6 {
 	color: #fff !important;
 }
@@ -45,4 +49,12 @@
 
 .hy-b-color-5 {
 	background-color: #f8fff1 !important;
+}
+
+.hy-b-color-6 {
+	background-color: #f3fde8 !important;
+}
+
+.hy-b-color-7 {
+	background-color: #3b8686 !important;
 }

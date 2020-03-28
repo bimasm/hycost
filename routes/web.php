@@ -31,9 +31,19 @@ Route::get('/staf', function() {
 
 
 //-- Start ---------------------------------------------------------------------------------------- User
+//-- Start -------------------------------------------------------------------- Forum
 Route::get('/user', 'UserController@User_Dashboard_Forum')
 ->name('UserDashboardForum')->middleware('auth:user');
 
 Route::get('/post', 'UserController@User_SemuaPost_Forum')
 ->name('UserPostSemuaForum')->middleware('auth:user');
+
+Route::get('/add-newpost', 'UserController@User_AddNewPost_Forum')
+->name('UserPostAddNewPost')->middleware('auth:user');
+
+Route::get('/komentar', 'UserController@User_SemuaKomentar_Forum')
+->name('UserKomentarSemua')->middleware('auth:user');
+//-- End -------------------------------------------------------------------- Forum
+Route::get('/setting', 'UserController@User_Setting')
+->name('UserSetting')->middleware('auth:user');
 //-- End ---------------------------------------------------------------------------------------- /User

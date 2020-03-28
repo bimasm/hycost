@@ -1,4 +1,4 @@
-<ul id="sidenav-1" class="sidenav sidenav-fixed sidenav-hy noselect">
+<ul id="sidenav-1" class="sidenav sidenav-fixed sidenav-hy noselect animated fadeIn faster">
 
 	{{--//START//----------------------------------------------------------------------------------------- sidenav monitoring --}}
 
@@ -37,15 +37,15 @@
 	{{--//END//----------------------------------------------------------------------------------------- sidenav monitoring --}}
 
 	{{--//START//----------------------------------------------------------------------------------------- sidenav forum --}}
-	@if(request()->routeIs('UserDashboardForum','UserPostSemuaForum'))
+	@if(request()->routeIs('UserDashboardForum','UserPostSemuaForum','UserPostAddNewPost','UserKomentarSemua','UserSetting'))
 	<li><a class="subheader">Forum</a></li>
 	<li class="
 	{{ (request()->routeIs(
 
 		'UserDashboardForum'
 
-		)) ? 'active' : '' }}"
-		>
+		)) ? 'active' : '' }}
+		">
 		<a href="{{route('UserDashboardForum')}}"><i class="material-icons">dashboard</i>Dashboard</a>
 	</li>
 	<li>
@@ -53,7 +53,8 @@
 			<li class="
 			{{ (request()->routeIs(
 
-				'UserPostSemuaForum'
+				'UserPostSemuaForum',
+				'UserPostAddNewPost'
 
 				)) ? 'active' : '' }}
 				">
@@ -69,13 +70,29 @@
 							">
 							<a href="{{route('UserPostSemuaForum')}}">Semua Post</a>
 						</li>
-						<li><a href="#!">Tambah Post Baru</a></li>
+						<li class="
+						{{ (request()->routeIs(
+
+							'UserPostAddNewPost'
+
+							)) ? 'active' : '' }}
+							">
+							<a href="{{route('UserPostAddNewPost')}}">Tambah Post Baru</a>
+						</li>
 					</ul>
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li><a href="#!"><i class="material-icons">insert_comment</i>Komentar</a></li>
+	<li class="
+	{{ (request()->routeIs(
+
+		'UserKomentarSemua'
+
+		)) ? 'active' : '' }}
+		">
+		<a href="{{route('UserKomentarSemua')}}"><i class="material-icons">insert_comment</i>Komentar</a>
+	</li>
 	{{--//END//----------------------------------------------------------------------------------------- sidenav forum --}}
 
 	<li><a class="subheader">Akun</a></li>
@@ -93,7 +110,15 @@
 			</li>
 		</ul>
 	</li> --}}
-	@if(request()->routeIs('UserDashboardForum','UserPostSemuaForum'))
-	<li><a href="#!"><i class="material-icons">settings</i>Setting</a></li>
+	@if(request()->routeIs('UserDashboardForum','UserPostSemuaForum','UserPostAddNewPost','UserKomentarSemua','UserSetting'))
+	<li class="
+	{{ (request()->routeIs(
+
+		'UserSetting'
+
+		)) ? 'active' : '' }}
+		">
+		<a href="{{route('UserSetting')}}"><i class="material-icons">settings</i>Setting</a>
+	</li>
 	@endif
 </ul>

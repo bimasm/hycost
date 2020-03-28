@@ -17,11 +17,17 @@ Dashboard Forum User
 	<div class="content-hy-dash">
 		<div class="container cont-hy-dash">
 
-			{{--  Start Breadcumb --}}
-			@include('user.app.breadcumb')
-			{{--  End Breadcumb --}}
+			{{-- Start Header --}}
+			<div class="row bread-hy-cont animated fadeIn faster">
+				<div class="col s12 m12 l5">
+					{{-- Start Breadcumb --}}
+					@include('user.app.breadcumb')
+					{{-- End Breadcumb --}}
+				</div>
+			</div>
+			{{-- End Header --}}
 
-			<div class="cont-hy-dash-all">
+			<div class="cont-hy-dash-all animated fadeIn faster">
 				<div class="row">
 
 					<div class="col s12 m12 l12">

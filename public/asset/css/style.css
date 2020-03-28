@@ -57,6 +57,22 @@
 .hy-btn-full {
 	width: 100%;
 }
+
+.hy-btn-flat {
+	color: #80be42;
+	text-transform: capitalize;
+	font-weight: 600;
+	background-color: transparent;
+	box-shadow: none;
+	transition: all 0.3s;
+}
+
+.hy-btn-flat:hover {
+	color: #0000008a;
+	background-color: rgb(224 224 224);
+	box-shadow: none;
+}
+
 /*--- END ------------------------------------------------------------------------------------ Button ---*/
 
 /*--- START ------------------------------------------------------------------------------------ NAVBAR ---*/
@@ -475,6 +491,35 @@ input.hy-input[type="password"] {
 	transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s
 }
 
+input.hy-input-border[type=text]:not(.browser-default)
+{
+	background-color: transparent;
+	border: none;
+	border: 1px solid #dadce0;
+	border-radius: 8px;
+	outline: none;
+	height: 3rem;
+	width: 100%;
+	font-size: 16px;
+	margin: 0 0 8px 0;
+	padding: 0 0 0 10px;
+
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+	-webkit-transition: border .3s, -webkit-box-shadow .3s;
+	transition: border .3s, -webkit-box-shadow .3s;
+	transition: box-shadow .3s, border .3s;
+	transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s
+}
+
+input.hy-input-border[type=text]:not(.browser-default):focus:not([readonly]) {
+	border: 1px solid #80BE42 !important;
+	-webkit-box-shadow: 0 0 0 0 #80BE42 !important;
+	box-shadow: 0 0 0 0 #80BE42 !important;
+}
+
 .input-field> label.hy-label {
 	left: 10px;
 }
@@ -497,6 +542,10 @@ input[type=password]:not(.browser-default):focus:not([readonly])+label.hy-label 
 
 .input-field.hy-infield {
 	margin-right: 10px;
+}
+
+.judul {
+	font-size: 30px !important;
 }
 /*--- END ------------------------------------------------------------------------------------ Input ---*/
 
@@ -553,6 +602,20 @@ input[type=password]:not(.browser-default):focus:not([readonly])+label.hy-label 
 	margin: 3em 5em 0 22em;
 }
 
+.cont-hy-action-count {
+	background: #80be42;
+	max-width: 8em;
+	padding: 0.4em;
+	border-radius: 6px;
+	text-align: center;
+	color: #fff;
+}
+
+.cont-hy-action-count > span {
+	font-weight: 600;
+	padding-right: 0.3em;
+}
+
 .cont-hy-dash {
 	width: 100%;
 	padding-bottom: 100px;
@@ -562,6 +625,42 @@ input[type=password]:not(.browser-default):focus:not([readonly])+label.hy-label 
 	margin: 1.5em 0 0 0
 }
 
+.cont-hy-action-tb {
+	margin: 0
+}
+
+.cont-hy-action-tb > #datacek > div.row {
+	padding: 10px 10px;
+}
+
+.cont-hy-action-tb > #datacek > div.row > div.col > ul {
+	margin: 0;
+}
+
+.cont-hy-action-tb > #datacek > div.row > div.col > ul > li {
+	float: right;
+	margin: 0 10px;
+}
+
+.valign-wrapper-hy {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center
+}
+
+.mobile-res {
+	display: none;
+}
+
+.web-res {
+	display: block;
+}
+
 @media only screen and (max-width: 600px) {
 	.content-hy-dash {
 		margin: 3em 0 0 0;
@@ -569,6 +668,19 @@ input[type=password]:not(.browser-default):focus:not([readonly])+label.hy-label 
 
 	.cont-hy-dash {
 		width: 90%;
+	}
+
+	.valign-wrapper-hy {
+		display: block;
+		text-align: center;
+	}
+
+	.mobile-res {
+		display: block;
+	}
+
+	.web-res {
+		display: none;
 	}
 }
 /*--- END ------------------------------------------------------------------------------------ CONTENT ---*/
@@ -606,6 +718,8 @@ input[type=password]:not(.browser-default):focus:not([readonly])+label.hy-label 
 
 .bread-hy-cont {
 	border-bottom: 1px solid #eeeeee;
+	padding-bottom: 15px;
+	margin-bottom: 0
 }
 /*--- END ------------------------------------------------------------------------------------ BREADCUMB ---*/
 
@@ -685,3 +799,107 @@ input[type=password]:not(.browser-default):focus:not([readonly])+label.hy-label 
 	margin: 0 0 1.5em 0
 }
 /*--- END ------------------------------------------------------------------------------------ ALERT ---*/
+
+/*--- START ------------------------------------------------------------------------------------ COLLAPSIBLE ---*/
+.collap-second-item {
+	color: #0000008a;
+	float: right;
+	position: absolute;
+	right: 0em;
+}
+
+.icon-rot {
+	transition: all 0.5s;
+}
+
+ul.collapsible > li.active > div.collapsible-header > a.collap-second-item > i.icon-rot {
+	transform: rotate(180deg);
+	/*	transform: rotate(180deg);*/
+}
+
+.collap-head-last-nobt {
+	border-bottom: 0 !important;
+}
+
+ul.collapsible > li.active > div.collap-head-last-nobt {
+	border-bottom: 1px solid #ddd !important;
+}
+
+.collap-body-last-nobt {
+	border-bottom: 0 !important;
+}
+
+.collap-card {
+	padding: 0 !important;
+}
+
+.collap-card > .collapsible {
+	box-shadow: none; 
+	border:0
+}
+/*--- END ------------------------------------------------------------------------------------ COLLAPSIBLE ---*/
+
+.tabel-belum {
+	background-color: #fff9c4;
+}
+
+.collect-pp {
+	margin:0;
+}
+
+.collect-pp > a.collection-item {
+	padding: 20px 20px;
+	color: #5f6368;
+}
+
+.collect-pp > a.akhir {
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+.collect-nb {
+	border:0;
+}
+
+.collect-pp > a.collection-item > div.row > div.col.s14 > div.secondary-content {
+	color: #5f6368;
+}
+
+.collect-pp > a.collection-item > div.row {
+	margin: 0;
+}
+
+.collect-pp > a.collection-item > div.row > div.col.s14.icon {
+	float: right;
+}
+
+.collect-pp > a.collection-item > div.row > div.col.s14.title {
+	min-width: 300px;
+	font-weight: 600
+}
+
+.collect-pp > a.collection-item > div.row > div.col.s6.title {
+	font-weight: 600
+}
+
+ul.collect-table {
+	border: 0 !important;
+	margin: 0 !important;
+}
+
+ul.collect-table > li.collection-item {
+	background: transparent !important;
+	min-height: 60px !important;
+	line-height: 2.7rem !important;
+}
+
+.search-cont {
+	background-color: #e0e0e0;
+	padding: 2px;
+	border-radius: 12px;
+}
+
+div.search-cont > div.nav-wrapper > form > div.input-field {
+	margin-top: 0.7rem;
+	margin-bottom: 0.7rem;
+}

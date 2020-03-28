@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "judul": "Tiger Nixon",
+      "tag": "System Architect",
+      "status": "$320,800",
+      "tanggal": "2011/04/25",
+    },
+    {
+      "id": "2",
+      "judul": "Tiger Nixon",
+      "tag": "System Architect",
+      "status": "$320,800",
+      "tanggal": "2011/04/25",
+    },
+    {
+      "id": "3",
+      "judul": "Tiger Nixon",
+      "tag": "System Architect",
+      "status": "$320,800",
+      "tanggal": "2011/04/25",
+    }
+  ]
+}
