@@ -201,13 +201,10 @@
     $(document).ready(function(){
       $('.fixed-action-btn').floatingActionButton();
     });
-<<<<<<< HEAD
 
     $(document).ready(function(){
       $('.tooltipped').tooltip();
     });
-=======
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
   </script>
 </body>
 </html>

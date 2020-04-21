@@ -81,7 +81,6 @@
 	box-shadow: none;
 }
 
-<<<<<<< HEAD
 .hy-btn-float {
 	border-radius: 50% !important;
 	box-shadow: none !important;
@@ -89,8 +88,6 @@
 	color: #80BE42 !important
 }
 
-=======
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 /*--- END ------------------------------------------------------------------------------------ Button ---*/
 
 /*--- START ------------------------------------------------------------------------------------ NAVBAR ---*/
@@ -113,20 +110,12 @@
 }
 
 .hy-nav-dashboard-portal > ul > li > a {
-<<<<<<< HEAD
 	color: #606469;
-=======
-	color: #fff;
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 }
 
 
 .hy-nav-dashboard {
-<<<<<<< HEAD
 	background-color: transparent;
-=======
-	background-color: #80BE42;
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 	width: 100%;
 	height: 70px;
 	line-height: 70px;
@@ -202,7 +191,6 @@
 /*--- END ------------------------------------------------------------------------------------ NAVBAR ---*/
 
 /*--- START ------------------------------------------------------------------------------------ SIDE NAV ---*/
-<<<<<<< HEAD
 .sidenav-hy-tools {
 	width: 350px;
 	padding-top: 30px;
@@ -340,17 +328,6 @@ ul.sidenav-hy-tools.notif > li.item-sudah > a.notif > div.card > div.card-conten
 
 	.sidenav-hy-2 {
 		width: 10px !important;
-=======
-.sidenav-hy {
-	box-shadow: none;
-	z-index: 0; 
-	margin-top: 100px;
-	padding-right: 10px;
-}
-
-@media only screen and (max-width: 600px) {
-	.sidenav-hy {
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 		box-shadow: none;
 		z-index: 999; 
 		margin-top: 0px;
@@ -365,11 +342,7 @@ ul.sidenav-hy-tools.notif > li.item-sudah > a.notif > div.card > div.card-conten
 }
 
 .sidenav li> ul.collapsible > li > .collapsible-header {
-<<<<<<< HEAD
 	color: #fff;
-=======
-	color: rgba(0, 0, 0, 0.87);
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 	display: block;
 	font-size: 14px;
 	font-weight: 500;
@@ -381,11 +354,7 @@ ul.sidenav-hy-tools.notif > li.item-sudah > a.notif > div.card > div.card-conten
 .sidenav li> ul.collapsible > li > .collapsible-header:hover {
 	border-bottom-right-radius: 30px;
 	border-top-right-radius: 30px;
-<<<<<<< HEAD
 	background-color: #97d05d
-=======
-	background-color: #f3fde8
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 }
 
 .sidenav li> ul.collapsible > li > .collapsible-header > i.material-icons {
@@ -394,11 +363,7 @@ ul.sidenav-hy-tools.notif > li.item-sudah > a.notif > div.card > div.card-conten
 	line-height: 48px;
 	margin: 0 32px 0 0;
 	width: 24px;
-<<<<<<< HEAD
 	color: #fff;
-=======
-	color: rgba(0, 0, 0, 0.54);
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 }
 
 .sidenav li> ul.collapsible > li.active > .collapsible-header > i.material-icons {
@@ -407,11 +372,7 @@ ul.sidenav-hy-tools.notif > li.item-sudah > a.notif > div.card > div.card-conten
 	line-height: 48px;
 	margin: 0 32px 0 0;
 	width: 24px;
-<<<<<<< HEAD
 	color: #fff;
-=======
-	color: #80BE42;
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 }
 
 .sidenav li> ul.collapsible > li > .collapsible-header > i.material-icons.right {
@@ -425,11 +386,7 @@ ul.sidenav-hy-tools.notif > li.item-sudah > a.notif > div.card > div.card-conten
 }
 
 .sidenav li> ul.collapsible > li.active > .collapsible-header {
-<<<<<<< HEAD
 	color: #fff;
-=======
-	color: #80BE42;
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 }
 
 .sidenav li> ul.collapsible > li.active {
@@ -437,11 +394,7 @@ ul.sidenav-hy-tools.notif > li.item-sudah > a.notif > div.card > div.card-conten
 }
 
 .sidenav li> ul.collapsible > li > .collapsible-body > ul {
-<<<<<<< HEAD
 	border-left: 3px solid #fff;
-=======
-	border-left: 3px solid #80BE42;
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 	margin-left: 41px;
 }
 
@@ -449,7 +402,6 @@ ul.sidenav-hy-tools.notif > li.item-sudah > a.notif > div.card > div.card-conten
 	padding-left: 30px;
 }
 
-<<<<<<< HEAD
 ul.sidenav-second > li {
 	margin: 15px 0;
 	background-color: transparent;
@@ -494,8 +446,6 @@ li > div.sidenav-title {
 	margin-bottom: 40px;
 }
 
-=======
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 
 /*--- END ------------------------------------------------------------------------------------ SIDE NAV ---*/
 
@@ -728,12 +678,8 @@ input.hy-input[type="password"] {
 	transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s
 }
 
-<<<<<<< HEAD
 input.hy-input-border[type=text]:not(.browser-default),
 input.hy-input-border[type=number]:not(.browser-default)
-=======
-input.hy-input-border[type=text]:not(.browser-default)
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 {
 	background-color: transparent;
 	border: none;
@@ -756,12 +702,8 @@ input.hy-input-border[type=text]:not(.browser-default)
 	transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s
 }
 
-<<<<<<< HEAD
 input.hy-input-border[type=text]:not(.browser-default):focus:not([readonly]),
 input.hy-input-border[type=number]:not(.browser-default):focus:not([readonly]) {
-=======
-input.hy-input-border[type=text]:not(.browser-default):focus:not([readonly]) {
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 	border: 1px solid #80BE42 !important;
 	-webkit-box-shadow: 0 0 0 0 #80BE42 !important;
 	box-shadow: 0 0 0 0 #80BE42 !important;
@@ -794,7 +736,6 @@ input[type=password]:not(.browser-default):focus:not([readonly])+label.hy-label 
 .judul {
 	font-size: 30px !important;
 }
-<<<<<<< HEAD
 
 .quantity {
 	position: relative;
@@ -865,8 +806,6 @@ input[type=number]
 	bottom: -1px;
 	height: 50%;
 }
-=======
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 /*--- END ------------------------------------------------------------------------------------ Input ---*/
 
 .drop-akun{
@@ -919,11 +858,7 @@ input[type=number]
 
 /*--- START ------------------------------------------------------------------------------------ CONTENT ---*/
 .content-hy-dash {
-<<<<<<< HEAD
 	margin: 3em 5em 0 23em;
-=======
-	margin: 3em 5em 0 22em;
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 }
 
 .cont-hy-action-count {
@@ -1090,13 +1025,10 @@ input[type=number]
 	margin:1.5em 0 0 0; 
 	border:0
 }
-<<<<<<< HEAD
 
 .card-hy-f > .card-content {
 	padding-bottom: 0
 }
-=======
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 /*--- END ------------------------------------------------------------------------------------ CARD ---*/
 
 /*--- START ------------------------------------------------------------------------------------ ALERT ---*/
@@ -1233,7 +1165,6 @@ ul.collect-table > li.collection-item {
 div.search-cont > div.nav-wrapper > form > div.input-field {
 	margin-top: 0.7rem;
 	margin-bottom: 0.7rem;
-<<<<<<< HEAD
 }
 
 
@@ -1281,6 +1212,3 @@ div.search-cont > div.nav-wrapper > form > div.input-field {
 		box-shadow: none;
 	}
 }
-=======
-}
->>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
