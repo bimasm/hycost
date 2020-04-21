@@ -5,17 +5,17 @@ Tambah Label Baru User
 @endsection
 
 @section('nav-user')
-@include('user.app.nav-user')  
+@include('user.app.nav-back')  
 @endsection
 
 @section('sidenav-user')
-@include('user.app.side-nav')
+{{-- @include('user.app.side-nav') --}}
 @endsection
 
 @section('content-user')
 
 <section>
-	<div class="content-hy-dash">
+	<div class="content-hy-dash-add">
 		<div class="container cont-hy-dash">
 
 			{{-- Start Header --}}
