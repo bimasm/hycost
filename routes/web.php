@@ -43,7 +43,23 @@ Route::get('/add-newpost', 'UserController@User_AddNewPost_Forum')
 
 Route::get('/komentar', 'UserController@User_SemuaKomentar_Forum')
 ->name('UserKomentarSemua')->middleware('auth:user');
+<<<<<<< HEAD
+//-- End ---------------------------------------------------------------------- Forum
+
+//-- Start -------------------------------------------------------------------- Monitorng
+Route::get('/user/monitor', 'UserController@User_Dashboard_Monitor')
+->name('UserDashboardMonitor')->middleware('auth:user');
+
+Route::get('/label', 'UserController@User_SemuaLabel_Monitor')
+->name('UserSemuaLabelMonitor')->middleware('auth:user');
+
+Route::get('/add-newlabel', 'UserController@User_AddNewlabel_Monitor')
+->name('UserLabelAddNewMonitor')->middleware('auth:user');
+//-- End ---------------------------------------------------------------------- Monitorng
+
+=======
 //-- End -------------------------------------------------------------------- Forum
+>>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 Route::get('/setting', 'UserController@User_Setting')
 ->name('UserSetting')->middleware('auth:user');
 //-- End ---------------------------------------------------------------------------------------- /User

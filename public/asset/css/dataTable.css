@@ -218,7 +218,20 @@ td.details-control {
     background: url("https://raw.githubusercontent.com/ivanpriyambudi/img-dataTable/master/open.png") no-repeat center center;
     cursor: pointer;
 }
+<<<<<<< HEAD
+tr.shown > td > a.ss {
+   transform: rotate(90deg);
+}
+
+.detail-tabel {
+    margin: 0 90px
+}
+
+.akun-table {
+    padding: 0;
+=======
 tr.shown td.details-control {
     width: 40px;
     background: url("https://raw.githubusercontent.com/ivanpriyambudi/img-dataTable/master/close.png") no-repeat center center;
+>>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
 }

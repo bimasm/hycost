@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link rel="icon" href="asset/img/icon.png">
 
   <title>@yield('title')</title>
@@ -92,7 +93,13 @@
 
       $(document).ready(function(){
         $('.sidenav').sidenav();
+
+        // $('a .sidenav-trigger').click(function(){  
+        //   $('#sidenav-1').sidenav('onOpenStart');
+        //   $('#sidenav-2').sidenav('onOpenStart');
+        // });
       });
+
     });
   </script>
   <script type="text/javascript">
@@ -194,6 +201,13 @@
     $(document).ready(function(){
       $('.fixed-action-btn').floatingActionButton();
     });
+<<<<<<< HEAD
+
+    $(document).ready(function(){
+      $('.tooltipped').tooltip();
+    });
+=======
+>>>>>>> ec04a23068213a39e0ef0b95d16e12bcb2418607
   </script>
 </body>
 </html>
