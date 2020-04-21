@@ -66,6 +66,51 @@
 	width: 100%;
 }
 
+.hy-btn-flat-1 {
+	color: #80be42;
+	text-transform: capitalize;
+	font-weight: 600;
+	background-color: transparent;
+	box-shadow: none;
+	transition: all 0.3s;
+}
+
+.hy-btn-flat-1:hover {
+	color: #0000008a;
+	background-color: rgb(224 224 224);
+	box-shadow: none;
+}
+
+.hy-btn-flat-2 {
+	color: #80be42;
+	text-transform: capitalize;
+	font-weight: 600;
+	background-color: #80be441f;
+	box-shadow: none;
+	transition: all 0.3s;
+}
+
+.hy-btn-flat-2:hover {
+	color: #0000008a;
+	background-color: rgb(224 224 224);
+	box-shadow: none;
+}
+
+.hy-btn-flat-3 {
+	color: #fff;
+	text-transform: capitalize;
+	font-weight: 600;
+	background-color: #80be42;
+	box-shadow: none;
+	transition: all 0.3s;
+}
+
+.hy-btn-flat-3:hover {
+	color: #fff;
+	background-color: #588828;
+	box-shadow: none;
+}
+
 .hy-btn-flat {
 	color: #80be42;
 	text-transform: capitalize;
@@ -857,8 +902,38 @@ input[type=number]
 /*--- END ------------------------------------------------------------------------------------ SCROLL ---*/
 
 /*--- START ------------------------------------------------------------------------------------ CONTENT ---*/
+ul.hy-header-tols {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	float: right;
+}
+
+ul.hy-header-tols > li {
+	float: left;
+	padding: 10px
+}
+
+ul.hy-header-tols > li.link {
+	display: block;
+	text-align: center;
+	margin: 5px 0;
+}
+
 .content-hy-dash {
 	margin: 3em 5em 0 23em;
+}
+
+.content-hy-dash-add {
+	margin: 3em 13em; 
+	border: 1px solid #dadce0; 
+	border-radius: 8px; 
+	padding: 2em;
+}
+
+div.content-hy-dash-add > div.cont-hy-dash {
+	padding-bottom: 0
 }
 
 .cont-hy-action-count {
@@ -922,6 +997,10 @@ input[type=number]
 
 @media only screen and (max-width: 600px) {
 	.content-hy-dash {
+		margin: 3em 0 0 0;
+	}
+
+	.content-hy-dash-add {
 		margin: 3em 0 0 0;
 	}
 
@@ -1027,7 +1106,7 @@ input[type=number]
 }
 
 .card-hy-f > .card-content {
-	padding-bottom: 0
+	/*padding-bottom: 0*/
 }
 /*--- END ------------------------------------------------------------------------------------ CARD ---*/
 
@@ -1157,9 +1236,10 @@ ul.collect-table > li.collection-item {
 }
 
 .search-cont {
-	background-color: #e0e0e0;
+	background-color: #f0f7e8;
 	padding: 2px;
 	border-radius: 12px;
+	width: 208px;
 }
 
 div.search-cont > div.nav-wrapper > form > div.input-field {
@@ -1210,5 +1290,12 @@ div.search-cont > div.nav-wrapper > form > div.input-field {
 		overflow-y: hidden;
 		transform: translateX(-105%);
 		box-shadow: none;
+	}
+
+	.search-cont {
+		background-color: #f0f7e8;
+		padding: 2px;
+		border-radius: 12px;
+		width: 100%;
 	}
 }

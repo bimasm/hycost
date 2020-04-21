@@ -13,7 +13,6 @@
 				@endif
 
 				@if(request()->routeIs('UserPostAddNewPost'))
-				<a href="{{route('UserPostSemuaForum')}}" class="breadcrumb bread-hy-c">Post</a>
 				<a href="#!" class="breadcrumb bread-hy-c">Post Baru</a>
 				@endif
 

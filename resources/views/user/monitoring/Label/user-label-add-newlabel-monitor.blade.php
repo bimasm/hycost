@@ -128,13 +128,14 @@ Tambah Label Baru User
 						<div class="card card-hy-f">
 							<div class="card-content">
 								
-								<p>
-									<label>
-										<input type="checkbox" class="filled-in" />
-										<span>Publikasikan ke umum</span>
-									</label>
-								</p>
-
+								<div class="row" style="margin:0">
+									<div class="col s12 m12 l12">
+										<div class="input-field col s12">
+											<input placeholder="Nama Tanaman" type="text" id="autocomplete-input" class="autocomplete hy-input-border">
+										</div>
+									</div>
+								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -183,6 +184,18 @@ Tambah Label Baru User
 			spinner.find("input").trigger("change");
 		});
 
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('input.autocomplete').autocomplete({
+			data: {
+				"Apple": null,
+				"Microsoft": null,
+				"Google": 'https://placehold.it/250x250'
+			},
+		});
 	});
 </script>
 @endsection

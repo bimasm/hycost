@@ -30,44 +30,53 @@ Label Monitoring User
 			{{-- Start Header --}}
 			<div class="row bread-hy-cont animated fadeIn faster valign-wrapper-hy">
 
-				<div class="col s12 m12 l7 valign">
+				<div class="col s12 m12 l6 valign">
 					{{--  Start Breadcumb --}}
 					@include('user.app.breadcumb')
 					{{--  End Breadcumb --}}
 				</div>
-				<div class="col s12 m12 l5">
+				<div class="col s12 m12 l6">
 
+					<ul class="hy-header-tols">
+						<li>
+							<div class="search-cont web-res">
+								<div class="nav-wrapper">
+									<form>
+										<div class="input-field">
+											<input id="myInputTextField" type="search" placeholder="Cari disini" required>
+											<label class="label-icon" for="search">
+												<i class="material-icons">search</i>
+											</label>
+											<i class="material-icons">close</i>
+										</div>
+									</form>
+								</div>
+							</div>
+							{{-- End Search On Web --}}
+
+							{{-- Start Search On Mobile --}}
+							<div class="search-cont mobile-res">
+								<div class="nav-wrapper">
+									<form>
+										<div class="input-field">
+											<input id="myInputTextField2" type="search" placeholder="Cari disini" required>
+											<label class="label-icon" for="search">
+												<i class="material-icons">search</i>
+											</label>
+											<i class="material-icons">close</i>
+										</div>
+									</form>
+								</div>
+							</div>
+							{{-- End Search On Mobile --}}
+						</li>
+						<li class="link">
+							<div class="web-res">
+								<a href="{{route('UserLabelAddNewMonitor')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons left">add</i>Label Baru</a>
+							</div>
+						</li>
+					</ul>
 					{{-- Start Search On Web --}}
-					<div class="search-cont web-res">
-						<div class="nav-wrapper">
-							<form>
-								<div class="input-field">
-									<input id="myInputTextField" type="search" placeholder="Cari disini" required>
-									<label class="label-icon" for="search">
-										<i class="material-icons">search</i>
-									</label>
-									<i class="material-icons">close</i>
-								</div>
-							</form>
-						</div>
-					</div>
-					{{-- End Search On Web --}}
-
-					{{-- Start Search On Mobile --}}
-					<div class="search-cont mobile-res">
-						<div class="nav-wrapper">
-							<form>
-								<div class="input-field">
-									<input id="myInputTextField2" type="search" placeholder="Cari disini" required>
-									<label class="label-icon" for="search">
-										<i class="material-icons">search</i>
-									</label>
-									<i class="material-icons">close</i>
-								</div>
-							</form>
-						</div>
-					</div>
-					{{-- End Search On Mobile --}}
 					
 				</div>
 			</div>
