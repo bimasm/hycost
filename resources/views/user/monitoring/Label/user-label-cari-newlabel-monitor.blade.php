@@ -70,9 +70,9 @@ Cari Label Baru User
 								<table id="example" class="" style="width:100%">
 									<thead>
 										<tr>
-											<th>Nama Label</th>
-											<th>Author</th>
-											<th></th>
+											<th>Label</th>
+											<th>Sayur</th>
+											<th>Pemakai</th>
 											<th></th>
 										</tr>
 									</thead>
@@ -92,6 +92,17 @@ Cari Label Baru User
 		</div>
 	</div>
 </section>
+
+<div id="detail-label" class="modal">
+	<div class="modal-content">
+		<h4>Detail Label</h4>
+		<h1><span id="namas"></span></h1>
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+	</div>
+</div>
+
 @endsection
 
 @section('js-plus')
@@ -169,115 +180,6 @@ Cari Label Baru User
 <script type="text/javascript">
 
 	$(document).ready(function() {
-		function format ( d ) {
-
-			return '<div class="animated fadeIn faster">'+
-
-			'<div class="row">'+
-			'<div class="col s12 m12 l6">'+
-
-			'<div class="col s12 m12 l12">'+
-			'<div class="card card-hy-f white"><div class="card-content" style="padding:20px">'+
-			'<div class="row valign-wrapper" style="margin-bottom:0">'+
-			'<div class="col s12 m12 l4 valign">aa</div>'+
-			'<div class="col s12 m12 l8">'+
-			'<div class="row" style="margin-bottom:0">'+
-			'<div class="col s12 m12 l6 center-align">'+
-			'Suhu Air'+
-			'</div>'+
-			'<div class="col s12 m12 l6 center-align">'+
-			'60'+
-			'</div>'+
-			'</div>'+
-			'</div>'+
-			'</div>'+
-			'</div></div>'+
-			'</div>'+
-
-			'<div class="col s12 m12 l12">'+
-			'<div class="card card-hy-f white"><div class="card-content" style="padding:20px">'+
-			'<div class="row valign-wrapper" style="margin-bottom:0">'+
-			'<div class="col s12 m12 l4 valign">aa</div>'+
-			'<div class="col s12 m12 l8">'+
-			'<div class="row" style="margin-bottom:0">'+
-			'<div class="col s12 m12 l6 center-align">'+
-			'Suhu Air'+
-			'</div>'+
-			'<div class="col s12 m12 l6 center-align">'+
-			'60'+
-			'</div>'+
-			'</div>'+
-			'</div>'+
-			'</div>'+
-			'</div></div>'+
-			'</div>'+
-
-			'<div class="col s12 m12 l12">'+
-			'<div class="card card-hy-f white"><div class="card-content" style="padding:20px">'+
-			'<div class="row valign-wrapper" style="margin-bottom:0">'+
-			'<div class="col s12 m12 l4 valign">aa</div>'+
-			'<div class="col s12 m12 l8">'+
-			'<div class="row" style="margin-bottom:0">'+
-			'<div class="col s12 m12 l6 center-align">'+
-			'Suhu Air'+
-			'</div>'+
-			'<div class="col s12 m12 l6 center-align">'+
-			'60'+
-			'</div>'+
-			'</div>'+
-			'</div>'+
-			'</div>'+
-			'</div></div>'+
-			'</div>'+
-
-			'<div class="col s12 m12 l12">'+
-			'<div class="card card-hy-f white"><div class="card-content" style="padding:20px">'+
-			'<div class="row valign-wrapper" style="margin-bottom:0">'+
-			'<div class="col s12 m12 l4 valign">aa</div>'+
-			'<div class="col s12 m12 l8">'+
-			'<div class="row" style="margin-bottom:0">'+
-			'<div class="col s12 m12 l6 center-align">'+
-			'Suhu Air'+
-			'</div>'+
-			'<div class="col s12 m12 l6 center-align">'+
-			'60'+
-			'</div>'+
-			'</div>'+
-			'</div>'+
-			'</div>'+
-			'</div></div>'+
-			'</div>'+
-
-			'</div>'+
-			'<div class="col s12 m12 l6">'+
-			
-			'<table>'+
-			'<tbody>'+
-
-			'<tr>'+
-			'<th>Status</th>'+
-			'<td>'+d.status+'</td>'+
-			'</tr>'+
-
-			'<tr>'+
-			'<th>Tanggal Pemasangan</th>'+
-			'<td>'+d.tanggal+'</td>'+
-			'</tr>'+
-
-			'<tr>'+
-			'<th>Jumlah Pemakai</th>'+
-			'<td>300 User</td>'+
-			'</tr>'+
-
-			'</tbody>'+
-			'</table>'+
-
-			'</div>'+
-			'</div>'+
-
-			'</div>';
-		}
-
 		var table = $('#example').DataTable( {
 
 			"dom": 
@@ -289,19 +191,29 @@ Cari Label Baru User
 			},
 
 			"columnDefs": [
-			{ "targets": 0,"data": "nama" },
-			{ "targets": 1,"data": "author" },
-			{
-				"targets": 2,
-				"data": null,
-				"orderable": false,
-				"defaultContent": "<button class='waves-effect btn-flat hy-btn-flat'>Pasang</button>"
+			{ 
+				"targets": 0,
+				"data": "nama",
+				render: function (data, type, row, meta) {
+					return '<a href="#detail-label" class="namaz waves-effect btn-flat hy-btn-flat modal-trigger">'+data+'</a>';
+				},
 			},
+			{ "targets": 1,"data": "sayur" },
+			{ "targets": 2,"data": "jumlah","className": 'center-align' },
 			{
-				'targets': -1,
-				"orderable":      false,
-				"data":           null,
-				"defaultContent": '<a class="ss btn-floating waves-effect waves-light hy-b-color-6 hy-btn-float"><i class="gg material-icons hy-color-2">keyboard_arrow_right</i></a>'
+				"targets": 3,
+				"data": "status",
+				"orderable": false,
+				"className": 'center-align',
+				render: function (data, type, row, meta) {
+
+					if (data == "Off") {
+						return '<button class="waves-effect btn-flat hy-btn-flat">Pasang</button>';
+					} else{
+						return '<button class="waves-effect btn-flat hy-btn-flat disabled">Terpasang</button>';
+					}
+					
+				},
 			}
 			],
 
@@ -316,22 +228,11 @@ Cari Label Baru User
 			window.location.href = "http://www.w3schools.com";
 		} );
 
-		$('#example tbody').on('click', 'td a.ss', function () { ///////////////////////////// tab
-			var tr = $(this).closest('tr');
-			var row = table.row( tr );
-
-			if ( row.child.isShown() ) {
-
-				row.child.hide();
-				tr.removeClass('grey hy-b-color-6');
-				tr.removeClass('shown');
-			}
-			else {
-
-				row.child( format(row.data()) ).show();
-				tr.addClass('grey hy-b-color-6');
-				tr.addClass('shown');
-			}
+		$('#example tbody').on('click', 'td a.namaz', function () { ///////////////////////////// tab
+			var data = table.row($(this).parents('tr')).data();
+			var namas = data[ 'nama' ];
+			console.log(namas);
+			document.getElementById("namas").innerHTML = namas;
 		} );
 
 		$("#hapus").on("click",function(){ /////////////////////////////////////////////////////////// hapus
