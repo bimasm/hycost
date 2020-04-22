@@ -15,6 +15,90 @@
       "tanggal": "22 Juni 2020"
     },
     {
+      "id": "2",
+      "nama": "Pakcoy Super",
+      "author": "Bima",
+      "status": "Off",
+      "tanggal": "22 Juni 2020"
+    },
+    {
+      "id": "2",
+      "nama": "Pakcoy Super",
+      "author": "Bima",
+      "status": "Off",
+      "tanggal": "22 Juni 2020"
+    },
+    {
+      "id": "2",
+      "nama": "Pakcoy Super",
+      "author": "Bima",
+      "status": "Off",
+      "tanggal": "22 Juni 2020"
+    },
+    {
+      "id": "2",
+      "nama": "Pakcoy Super",
+      "author": "Bima",
+      "status": "Off",
+      "tanggal": "22 Juni 2020"
+    },
+    {
+      "id": "2",
+      "nama": "Pakcoy Super",
+      "author": "Bima",
+      "status": "Off",
+      "tanggal": "22 Juni 2020"
+    },
+    {
+      "id": "2",
+      "nama": "Pakcoy Super",
+      "author": "Bima",
+      "status": "Off",
+      "tanggal": "22 Juni 2020"
+    },
+    {
+      "id": "2",
+      "nama": "Pakcoy Super",
+      "author": "Bima",
+      "status": "Off",
+      "tanggal": "22 Juni 2020"
+    },
+    {
+      "id": "2",
+      "nama": "Pakcoy Super",
+      "author": "Bima",
+      "status": "Off",
+      "tanggal": "22 Juni 2020"
+    },
+    {
+      "id": "2",
+      "nama": "Pakcoy Super",
+      "author": "Bima",
+      "status": "Off",
+      "tanggal": "22 Juni 2020"
+    },
+    {
+      "id": "2",
+      "nama": "Pakcoy Super",
+      "author": "Bima",
+      "status": "Off",
+      "tanggal": "22 Juni 2020"
+    },
+    {
+      "id": "2",
+      "nama": "Pakcoy Super",
+      "author": "Bima",
+      "status": "Off",
+      "tanggal": "22 Juni 2020"
+    },
+    {
+      "id": "2",
+      "nama": "Pakcoy Super",
+      "author": "Bima",
+      "status": "Off",
+      "tanggal": "22 Juni 2020"
+    },
+    {
       "id": "3",
       "nama": "Kangkung Seger",
       "author": "Ivan",

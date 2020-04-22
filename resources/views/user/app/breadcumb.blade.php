@@ -31,11 +31,14 @@
 
 				@if(request()->routeIs('UserSemuaLabelMonitor'))
 				<a href="#!" class="breadcrumb bread-hy-c">Label</a>
-				<a href="#!" class="breadcrumb bread-hy-c">Semua Label</a>
 				@endif
 
 				@if(request()->routeIs('UserLabelAddNewMonitor'))
 				<a href="#!" class="breadcrumb bread-hy-c">Tambah Label Baru</a>
+				@endif
+
+				@if(request()->routeIs('UserLabelCariNewMonitor'))
+				<a href="#!" class="breadcrumb bread-hy-c">Cari Label Baru</a>
 				@endif
 
 			</div>

@@ -39,6 +39,7 @@ Label Monitoring User
 
 					<ul class="hy-header-tols">
 						<li>
+							{{-- Start Search On Web --}}
 							<div class="search-cont web-res">
 								<div class="nav-wrapper">
 									<form>
@@ -72,7 +73,7 @@ Label Monitoring User
 						</li>
 						<li class="link">
 							<div class="web-res">
-								<a href="{{route('UserLabelAddNewMonitor')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons left">add</i>Label Baru</a>
+								<a href="#modal-add-label" class='waves-effect btn-flat hy-btn-flat-2 modal-trigger'><i class="material-icons left">add</i>Label Baru</a>
 							</div>
 						</li>
 					</ul>
@@ -128,7 +129,7 @@ Label Monitoring User
 										<th>Nama Label</th>
 										<th>Author</th>
 										<th>Status</th>
-										<th>Link</th>
+										<th></th>
 										<th></th>
 									</tr>
 								</thead>

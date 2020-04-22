@@ -93,7 +93,7 @@
 		<a class="waves-effect waves-light btn-large btn-sidenav-tambah"><i class="material-icons left">label</i>Kebun</a>
 	</li>
 	<li>
-		<a href="{{route('UserLabelAddNewMonitor')}}" class="waves-effect waves-light btn-large btn-sidenav-tambah"><i class="material-icons left">trip_origin</i>Label</a>
+		<a href="#modal-add-label" class="waves-effect waves-light btn-large btn-sidenav-tambah modal-trigger sidenav-close"><i class="material-icons left">trip_origin</i>Label</a>
 	</li>
 </ul>
 
@@ -160,42 +160,14 @@
 			">
 			<a href="{{route('UserDashboardMonitor')}}"><i class="material-icons">dashboard</i>Dashboard</a>
 		</li>
-		<li>
-			<ul class="collapsible">
-				<li class="
-				{{ (request()->routeIs(
+		<li class="
+		{{ (request()->routeIs(
 
-					'UserSemuaLabelMonitor',
-					'UserLabelAddNewMonitor'
+			'UserSemuaLabelMonitor'
 
-					)) ? 'active' : '' }}
-					">
-					<div class="collapsible-header"><i class="material-icons">label</i>Label<i class="material-icons right">arrow_forward_ios</i></div>
-					<div class="collapsible-body">
-						<ul>
-							<li class="
-							{{ (request()->routeIs(
-
-								'UserSemuaLabelMonitor'
-
-								)) ? 'active' : '' }}
-								">
-								<a href="{{route('UserSemuaLabelMonitor')}}">Semua Label</a>
-							</li>
-							<li class="
-							{{ (request()->routeIs(
-
-								'UserLabelAddNewMonitor'
-
-								)) ? 'active' : '' }}
-								">
-								<a href="{{route('UserLabelAddNewMonitor')}}">Tambah Label</a>
-							</li>
-							<li><a href="#!">Cari Label</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul>
+			)) ? 'active' : '' }}
+			">
+			<a href="{{route('UserSemuaLabelMonitor')}}"><i class="material-icons">label</i>Label</a>
 		</li>
 		<li>
 			<ul class="collapsible">
@@ -257,3 +229,5 @@
 	{{--//- END -///////////////////////////////////////////////////////////////////////////////// SIDENAV ONE --}}
 
 </div>
+
+@include('user.app.modal-add')

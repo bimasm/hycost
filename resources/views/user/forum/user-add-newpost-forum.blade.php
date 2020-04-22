@@ -14,7 +14,7 @@ Dashboard Forum User
 
 @section('content-user')
 <section>
-	<form action="" method="">
+	<form action="" method="POST">
 		@csrf
 		<div class="content-hy-dash-add">
 			<div class="container cont-hy-dash">
@@ -149,15 +149,20 @@ Dashboard Forum User
 								</div>
 							</div>
 							
-
 						</div>
-						<div class="col s12 m12 l12 center-align" style="border-top: 1px solid #dadce0; padding-top: 3em">
-							<div class="mobile-res">
-								<button type="submit" class="waves-effect waves-light btn hy-b-color-7" style="width: 100%"><i class="material-icons right">send</i>Publikasi</button>
-							</div>
-							<a href="{{ URL::previous() }}" class='waves-effect btn-flat hy-btn-flat-1'><i class="material-icons right"></i>Cancel</a>
 
-							<a href="#!" class='waves-effect btn-flat hy-btn-flat-3'><i class="material-icons right">send</i>Publikasi Post</a>
+						<div class="col s12 m12 l12 center-align hy-cont-fot-add">
+							<div class="mobile-res">
+								<button type="submit" class="waves-effect waves-light btn hy-b-color-7" style="width: 100%"><i class="material-icons right">send</i>Publikasi Post</button>
+
+								<a href="{{ URL::previous() }}" class='waves-effect btn-flat hy-btn-flat-1'><i class="material-icons right"></i>Batal</a>
+							</div>
+
+							<div class="web-res">
+								<a href="{{ URL::previous() }}" class='waves-effect btn-flat hy-btn-flat-1'><i class="material-icons right"></i>Batal</a>
+
+								<button type="submit" class='waves-effect btn-flat hy-btn-flat-3'><i class="material-icons right">send</i>Publikasi Post</button>
+							</div>
 						</div>
 
 					</div>

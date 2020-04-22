@@ -6,6 +6,25 @@
 }
 
 /*--- START ------------------------------------------------------------------------------------ Button ---*/
+a.aktip {
+	background-color: #80be43ed !important;
+}
+
+.aktip > i {
+	color: #fff !important;
+}
+
+.hy-btn-icon-flat {
+	background-color: #f3fde8;
+	box-shadow: none;
+	transition: 0.3s;
+}
+
+.hy-btn-icon-flat:hover {
+	box-shadow: none;
+	background-color: #d9efc2;
+}
+
 .hy-btn-side-icon {
 	box-shadow: none;
 }
@@ -748,10 +767,24 @@ input.hy-input-border[type=number]:not(.browser-default)
 }
 
 input.hy-input-border[type=text]:not(.browser-default):focus:not([readonly]),
-input.hy-input-border[type=number]:not(.browser-default):focus:not([readonly]) {
+input.hy-input-border[type=number]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea.hy-input-border:not(.browser-default):focus:not([readonly])
+{
 	border: 1px solid #80BE42 !important;
 	-webkit-box-shadow: 0 0 0 0 #80BE42 !important;
 	box-shadow: 0 0 0 0 #80BE42 !important;
+}
+
+textarea.materialize-textarea.hy-input-border:not(.browser-default) {
+	line-height: normal;
+	overflow-y: hidden;
+	padding: .8rem 0 .8rem 1rem;
+	resize: none;
+	min-height: 3rem;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #dadce0;
+	border-radius: 8px;
 }
 
 .input-field> label.hy-label {
@@ -902,6 +935,12 @@ input[type=number]
 /*--- END ------------------------------------------------------------------------------------ SCROLL ---*/
 
 /*--- START ------------------------------------------------------------------------------------ CONTENT ---*/
+.hy-cont-fot-add {
+	border-top: 1px solid #dadce0; 
+	padding-top: 3em !important;
+	margin-top: 1em !important;
+}
+
 ul.hy-header-tols {
 	list-style-type: none;
 	margin: 0;
@@ -1177,7 +1216,11 @@ ul.collapsible > li.active > div.collap-head-last-nobt {
 
 .collap-card > .collapsible {
 	box-shadow: none; 
-	border:0
+	border:0;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
 }
 /*--- END ------------------------------------------------------------------------------------ COLLAPSIBLE ---*/
 
@@ -1246,11 +1289,6 @@ div.search-cont > div.nav-wrapper > form > div.input-field {
 	margin-top: 0.7rem;
 	margin-bottom: 0.7rem;
 }
-
-
-
-
-
 
 
 /*tes*/

@@ -6586,7 +6586,7 @@ textarea.materialize-textarea {
     resize: none;
     min-height: 3rem;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 .hiddendiv {

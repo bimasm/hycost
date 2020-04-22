@@ -46,6 +46,11 @@ class UserController extends Controller
         return view('user.monitoring.Label.user-label-add-newlabel-monitor');
     }
 
+    public function User_CariLabel_Monitor()
+    {
+        return view('user.monitoring.Label.user-label-cari-newlabel-monitor');
+    }
+
     //--- End --------------------------------------------------------------- Monitoring
 
     public function User_Setting()
