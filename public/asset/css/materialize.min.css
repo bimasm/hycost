@@ -5646,7 +5646,7 @@ body.keyboard-focused .dropdown-content li:focus {
     position: fixed;
     left: 0;
     right: 0;
-    background-color: #fafafa;
+    background-color: #ffffff;
     padding: 0;
     max-height: 70%;
     width: 55%;
@@ -5706,7 +5706,7 @@ body.keyboard-focused .dropdown-content li:focus {
     right: 0;
     height: 125%;
     width: 100%;
-    background: #000;
+    background: #bfdfa0;
     display: none;
     will-change: opacity
 }
@@ -7653,7 +7653,7 @@ input[type=range]::-ms-thumb {
         right: 0;
         opacity: 0;
         height: 120vh;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: #bfdfa099;
         z-index: 997;
         display: none
     }

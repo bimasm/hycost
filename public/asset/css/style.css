@@ -941,6 +941,30 @@ input[type=number]
 	margin-top: 1em !important;
 }
 
+ul.hy-header-tols-2 {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	float: left;
+}
+
+ul.hy-header-tols-2 > li {
+	float: left;
+	padding: 10px
+}
+
+ul.hy-header-tols-2 > li > div.title {
+	font-size: 1.648rem;
+	margin: 0.4rem 0;
+}
+
+ul.hy-header-tols-2 > li.link {
+	display: block;
+	text-align: center;
+	margin: 5px 0;
+}
+
 ul.hy-header-tols {
 	list-style-type: none;
 	margin: 0;
@@ -1024,6 +1048,10 @@ div.content-hy-dash-add > div.cont-hy-dash {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center
+}
+
+.kanan {
+	float: right;
 }
 
 .mobile-res {
@@ -1223,6 +1251,42 @@ ul.collapsible > li.active > div.collap-head-last-nobt {
 	margin-inline-end: 0px;
 }
 /*--- END ------------------------------------------------------------------------------------ COLLAPSIBLE ---*/
+
+/*--- START ------------------------------------------------------------------------------------ MODAL ---*/
+div.hy-modal-title {
+	border-bottom: 1px solid #dadce0; 
+	padding: 0 0 1em 0;
+	margin-bottom: 1em
+}
+
+div.hy-modal-title > div.row > div.col > div.title {
+	font-size: 30px
+}
+
+.hy-modal-large {
+	width: 80%;
+	max-height: 80%;
+}
+
+.modal.modal-fixed-header {
+	padding: 0;
+	height: 70%
+}
+
+.modal.modal-fixed-header .modal-content {
+	position: absolute;
+	height: calc(100% - 56px);
+	max-height: 100%;
+	width: 100%;
+	overflow-y: auto
+}
+
+.modal.modal-fixed-header .modal-header {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	position: absolute;
+	bottom: 0
+}
+/*--- END ------------------------------------------------------------------------------------ MODAL ---*/
 
 .tabel-belum {
 	background-color: #fff9c4;

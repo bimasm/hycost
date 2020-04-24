@@ -57,6 +57,9 @@ Route::get('/add-newlabel', 'UserController@User_AddNewlabel_Monitor')
 
 Route::get('/cari-newlabel', 'UserController@User_CariLabel_Monitor')
 ->name('UserLabelCariNewMonitor')->middleware('auth:user');
+
+Route::get('/detail-label', 'UserController@User_DetailLabel_Monitor')
+->name('UserLabelDetailMonitor')->middleware('auth:user');
 //-- End ---------------------------------------------------------------------- Monitorng
 
 Route::get('/setting', 'UserController@User_Setting')

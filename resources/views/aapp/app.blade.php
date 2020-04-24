@@ -64,9 +64,9 @@
   <script type="text/javascript" src="{{asset('asset/js/materialize.min.js')}}"></script>
 
   {{-- datatable --}}
-  <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
-  <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" src="{{asset('asset/js/jquery.dataTables.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('asset/js/dataTables.select.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('asset/js/dataTables.buttons.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('asset/js/dataTables.checkboxes.js')}}"></script>
 
   @yield('js-plus')
@@ -93,11 +93,6 @@
 
       $(document).ready(function(){
         $('.sidenav').sidenav();
-
-        // $('a .sidenav-trigger').click(function(){  
-        //   $('#sidenav-1').sidenav('onOpenStart');
-        //   $('#sidenav-2').sidenav('onOpenStart');
-        // });
       });
 
     });
