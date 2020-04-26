@@ -6,12 +6,31 @@
 }
 
 /*--- START ------------------------------------------------------------------------------------ Button ---*/
+
+i.btn-append {
+	font-size: 1.5em !important;
+}
+
 a.aktip {
 	background-color: #80be43ed !important;
 }
 
 .aktip > i {
 	color: #fff !important;
+}
+
+.hy-btn-icon-flat.btn-append {
+	background-color: #f3fde8 !important;
+	box-shadow: none !important;
+	transition: 0.3s;
+	border: 0;
+	padding: 0
+}
+
+.hy-btn-icon-flat:hover {
+	border:0;
+	box-shadow: none !important;
+	background-color: #d9efc2 !important;
 }
 
 .hy-btn-icon-flat {

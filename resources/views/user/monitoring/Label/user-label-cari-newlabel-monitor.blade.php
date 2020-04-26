@@ -14,7 +14,7 @@ Cari Label Baru User
 
 @section('content-user')
 
-<section id="list">
+<section id="list" style="">
 	<div class="content-hy-dash-add">
 		<div class="container cont-hy-dash">
 
@@ -46,11 +46,17 @@ Cari Label Baru User
 							{{-- End Search On Web --}}
 						</li>
 						<li class="link">
-							<a id="btn-toTable" onclick="toTable()" class="btn-floating waves-effect waves-light hy-btn-icon-flat" style="display: none">
-								<i class="material-icons hy-color-2">view_list</i>
+
+							<div id="example_wrapper" class="col-sm-6"></div>
+
+						</li>
+						<li class="link">
+							<a id="btn-tofill" onclick="toFill()" class="btn-floating waves-effect waves-light hy-btn-icon-flat">
+								<i class="material-icons hy-color-2">filter_list</i>
 							</a>
-							<a id="btn-toGrid" onclick="toGrid()" class="btn-floating waves-effect waves-light hy-btn-icon-flat">
-								<i class="material-icons hy-color-2">view_module</i>
+
+							<a id="btn-nofill" onclick="toNFill()" class="btn-floating waves-effect waves-light hy-b-color-8 hy-btn-icon-flat" style="display: none">
+								<i class="material-icons hy-color-2">filter_list</i>
 							</a>
 						</li>
 					</ul>
@@ -61,9 +67,46 @@ Cari Label Baru User
 			{{-- Start Konten --}}
 			<div class="cont-hy-dash-all animated fadeIn faster">
 				<div class="row">
-					<div class="col s12 m12 l3">a</div>
-					<div class="col s12 m12 l9">
 
+					<div id="fill" class="col s12 m12 l3 animated fadeIn faster" style="display: none">
+
+						<div class="filter-container">
+							<div class="row" style="margin-bottom: 0">
+								<div class="input-field col s12 center-align">
+									<select id="dropdown1">
+										<option value="">Semua Sayur</option>
+										<option value="Selada">Selada</option>
+										<option value="Pakcoy">Pakcoy</option>
+										<option value="Kangkung">Kangkung</option>
+									</select>
+									<label>Jenis Sayur</label>
+								</div>
+
+								<div class="input-field col s12 center-align">
+									<select id="min" type="text">
+										<option value="">Semua Jumlah</option>
+										<option value="50"> >= 50</option>
+										<option value="100"> >= 100</option>
+										<option value="150"> >= 150</option>
+										<option value="200"> >= 200</option>
+									</select>
+									<label>Minimal Jumlah Pengguna</label>
+								</div>
+
+								<div class="input-field col s12 left-align">
+									<div>
+										<label>
+											<input id="terbarucek" type="checkbox" class="filled-in" />
+											<span>Terbaru</span>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div id="tabelnya" class="col s12 m12 l12">
 						<div class="web-res">
 
 							<div id="tabel" class="animated fadeIn faster" style="display: block">
@@ -250,6 +293,45 @@ Cari Label Baru User
 
 @section('js-plus')
 <script type="text/javascript">
+
+	function toFill() {
+		var x = document.getElementById("fill");
+
+		// var hh = document.getElementById("tabelnya");
+
+		var i = document.getElementById("btn-tofill");
+		var j = document.getElementById("btn-nofill");
+
+		if (x.style.display === "none" || i.style.display === "block") {
+			x.style.display = "block";
+
+			$("#tabelnya").removeClass('l12');
+			$("#tabelnya").addClass('tabel-w-fil');
+			$("#tabelnya").addClass('l9');
+
+			j.style.display = "block";
+			i.style.display = "none";
+		}
+	}
+
+	function toNFill() {
+		var x = document.getElementById("fill");
+
+		var j = document.getElementById("btn-tofill");
+		var i = document.getElementById("btn-nofill");
+
+		if (x.style.display === "none" || i.style.display === "block") {
+			x.style.display = "none";
+
+			$("#tabelnya").removeClass('l9');
+			$("#tabelnya").addClass('l12');
+			$("#tabelnya").removeClass('tabel-w-fil');
+
+			j.style.display = "block";
+			i.style.display = "none";
+		}
+	}
+
 	function toDetail() {
 		var x = document.getElementById("detail");
 		var y = document.getElementById("list");
@@ -277,122 +359,48 @@ Cari Label Baru User
 			x.style.display = "block";
 			y.style.display = "none";
 
-			j.style.display = "block";
-			i.style.display = "none";
-		}
-	}
-
-	function toGrid() {
-		var x = document.getElementById("grid");
-		var y = document.getElementById("tabel");
-
-		var i = document.getElementById("btn-toGrid");
-		var j = document.getElementById("btn-toTable");
-
-		if (x.style.display === "none" || i.style.display === "block") {
-			x.style.display = "block";
-			y.style.display = "none";
-
-			j.style.display = "block";
-			i.style.display = "none";
-		}
-	}
-
-	function toTable() {
-		var y = document.getElementById("grid");
-		var x = document.getElementById("tabel");
-
-		var j = document.getElementById("btn-toGrid");
-		var i = document.getElementById("btn-toTable");
-
-		if (x.style.display === "none" || i.style.display === "block") {
-			x.style.display = "block";
-			y.style.display = "none";
-
-			j.style.display = "block";
+			j.style.display = "";
 			i.style.display = "none";
 		}
 	}
 </script>
-<script type="text/javascript">
-	$(function() {
-		ajaxJS();
-		function ajaxJS(e) {
-			if (e) {
-				e.preventDefault();
-			}
-			$.ajax({
-				url: "{{asset('asset/js/tabel-label.js')}}",
-				method: "GET",
-
-				success: function(data) {
-					data = jQuery.parseJSON(data);
-
-					var html_to_append = '';
-					$.each(data.data, function(i, item) {
-						html_to_append +=
-						'<div class="dat col s12 m12 l4">'+
-						'<a id="btn-toDetail" onclick="toDetail()" class="namass">'+
-						'<div class="card card-hy-f">'+
-						'<div class="card-content center-align">'+
-						'<p>'+item.nama+'</p>'+
-						'</div>'+
-						'</div>'+
-						'</a>'+
-						'</div>';
-					});
-					$("#items-container").html(html_to_append);
-
-					$('#items-container').on('click', 'a.namass', function () {
-						var data = html_to_append.row($(this).parents('.dat')).data();
-						var namas = data['nama'];
-						console.log(namas);
-						document.getElementById("namas").innerHTML = namas;
-					} );
-				},
-
-				error: function() {
-					console.log(data);
-				}
-			});
-
-
-
-		}
-
-
-
-	});
-</script>
 
 <script type="text/javascript">
 
-	$(document).ready(function() {
-		var table = $('#example').DataTable( {
+	$(document).ready(function () {
 
-			"dom": 
-			"<'row'<'col s12 m12 l12'tr>>" +
-			"<'row'<'col s12 m12 l5'><'col s12 m12 l7'p>>",
+		var table = $('#example').DataTable({
+			'dom':
+			"<'row'<'col-sm-12 col-md-6'><'col-sm-12 col-md-6'<'float-md-right ml-2'B>>>" +
+			"<'row'<'col-sm-12'tr>>" +
+			"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
 
-			"ajax": {
-				"url": "{{asset('asset/js/tabel-label.js')}}"
-			},
+			'ajax': '{{asset('asset/js/tabel-label.js')}}',
+
 
 			"columnDefs": [
 			{ 
 				"targets": 0,
 				"data": "nama",
+				"orderable": false,
+				"className": 'nama-dat',
 				render: function (data, type, row, meta) {
 					return '<a onclick="toDetail()" id="btn-toDetail" class="namaz waves-effect btn-flat hy-btn-flat">'+data+'</a>';
 				},
 			},
-			{ "targets": 1,"data": "sayur" },
-			{ "targets": 2,"data": "jumlah","className": 'center-align' },
+			{ "targets": 1,"data": "sayur","orderable": false },
+			{ 
+				"targets": 2,"data": "jumlah",
+				"orderable": false, 
+				render: function (data, type, row, meta) {
+					return '<span class="jmlh">'+data+' User</span>';
+				},
+			},
 			{
 				"targets": 3,
 				"data": "status",
 				"orderable": false,
-				"className": 'center-align',
+				"className": 'status-dat center-align',
 				render: function (data, type, row, meta) {
 
 					if (data == "Off") {
@@ -400,16 +408,139 @@ Cari Label Baru User
 					} else{
 						return '<button class="waves-effect btn-flat hy-btn-flat disabled">Terpasang</button>';
 					}
-					
+
+				},
+			},
+			{ "targets": 4,"data": "id", "visible": false }
+			],
+
+
+			'buttons': [ 
+			{
+				extend: 'copy',
+
+				exportOptions: 
+				{ columns: [':visible'], rows: [':visible']},
+
+			},
+
+			{
+				'className': 'btn-floating waves-effect waves-light hy-btn-icon-flat btn-append',
+				'text': '<i class="hy-color-2 fa fa-th btn-append"></i>',
+				'action': function (e, dt, node) {
+
+					$(dt.table().node()).toggleClass('cards animated fadeIn faster');
+					$('.fa', node).toggleClass(['fa-list', 'fa-th']);
+
+					dt.draw('page');
 				},
 			}
 			],
 
-			select: false,
-			
-			'order': [[1, 'dsc']]
+			'initComplete': function (settings, json) {
+				$("button").removeClass("dt-button");
+				$("div").removeClass("dt-buttons");
+			},
+			'drawCallback': function (settings) {
+				var api = this.api();
+				var $table = $(api.table().node());
+				
+
+				if ($table.hasClass('cards')) {
+
+					$('.jmlh', $table).each(function () {
+						$(this).addClass('data-juml');
+					});
+
+					$('.status-dat', $table).each(function () {
+						$(this).addClass('data-status');
+					});
+
+					$('.nama-dat', $table).each(function () {
+						$(this).addClass('data-nama');
+					});
+
+					// var labels = [];
+					// $('thead th', $table).each(function () {
+					// 	labels.push($(this).text());
+					// });
+
+					// $('tbody tr', $table).each(function () {
+					// 	$(this).find('td').each(function (column) {
+					// 		$(this).attr('data-label', labels[column]);
+					// 	});
+					// });
+
+					// var max = 1;
+					// $('tbody tr', $table).each(function () {
+					// 	max = Math.max($(this).height(), max);
+					// }).height(max);
+
+				} else {
+
+					$('.jmlh', $table).each(function () {
+						$(this).removeClass('data-juml');
+					});
+
+					$('.status-dat', $table).each(function () {
+						$(this).removeClass('data-status');
+					});
+
+					$('.nama-dat', $table).each(function () {
+						$(this).removeClass('data-nama');
+					});
+
+					$('tbody td', $table).each(function () {
+						$(this).removeAttr('data-label');
+					});
+
+					$('tbody tr', $table).each(function () {
+						$(this).height('auto');
+					});
+				}
+			}
+		})
+
+		table.buttons().container().appendTo( '#example_wrapper' );
+
+		$.fn.dataTable.ext.search.push(
+			function( settings, data, dataIndex ) {
+				var min = parseInt( $('#min').val(), 10 );
+				var max = parseInt( $('#max').val(), 10 );
+				var age = parseFloat( data[2] ) || 0;
+
+				if ( ( isNaN( min ) && isNaN( max ) ) ||
+					( isNaN( min ) && age <= max ) ||
+					( min <= age   && isNaN( max ) ) ||
+					( min <= age   && age <= max ) )
+				{
+					return true;
+				}
+				return false;
+			}
+			);
+
+		$(document).ready(function() {
+			var table = $('#example').DataTable();
+
+			$('#min, #max').on('change', function () {
+				table.draw();
+			} );
 		} );
 
+		var table =  $('#example').DataTable();
+		$('#dropdown1').on('change', function () {
+			table.columns(1).search( this.value ).draw();
+		} );
+
+		var table2 =  $('#example').DataTable();
+		$('#terbarucek').on('change', function () {
+			if($(this).is(":checked")) {
+				table2.order([4, 'asc']).draw();
+			} else {
+				table2.order([4, 'dsc']).draw();
+			}
+		} );
 
 		$('#example tbody').on( 'click', 'button', function () { /////////////////////////////////// link
 			var data = table.row( $(this).parents('tr') ).data();
@@ -446,7 +577,14 @@ Cari Label Baru User
 			oTable.search($(this).val()).draw();
 		})
 
-	} );
+		.on('select', function (e, dt, type, indexes) {
+			var rowData = table.rows(indexes).data().toArray()
+			$('#row-data').html(JSON.stringify(rowData));
+		})
+		.on('deselect', function () {
+			$('#row-data').empty();
+		})
+	});
 </script>
 
 <script>
