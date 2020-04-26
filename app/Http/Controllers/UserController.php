@@ -8,33 +8,46 @@ use Auth;
 
 class UserController extends Controller
 {
-    //--- Start ------------------------------------------------------------- Forum
-    public function User_Dashboard_Forum()
+    //--- Start -------------------------------------------------------------------------- Forum
+    public function User_Forum_Home()
     {
-    	return view('user.forum.user-dashboard-forum');
+        return view('user.forum.landing.forum-home');
     }
 
+    public function User_Forum_Kategori()
+    {
+        return view('user.forum.landing.forum-kategori');
+    }
+
+    //---------------------------------------------------------------- Dashboard
+    public function User_Dashboard_Forum()
+    {
+    	return view('user.forum.dashboard.user-dashboard-forum');
+    }
+    //---------------------------------------------------------------- Post
     public function User_SemuaPost_Forum()
     {
-    	return view('user.forum.user-post-semua-forum');
+    	return view('user.forum.dashboard.user-post-semua-forum');
     }
 
     public function User_AddNewPost_Forum()
     {
-    	return view('user.forum.user-add-newpost-forum');
+    	return view('user.forum.dashboard.user-add-newpost-forum');
     }
-
+    //---------------------------------------------------------------- Komentar
     public function User_SemuaKomentar_Forum()
     {
-        return view('user.forum.user-komentar-semua-forum');
+        return view('user.forum.dashboard.user-komentar-semua-forum');
     }
-    //--- End -------------------------------------------------------------- Forum
+    //--- End ----------------------------------------------------------------------------- Forum
 
-    //--- Start ------------------------------------------------------------- Monitoring
+    //--- Start --------------------------------------------------------------------------- Monitoring
+    //---------------------------------------------------------------- Dashboard
     public function User_Dashboard_Monitor()
     {
         return view('user.monitoring.user-dashboard-monitor');
     }
+    //---------------------------------------------------------------- Label
 
     public function User_SemuaLabel_Monitor()
     {
@@ -56,7 +69,14 @@ class UserController extends Controller
         return view('user.monitoring.Label.user-label-detail-monitor');
     }
 
-    //--- End --------------------------------------------------------------- Monitoring
+    //---------------------------------------------------------------- Kebun
+
+    public function User_SemuaKebun_Monitor()
+    {
+        return view('user.monitoring.kebun.user-kebun-semua-monitor');
+    }
+
+    //--- End ----------------------------------------------------------------------------- Monitoring
 
     public function User_Setting()
     {

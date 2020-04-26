@@ -15,7 +15,7 @@
           <li><a class="button-collapse hy-nav-a" href="#beranda">Beranda</a></li>
           <li><a class="button-collapse hy-nav-a" href="#tentang">Tentang Kami</a></li>
           <li><a class="button-collapse hy-nav-a" href="#fitur">Fitur</a></li>
-          <li><a class="button-collapse hy-nav-a" href="#!">Forum</a></li>
+          <li><a class="button-collapse hy-nav-a" href="{{route('UserLandingForum')}}">Forum</a></li>
           <li><a href="/login" class="waves-effect waves-light btn hy-btn-bor-ijo-nav">Masuk</a></li>
           @endif
         </ul>
@@ -27,4 +27,5 @@
     <li><a href="#beranda">Beranda</a></li>
     <li><a href="#tentang">Tentang Kami</a></li>
     <li><a href="#fitur">Fitur</a></li>
+    <li><a href="{{route('UserLandingForum')}}">Forum</a></li>
   </ul>

@@ -51,11 +51,11 @@ Cari Label Baru User
 
 						</li>
 						<li class="link">
-							<a id="btn-tofill" onclick="toFill()" class="btn-floating waves-effect waves-light hy-btn-icon-flat">
+							<a id="btn-tofill" onclick="toFill()" class="btn-floating waves-effect waves-light hy-btn-icon-flat tooltipped" data-position="bottom" data-tooltip="Filter">
 								<i class="material-icons hy-color-2">filter_list</i>
 							</a>
 
-							<a id="btn-nofill" onclick="toNFill()" class="btn-floating waves-effect waves-light hy-b-color-8 hy-btn-icon-flat" style="display: none">
+							<a id="btn-nofill" onclick="toNFill()" class="btn-floating waves-effect waves-light hy-b-color-8 hy-btn-icon-flat tooltipped" style="display: none" data-position="bottom" data-tooltip="Filter">
 								<i class="material-icons hy-color-2">filter_list</i>
 							</a>
 						</li>
@@ -69,7 +69,6 @@ Cari Label Baru User
 				<div class="row">
 
 					<div id="fill" class="col s12 m12 l3 animated fadeIn faster" style="display: none">
-
 						<div class="filter-container">
 							<div class="row" style="margin-bottom: 0">
 								<div class="input-field col s12 center-align">
@@ -425,7 +424,7 @@ Cari Label Baru User
 			},
 
 			{
-				'className': 'btn-floating waves-effect waves-light hy-btn-icon-flat btn-append',
+				'className': 'btn-floating waves-effect waves-light hy-btn-icon-flat btn-append tooltipped toto',
 				'text': '<i class="hy-color-2 fa fa-th btn-append"></i>',
 				'action': function (e, dt, node) {
 
@@ -447,6 +446,8 @@ Cari Label Baru User
 				
 
 				if ($table.hasClass('cards')) {
+
+					$('.toto').attr('data-tooltip', 'tabel view');
 
 					$('.jmlh', $table).each(function () {
 						$(this).addClass('data-juml');
@@ -477,6 +478,8 @@ Cari Label Baru User
 					// }).height(max);
 
 				} else {
+
+					$('.toto').attr('data-tooltip', 'grid view');
 
 					$('.jmlh', $table).each(function () {
 						$(this).removeClass('data-juml');

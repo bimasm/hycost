@@ -148,7 +148,9 @@
 		<li><div class="sidenav-title">Hycost</div></li>
 
 		{{--//- START -////////////////////////////////////////////////////////////////////////// SIDENAV MONITORING --}}
-		@if(request()->routeIs('UserDashboardMonitor','UserSemuaLabelMonitor','UserLabelAddNewMonitor'))
+		
+		@if(request()->routeIs('UserDashboardMonitor','UserSemuaLabelMonitor','UserLabelAddNewMonitor','UserSemuaKebunMonitor'))
+
 		<li><a class="subheader">Dashboard Monitoring</a></li>
 
 		<li class="
@@ -169,18 +171,14 @@
 			">
 			<a href="{{route('UserSemuaLabelMonitor')}}"><i class="material-icons">label</i>Label</a>
 		</li>
-		<li>
-			<ul class="collapsible">
-				<li>
-					<div class="collapsible-header"><i class="material-icons">trip_origin</i>Kebun<i class="material-icons right">arrow_forward_ios</i></div>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="#!">Semua Kebun</a></li>
-							<li><a href="#!">Tambah Kebun</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul>
+		<li class="
+		{{ (request()->routeIs(
+
+			'UserSemuaKebunMonitor'
+
+			)) ? 'active' : '' }}
+			">
+			<a href="{{route('UserSemuaKebunMonitor')}}"><i class="material-icons">trip_origin</i>Kebun</a>
 		</li>
 
 		@endif
@@ -191,9 +189,10 @@
 
 
 
-
 		{{--//- START -//////////////////////////////////////////////////////////////////////////// SIDENAV FORUM --}}
+
 		@if(request()->routeIs('UserDashboardForum','UserPostSemuaForum','UserPostAddNewPost','UserKomentarSemua','UserSetting'))
+
 		<li><a class="subheader">Dashboard Forum</a></li>
 		<li class="
 		{{ (request()->routeIs(
@@ -223,6 +222,7 @@
 			">
 			<a href="{{route('UserKomentarSemua')}}"><i class="material-icons">insert_comment</i>Komentar</a>
 		</li>
+
 		@endif
 		{{--//- END -//////////////////////////////////////////////////////////////////////////// SIDENAV FORUM --}}
 	</ul>

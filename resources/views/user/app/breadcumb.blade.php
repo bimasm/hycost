@@ -41,6 +41,10 @@
 				<a href="#!" class="breadcrumb bread-hy-c">Cari Label Baru</a>
 				@endif
 
+				@if(request()->routeIs('UserSemuaKebunMonitor'))
+				<a href="#!" class="breadcrumb bread-hy-c">Kebun</a>
+				@endif
+
 			</div>
 		</div>
 	</nav>
