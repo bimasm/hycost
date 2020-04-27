@@ -12,16 +12,16 @@ Kategori
 <!-- Start ------------------------------------------------------------------------------------------- Slider -->
 <!-- End ------------------------------------------------------------------------------------------- /Slider -->
 
-<section id="tentang" name="tentang" class="hy-page-header-detail">
-	<div class="container hy-page-con left-align">
+<section id="tentang" name="tentang" class="hy-page-header-detail-2">
+	<div class="container hy-page-con left-align hy-page-pos">
 
 		<div>
-			<nav class="bread-hy">
+			<nav class="bread-hy-post">
 				<div class="nav-wrapper">
 					<div class="col s12">
-						<a href="#!" class="breadcrumb bread-hy-c">Hycost Forum</a>
-						<a href="#!" class="breadcrumb bread-hy-c">Kategori</a>
-						<a href="#!" class="breadcrumb bread-hy-c">Kebun</a>
+						<a href="#!" class="breadcrumb bread-hy-c-post">Hycost Forum</a>
+						<a href="#!" class="breadcrumb bread-hy-c-post">Kategori</a>
+						<a href="#!" class="breadcrumb bread-hy-c-post">Kebun</a>
 					</div>
 				</div>
 			</nav>

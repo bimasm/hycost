@@ -119,6 +119,21 @@ a.aktip {
 	box-shadow: none;
 }
 
+.hy-btn-flat-4 {
+	color: #0000008a;
+	text-transform: capitalize;
+	font-weight: 600;
+	background-color: transparent;
+	box-shadow: none;
+	transition: all 0.3s;
+}
+
+.hy-btn-flat-4:hover {
+	color: #80be42;
+	background-color: #80be441f;
+	box-shadow: none;
+}
+
 .hy-btn-flat-2 {
 	color: #80be42;
 	text-transform: capitalize;
@@ -583,6 +598,10 @@ li > div.sidenav-title {
 
 /*--- START ------------------------------------------------------------------------------------ Page ---*/
 
+.hy-page-pos {
+	width: 85%
+}
+
 .rightbar-post-hy {
 	padding-left: 40px !important;
 }
@@ -631,9 +650,18 @@ li > div.sidenav-title {
 	background-color: #f4faed
 }
 
+.hy-page-header-detail-2 {
+	padding: 40px 0 0px 0; 
+	background-color: #f4faed
+}
+
 @media only screen and (max-width: 600px) {
 	.rightbar-post-hy {
 		padding-left: 0px !important;
+	}
+
+	.hy-page-pos {
+		width: 99%
 	}
 }
 /*--- END ------------------------------------------------------------------------------------ Page ---*/
@@ -1176,6 +1204,36 @@ div.content-hy-dash-add > div.cont-hy-dash {
 	padding-bottom: 15px;
 	margin-bottom: 0
 }
+
+
+
+
+
+.bread-hy-post {
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.breadcrumb.bread-hy-c-post {
+	color: #80be42ad;
+	font-size: 20px;
+	line-height: 03em
+}
+
+.breadcrumb.bread-hy-c-post:last-child {
+	color: #80be42;
+	font-size: 20px;
+} 
+
+.breadcrumb.bread-hy-c-post:before {
+	color: #80be42ad;
+}
+
+.bread-hy-cont {
+	border-bottom: 1px solid #eeeeee;
+	padding-bottom: 15px;
+	margin-bottom: 0
+}
 /*--- END ------------------------------------------------------------------------------------ BREADCUMB ---*/
 
 /*--- START ------------------------------------------------------------------------------------ CARD ---*/
@@ -1523,6 +1581,76 @@ div.hy-property-post > .nom {
 div.hy-property-post > .text {
 	font-weight: 500;
 	font-size: 1rem;
+}
+
+.tgl-post-hy {
+	border: 1px solid #eee;
+	border-radius: 3px;
+	padding: 3px 8px;
+	margin-left: 1rem;
+	margin-top: 0
+}
+
+ul.collection.user > li.collection-item {
+	line-height: 3rem;
+}
+
+.user-post-hy {
+
+}
+
+.footer-hy-post {
+	padding: 1em 0;
+	border-top: 1px solid #eee;
+	margin-top: 2em;
+	margin-bottom: 0
+}
+
+.sub-footer-hy-post {
+	margin-top: 3rem
+}
+
+.sub-footer-hy-post > div.suka {
+	text-align: left;
+}
+
+.sub-footer-hy-post > div.komentar {
+	text-align: right;
+}
+
+@media only screen and (max-width: 600px) {
+	.tgl-post-hy {
+		border: 0;
+		padding: 0;
+		margin-left: 0;
+		margin-top: 5px;
+		float: left;
+	}
+
+	ul.collection.user > li.collection-item {
+		line-height: 1.5rem;
+	}
+
+	.user-post-hy {
+		margin: 0 30px 0 0;
+	}
+
+	.sub-footer-hy-post > div.suka {
+		text-align: center;
+	}
+
+	.sub-footer-hy-post > div.komentar {
+		margin-top: 30px;
+		text-align: center;
+	}
+}
+
+.drop-hy-post-detail {
+	width: 250px !important;
+	border-radius: 8px;
+	top: -40px;
+	-webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.175) !important;
+	box-shadow: 0 6px 12px rgba(0,0,0,0.175) !important;
 }
 
 
