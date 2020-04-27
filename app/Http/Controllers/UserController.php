@@ -19,6 +19,11 @@ class UserController extends Controller
         return view('user.forum.landing.forum-kategori');
     }
 
+    public function User_Forum_Detail()
+    {
+        return view('user.forum.landing.forum-detail');
+    }
+
     //---------------------------------------------------------------- Dashboard
     public function User_Dashboard_Forum()
     {

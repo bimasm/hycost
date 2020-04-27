@@ -39,6 +39,9 @@ Route::get('/forum', 'UserController@User_Forum_Home')
 
 Route::get('/forum/kategori', 'UserController@User_Forum_Kategori')
 ->name('UserLandingForumKategori');
+
+Route::get('/forum/detail', 'UserController@User_Forum_Detail')
+->name('UserLandingForumDetail');
 //-- End ----------------------------------------------------------- Landing
 
 //-- Start --------------------------------------------------------- Dashboard

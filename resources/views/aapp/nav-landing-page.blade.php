@@ -2,7 +2,7 @@
     <nav class="hy-nav">
       <div class="nav-wrapper container">
         <a id="logo-container" href="http://hycost.com/" class="brand-logo">
-          <img src="asset/img/logo-hy.png" class="img-logo">
+          <img src="{{asset('asset/img/logo-hy.png')}}" class="img-logo">
         </a>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger">
           <i class="material-icons col-menu">menu</i>

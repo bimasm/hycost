@@ -104,12 +104,12 @@
         $('.hy-nav').addClass('hy-nav-2');
         $('.hy-nav-a').addClass('hy-nav-a-2');
         $('.hy-btn-bor-ijo-nav').addClass('hy-btn-bor-wh-nav');
-        $('.navbar-fixed .hy-nav .nav-wrapper .brand-logo img').attr('src','asset/img/logo2.png');
+        $('.navbar-fixed .hy-nav .nav-wrapper .brand-logo img').attr('src','{{asset('asset/img/logo2.png')}}');
       } else {
         $('.hy-nav').removeClass('hy-nav-2');
         $('.hy-nav-a').removeClass('hy-nav-a-2');
         $('.hy-btn-bor-ijo-nav').removeClass('hy-btn-bor-wh-nav');
-        $('.navbar-fixed .hy-nav .nav-wrapper .brand-logo img').attr('src','asset/img/logo-hy.png');
+        $('.navbar-fixed .hy-nav .nav-wrapper .brand-logo img').attr('src','{{asset('asset/img/logo-hy.png')}}');
       }
     });
 

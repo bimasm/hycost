@@ -582,9 +582,19 @@ li > div.sidenav-title {
 /*--- END ------------------------------------------------------------------------------------ SLIDER ---*/
 
 /*--- START ------------------------------------------------------------------------------------ Page ---*/
+
+.rightbar-post-hy {
+	padding-left: 40px !important;
+}
+
 .hy-title-list {
+	padding: 1em 0;
 	border-bottom: 1px solid #eee; 
-	padding: 1em 0
+}
+
+.row.hy-title-list {
+	border-bottom: 1px solid #eee;\
+	margin-bottom: 0; 
 }
 
 .hy-page-title {
@@ -619,6 +629,12 @@ li > div.sidenav-title {
 .hy-page-header-detail {
 	padding: 40px 0 50px 0; 
 	background-color: #f4faed
+}
+
+@media only screen and (max-width: 600px) {
+	.rightbar-post-hy {
+		padding-left: 0px !important;
+	}
 }
 /*--- END ------------------------------------------------------------------------------------ Page ---*/
 
@@ -1441,6 +1457,10 @@ ul.collection.list-post {
 	border:0 !important;
 }
 
+ul.collection.list-post > li {
+	padding: 0;
+}
+
 ul.collection.list-post > li > a.tooltipped {
 	display: inline-block;
 }
@@ -1455,7 +1475,7 @@ ul.collection.list-post > li > a.tooltipped > div.card-hy-f > div.card-content {
 }
 
 ul.collection.list-post > li > a.tooltipped > div.card-hy-f > div.card-content > div.row {
-	margin-bottom: 0
+	margin-bottom: 0 !important
 }
 
 ul.collection.list-post > li > a.tooltipped > div.card-hy-f > div.card-content > div.row > div.valign {
@@ -1463,7 +1483,7 @@ ul.collection.list-post > li > a.tooltipped > div.card-hy-f > div.card-content >
 }
 
 ul.collection.list-post > li > a.tooltipped > div.card-hy-f > div.card-content > div.row > div.valign > img {
-	width: 100px; 
+	width: 80px; 
 	border-radius: 5px
 }
 
@@ -1477,4 +1497,53 @@ ul.collection.list-post > li > a.tooltipped > div.card-hy-f > div.card-content >
 
 ul.collection.list-post > li > a.tooltipped > div.card-hy-f > div.card-content > div.row > div.col > ul.collection > li {
 	padding: 10px 0;
+}
+
+ul.collection.list-post > li > a.tooltipped > div.card-hy-f > div.card-content > div.row > div.col > div.row {
+	margin: 0;
+}
+
+ul.collection.list-post > li > a.tooltipped > div.card-hy-f > div.card-content > div.row > div.col > div.row > div.col > ul.collection {
+	margin: 2px 0;
+}
+
+ul.collection.list-post > li > a.tooltipped > div.card-hy-f > div.card-content > div.row > div.col > div.row > div.col > ul.collection > li {
+	padding: 10px 0;
+}
+
+div.hy-property-post {
+	color: #616161;
+}
+
+div.hy-property-post > .nom {
+	font-weight: 700;
+	font-size: 1.15rem;
+}
+
+div.hy-property-post > .text {
+	font-weight: 500;
+	font-size: 1rem;
+}
+
+
+
+
+a.chip-hy {
+	display: inline-block;
+	height: 32px;
+	font-size: 13px;
+	font-weight: 500;
+	color: rgba(0, 0, 0, 0.6);
+	line-height: 32px;
+	padding: 0 12px;
+	border-radius: 16px;
+	background-color: #e4e4e4;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	transition: 0.5s
+}
+
+a.chip-hy:hover {
+	outline: none;
+	background-color: #80be441f;
 }

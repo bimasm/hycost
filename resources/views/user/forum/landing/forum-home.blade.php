@@ -37,32 +37,18 @@ Forum
 </section>
 <!-- End ------------------------------------------------------------------------------------------- /Slider -->
 
-<section id="tentang" name="tentang" class="hy-b-color-5">
-	<div class="container hy-page-con">
-		<div class="row">
-			<div class="col s12 m12 l6"></div>
-			<div class="col s12 m12 l6 left-align">
-				<div class="hy-page-title">
-					<h5><span class="underline"><b>Tentang Kami</b></span></h5>
-					<h6>Hydroponic Control System</h6>
-				</div>
-
-				<div class="hy-page-cont">
-					<p>
-						Hycost atau singkatan dari Hydroponic Control System adalah sebuah teknologi berupa alat yang memiliki fungsi membantu petani hidroponik untuk mengontrol tanaman hidroponik dalam hal nutrisi, PH, kadar air, kelembapan suhu yang dapat dikontrol petani melalui smartphone
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
 <section id="fitur" name="fitur">
 	<div class="container hy-page-con" style="width: 85%">
 		<div class="row">
 			<div class="col s12 m12 l8">
-				<div class="hy-title-list">
-					<h5>Kategori</h5>
+				
+				<div class="hy-title-list row valign-wrapper-hy">
+					<div class="col s12 m12 l6">
+						<h5>Kategori</h5>
+					</div>
+					<div class="col s12 m12 l6 valign right-align">
+							<a href="{{route('UserPostAddNewPost')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons left">rate_review</i>Buat Post Baru Sekarang</a>
+					</div>
 				</div>
 
 				<ul class="collection" style="border:0">
@@ -74,8 +60,10 @@ Forum
 								<p>Learn more about the GitHub Community Forum and discover resources to help you get started.</p>
 							</div>
 							<div class="col s12 m12 l3 center-align">
-								<h6>100</h6>
-								<h6>Post</h6>
+								<div class="hy-property-post">
+									<div class="nom">100</div>
+									<div class="text">Post</div>
+								</div>
 							</div>
 							<div class="col s12 m12 l3 center-align">
 								<a href="{{route('UserLandingForumKategori')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">keyboard_arrow_right</i>Detail</a>
@@ -90,8 +78,10 @@ Forum
 								<p>Learn more about the GitHub Community Forum and discover resources to help you get started.</p>
 							</div>
 							<div class="col s12 m12 l3 center-align">
-								<h6>100</h6>
-								<h6>Post</h6>
+								<div class="hy-property-post">
+									<div class="nom">100</div>
+									<div class="text">Post</div>
+								</div>
 							</div>
 							<div class="col s12 m12 l3 center-align">
 								<a href="{{route('UserLandingForumKategori')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">keyboard_arrow_right</i>Detail</a>
@@ -106,8 +96,10 @@ Forum
 								<p>Learn more about the GitHub Community Forum and discover resources to help you get started.</p>
 							</div>
 							<div class="col s12 m12 l3 center-align">
-								<h6>100</h6>
-								<h6>Post</h6>
+								<div class="hy-property-post">
+									<div class="nom">100</div>
+									<div class="text">Post</div>
+								</div>
 							</div>
 							<div class="col s12 m12 l3 center-align">
 								<a href="{{route('UserLandingForumKategori')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">keyboard_arrow_right</i>Detail</a>
@@ -122,8 +114,10 @@ Forum
 								<p>Learn more about the GitHub Community Forum and discover resources to help you get started.</p>
 							</div>
 							<div class="col s12 m12 l3 center-align">
-								<h6>100</h6>
-								<h6>Post</h6>
+								<div class="hy-property-post">
+									<div class="nom">100</div>
+									<div class="text">Post</div>
+								</div>
 							</div>
 							<div class="col s12 m12 l3 center-align">
 								<a href="{{route('UserLandingForumKategori')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">keyboard_arrow_right</i>Detail</a>
@@ -138,8 +132,10 @@ Forum
 								<p>Learn more about the GitHub Community Forum and discover resources to help you get started.</p>
 							</div>
 							<div class="col s12 m12 l3 center-align">
-								<h6>100</h6>
-								<h6>Post</h6>
+								<div class="hy-property-post">
+									<div class="nom">100</div>
+									<div class="text">Post</div>
+								</div>
 							</div>
 							<div class="col s12 m12 l3 center-align">
 								<a href="{{route('UserLandingForumKategori')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">keyboard_arrow_right</i>Detail</a>
@@ -151,7 +147,7 @@ Forum
 
 			</div>
 
-			<div class="col s12 m12 l4">
+			<div class="col s12 m12 l4 rightbar-post-hy">
 				<div class="hy-title-list">
 					<h5>Rekomendasi Post</h5>
 				</div>
@@ -174,8 +170,30 @@ Forum
 													<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
 													<ul class="collection colection-hy-f">
 														<li class="collection-item colect-hy-f">
-															21 Juni 2020
+															Kebun
 														</li>
+													</ul>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</a>
+							</li>
+
+							<li class="collection-item">
+								<a href="#!" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
+									<div class="card card-hy-f">
+										<div class="card-content">
+
+											<div class="row valign-wrapper-hy">
+												<div class="col s12 m12 l4 valign">
+													<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
+												</div>
+
+												<div class="col s12 m12 l8">
+													<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
+													<ul class="collection colection-hy-f">
 														<li class="collection-item colect-hy-f">
 															Kebun
 														</li>
@@ -202,9 +220,6 @@ Forum
 													<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
 													<ul class="collection colection-hy-f">
 														<li class="collection-item colect-hy-f">
-															21 Juni 2020
-														</li>
-														<li class="collection-item colect-hy-f">
 															Kebun
 														</li>
 													</ul>
@@ -230,9 +245,6 @@ Forum
 													<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
 													<ul class="collection colection-hy-f">
 														<li class="collection-item colect-hy-f">
-															21 Juni 2020
-														</li>
-														<li class="collection-item colect-hy-f">
 															Kebun
 														</li>
 													</ul>
@@ -257,37 +269,6 @@ Forum
 												<div class="col s12 m12 l8">
 													<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
 													<ul class="collection colection-hy-f">
-														<li class="collection-item colect-hy-f">
-															21 Juni 2020
-														</li>
-														<li class="collection-item colect-hy-f">
-															Kebun
-														</li>
-													</ul>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</a>
-							</li>
-
-							<li class="collection-item">
-								<a href="#!" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
-									<div class="card card-hy-f">
-										<div class="card-content">
-
-											<div class="row valign-wrapper-hy">
-												<div class="col s12 m12 l4 valign">
-													<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
-												</div>
-
-												<div class="col s12 m12 l8">
-													<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
-													<ul class="collection colection-hy-f">
-														<li class="collection-item colect-hy-f">
-															21 Juni 2020
-														</li>
 														<li class="collection-item colect-hy-f">
 															Kebun
 														</li>
