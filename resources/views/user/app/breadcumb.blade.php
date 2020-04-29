@@ -45,6 +45,11 @@
 				<a href="#!" class="breadcrumb bread-hy-c">Kebun</a>
 				@endif
 
+				@if(request()->routeIs('UserLandingForumKomentar'))
+				<a href="#!" class="breadcrumb bread-hy-c">Judul Post</a>
+				<a href="#!" class="breadcrumb bread-hy-c">Komentar</a>
+				@endif
+
 			</div>
 		</div>
 	</nav>

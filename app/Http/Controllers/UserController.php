@@ -24,6 +24,11 @@ class UserController extends Controller
         return view('user.forum.landing.forum-detail');
     }
 
+    public function User_Forum_Komentar()
+    {
+        return view('user.forum.dashboard.user-add-komentar-forum');
+    }
+
     //---------------------------------------------------------------- Dashboard
     public function User_Dashboard_Forum()
     {

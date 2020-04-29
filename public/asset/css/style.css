@@ -1600,7 +1600,7 @@ ul.collection.user > li.collection-item {
 }
 
 .footer-hy-post {
-	padding: 1em 0;
+	padding: 1em 0 0 0;
 	border-top: 1px solid #eee;
 	margin-top: 2em;
 	margin-bottom: 0
@@ -1654,6 +1654,23 @@ ul.collection.user > li.collection-item {
 }
 
 
+a.hy-who-like-btn {
+	border: 1px solid #eee;
+	padding: 0.5em 1em;
+	border-radius: 8px;
+	font-size: 1rem;
+	color: #424242;
+	transition: 0.2s
+}
+
+a.hy-who-like-btn:hover {
+	color: #80BE42 
+}
+
+.ss {
+	background-color: transparent;
+	border-radius: 8px;
+}
 
 
 a.chip-hy {
@@ -1674,4 +1691,37 @@ a.chip-hy {
 a.chip-hy:hover {
 	outline: none;
 	background-color: #80be441f;
+}
+
+.hy-user {
+	border:0; 
+	overflow: inherit;
+}
+
+div.hy-pos-view > div.owner {
+	border:0;
+}
+
+div.hy-pos-view > div.owner > div.card-content > div.row {
+	margin-bottom: 0
+}
+
+div.hy-pos-view > div.owner > div.card-content > div.row > div.title-pos {
+	margin-bottom: 30px
+}
+
+
+div.hy-pos-view > div.komen {
+}
+
+div.hy-pos-view > div.komen > div.card-content > div.row {
+	margin-bottom: 0
+}
+
+div.hy-pos-view > div.komen > div.card-content > div.row > div.title-pos {
+	margin-bottom: 30px
+}
+
+div.hy-pos-view > div.komen > div.card-content > div.row > div.komen-text {
+	margin-top: 30px
 }

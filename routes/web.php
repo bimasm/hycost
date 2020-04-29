@@ -42,6 +42,9 @@ Route::get('/forum/kategori', 'UserController@User_Forum_Kategori')
 
 Route::get('/forum/detail', 'UserController@User_Forum_Detail')
 ->name('UserLandingForumDetail');
+
+Route::get('/forum/detail/komentar', 'UserController@User_Forum_Komentar')
+->name('UserLandingForumKomentar')->middleware('auth:user');
 //-- End ----------------------------------------------------------- Landing
 
 //-- Start --------------------------------------------------------- Dashboard
