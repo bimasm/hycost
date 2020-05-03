@@ -40,6 +40,32 @@ Komentar Forum User
 							<textarea id="full-featured-non-premium" name="konten"></textarea>
 						</div>
 
+						<div class="col s12 m12 l12 hy-pos-view hy-komen-ke">
+							<h5>Komentar Ke:</h5>
+							
+							<div class="card card-hy-f owner">
+								<div class="card-content">
+									<div class="row">
+
+										<div class="col s12 m12 l12 hy-title-list">
+											<ul class="collection user hy-user">
+												<li class="collection-item avatar">
+													<img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
+													<span class="title user-post-hy">Nama User</span>
+													<span class="title tgl-post-hy">23, juni 2020</span>
+												</li>
+											</ul>
+										</div>
+
+										<div class="col s12 m12 l12 content-text">
+											<p>Event KASKUS Cendolin ada lagi nih Gan. Jangan lupa siapin gelas masing-masing buat ngisi cendolnya ya.</p><br>
+											<p>Seperti tahun-tahun sebelumnya, kali ini KASKUS juga mau bagi-bagi cendol gratis buat Kaskuser di seluruh Indonesia. Berbeda dari kegiatan cendolin biasanya yang langsung kasih cendol seger ke Kaskuser, kali ini KASKUS mau ngajak Gan Sist untuk ikutan bagiin cendol ke sesama Kaskuser meskipun lagi dalam kondisi social distancing.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
 						<div class="col s12 m12 l12 center-align hy-cont-fot-add">
 							<div class="mobile-res">
 								<button type="submit" class="waves-effect waves-light btn hy-b-color-7" style="width: 100%"><i class="material-icons right">send</i>Publikasi Post</button>

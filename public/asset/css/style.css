@@ -1706,11 +1706,6 @@ div.hy-pos-view > div.owner > div.card-content > div.row {
 	margin-bottom: 0
 }
 
-div.hy-pos-view > div.owner > div.card-content > div.row > div.title-pos {
-	margin-bottom: 30px
-}
-
-
 div.hy-pos-view > div.komen {
 }
 
@@ -1718,10 +1713,15 @@ div.hy-pos-view > div.komen > div.card-content > div.row {
 	margin-bottom: 0
 }
 
-div.hy-pos-view > div.komen > div.card-content > div.row > div.title-pos {
-	margin-bottom: 30px
+div.hy-pos-view > div.komen > div.card-content > div.row > div.content-text {
+	margin-top: 30px
 }
 
-div.hy-pos-view > div.komen > div.card-content > div.row > div.komen-text {
+div.hy-pos-view > div.owner > div.card-content > div.row > div.content-text {
+	margin-top: 30px
+}
+
+.hy-komen-ke {
+	border-top: 1px solid #eee;
 	margin-top: 30px
 }

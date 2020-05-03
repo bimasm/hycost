@@ -14,7 +14,17 @@ Detail
 <ul id='dropdown13' class='dropdown-content drop-hy-post-detail'>
 	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">arrow_downward</i>Lihat ke akhir Konten</a></li>
 	<li class="divider" tabindex="-1"></li>
+	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">bookmark_border</i>Simpan Post</a></li>
+	<li class="divider" tabindex="-1"></li>
 	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">error_outline</i>Laporkan Post</a></li>
+</ul>
+
+<ul id='dropdown14' class='dropdown-content drop-hy-post-detail'>
+	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">web</i>Ke Media Sosial</a></li>
+	<li class="divider" tabindex="-1"></li>
+	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">library_books</i>Ke Post Anda</a></li>
+	<li class="divider" tabindex="-1"></li>
+	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">link</i>Salin Link</a></li>
 </ul>
 
 <section id="tentang" name="tentang" class="hy-page-header-detail-2">
@@ -61,10 +71,10 @@ Detail
 										</ul>
 									</div>
 
-									<div class="col s12 m12 l12 title-pos">
+									<div class="col s12 m12 l12">
 										<h5>Kaskuser Bantu Indonesia Pulih dari Covid19! Yuk Barengan Penuhin Gelas Cendolnya Gan - Part 4</h5>
 									</div>
-									<div class="col s12 m12 l12">
+									<div class="col s12 m12 l12 content-text">
 										<p>Event KASKUS Cendolin ada lagi nih Gan. Jangan lupa siapin gelas masing-masing buat ngisi cendolnya ya.</p><br>
 										<p>Seperti tahun-tahun sebelumnya, kali ini KASKUS juga mau bagi-bagi cendol gratis buat Kaskuser di seluruh Indonesia. Berbeda dari kegiatan cendolin biasanya yang langsung kasih cendol seger ke Kaskuser, kali ini KASKUS mau ngajak Gan Sist untuk ikutan bagiin cendol ke sesama Kaskuser meskipun lagi dalam kondisi social distancing.</p><br>
 										<p>Nah, gimana caranya? Gampang kok, Agan Sista cuma perlu ikutan empat program yang udah KASKUS siapin ini. Cendol yang diterima dari program-program tersebut, nantinya akan masuk ke dalam gelas cendol yang dikumpulkan oleh seluruh Kaskuser dan bisa Gan Sist liat di cendolin.kaskus.co.id.</p>
@@ -91,10 +101,11 @@ Detail
 												<a href="{{route('UserLandingForumKomentar')}}" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">add_comment</i>Komentar</a>
 											</div>
 											<div class="col s4">
-												<a href="#!" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">reply</i>Bagikan</a>
+												<a href="#!" data-target='dropdown14' class='btn-large waves-effect btn-flat hy-btn-flat-4 dropdown-trigger'><i class="material-icons left">share</i>Bagikan</a>
 											</div>
 										</div>
 									</div>
+
 								</div>
 							</div>
 						</div>
@@ -116,7 +127,7 @@ Detail
 										</ul>
 									</div>
 
-									<div class="col s12 m12 l12 komen-text">
+									<div class="col s12 m12 l12 content-text">
 										<p>Event KASKUS Cendolin ada lagi nih Gan. Jangan lupa siapin gelas masing-masing buat ngisi cendolnya ya.</p><br>
 										<p>Seperti tahun-tahun sebelumnya, kali ini KASKUS juga mau bagi-bagi cendol gratis buat Kaskuser di seluruh Indonesia. Berbeda dari kegiatan cendolin biasanya yang langsung kasih cendol seger ke Kaskuser, kali ini KASKUS mau ngajak Gan Sist untuk ikutan bagiin cendol ke sesama Kaskuser meskipun lagi dalam kondisi social distancing.</p>
 									</div>
@@ -142,7 +153,7 @@ Detail
 												<a href="#!" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">add_comment</i>Komentar</a>
 											</div>
 											<div class="col s4">
-												<a href="#!" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">reply</i>Bagikan</a>
+												<a href="#!" data-target='dropdown14' class='btn-large waves-effect btn-flat hy-btn-flat-4 dropdown-trigger'><i class="material-icons left">share</i>Bagikan</a>
 											</div>
 										</div>
 									</div>
@@ -165,7 +176,7 @@ Detail
 										</ul>
 									</div>
 
-									<div class="col s12 m12 l12 komen-text">
+									<div class="col s12 m12 l12 content-text">
 										<p>Event KASKUS Cendolin ada lagi nih Gan. Jangan lupa siapin gelas masing-masing buat ngisi cendolnya ya.</p><br>
 										<p>Seperti tahun-tahun sebelumnya, kali ini KASKUS juga mau bagi-bagi cendol gratis buat Kaskuser di seluruh Indonesia. Berbeda dari kegiatan cendolin biasanya yang langsung kasih cendol seger ke Kaskuser, kali ini KASKUS mau ngajak Gan Sist untuk ikutan bagiin cendol ke sesama Kaskuser meskipun lagi dalam kondisi social distancing.</p>
 									</div>
@@ -191,7 +202,7 @@ Detail
 												<a href="#!" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">add_comment</i>Komentar</a>
 											</div>
 											<div class="col s4">
-												<a href="#!" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">reply</i>Bagikan</a>
+												<a href="#!" data-target='dropdown14' class='btn-large waves-effect btn-flat hy-btn-flat-4 dropdown-trigger'><i class="material-icons left">share</i>Bagikan</a>
 											</div>
 										</div>
 									</div>
@@ -209,6 +220,17 @@ Detail
 		</div>
 	</div>
 </section>
+
+{{-- <div id="modal-share" class="modal">
+	<div class="modal-content">
+		<h4>Modal Header</h4>
+		<p>A bunch of text</p>
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+	</div>
+</div> --}}
+
 @endsection
 
 @section('js-plus')
