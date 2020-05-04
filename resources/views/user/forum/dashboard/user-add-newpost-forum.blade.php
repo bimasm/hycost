@@ -14,7 +14,7 @@ Dashboard Forum User
 
 @section('content-user')
 <section>
-	<form action="" method="POST">
+	<form action="{{ route('AddNewPost') }}" method="POST" enctype="multipart/form-data">
 		@csrf
 		<div class="content-hy-dash-add">
 			<div class="container cont-hy-dash">
@@ -88,40 +88,18 @@ Dashboard Forum User
 														</a>
 													</div>
 													<div class="collapsible-body">
-														<ul class="collection">
-															<li class="collection-item">
-																<p>
-																	<label>
-																		<input type="checkbox" class="filled-in" />
-																		<span>Filled in1</span>
-																	</label>
-																</p>
-															</li>
-															<li class="collection-item">
-																<p>
-																	<label>
-																		<input type="checkbox" class="filled-in" />
-																		<span>Filled in1</span>
-																	</label>
-																</p>
-															</li>
-															<li class="collection-item">
-																<p>
-																	<label>
-																		<input type="checkbox" class="filled-in" />
-																		<span>Filled in1</span>
-																	</label>
-																</p>
-															</li>
-															<li class="collection-item">
-																<p>
-																	<label>
-																		<input type="checkbox" class="filled-in" />
-																		<span>Filled in1</span>
-																	</label>
-																</p>
-															</li>
-														</ul>
+														<p>
+															<label>
+																<input name="kategori" type="radio" value="1" />
+																<span>Red</span>
+															</label>
+														</p>
+														<p>
+															<label>
+																<input name="kategori" type="radio" value="2"/>
+																<span>Yellow</span>
+															</label>
+														</p>
 													</div>
 												</li>
 												<li>

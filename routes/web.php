@@ -56,6 +56,8 @@ Route::get('/post', 'UserController@User_SemuaPost_Forum')
 
 Route::get('/add-newpost', 'UserController@User_AddNewPost_Forum')
 ->name('UserPostAddNewPost')->middleware('auth:user');
+Route::post('/add-newpost', 'UserActionsController@addpost')
+->name('AddNewPost')->middleware('auth:user');
 
 Route::get('/komentar', 'UserController@User_SemuaKomentar_Forum')
 ->name('UserKomentarSemua')->middleware('auth:user');
