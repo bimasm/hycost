@@ -103,6 +103,9 @@
 
 	{{--//- START -///////////////////////////////////////////////////////////////////////////////// SIDENAV SECOND --}}
 	<ul id="sidenav-2" class="nav-1 sidenav sidenav-second sidenav-fixed sidenav-hy-2 noselect animated fadeIn faster">
+		<li>
+			<a class="tooltipped" data-position="right" data-tooltip="Home" href="/"><i class="material-icons">house</i></a>
+		</li>
 		<li class="
 		{{ (request()->routeIs(
 

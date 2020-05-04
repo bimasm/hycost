@@ -14,15 +14,6 @@ Komentar Forum User
 
 @section('content-user')
 
-{{-- Start Add New Post On Mobile --}}
-<div class="fixed-action-btn mobile-res">
-	<a href="{{route('UserPostAddNewPost')}}" class="btn-floating btn-large hy-b-color-7">
-		<i class="large material-icons">add</i>
-	</a>
-</div>
-{{-- End Add New Post On Mobile --}}
-
-
 <section>
 	<div class="content-hy-dash">
 		<div class="container cont-hy-dash">

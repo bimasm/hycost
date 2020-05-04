@@ -1,4 +1,4 @@
-<div>
+<div class="web-res">
 	<nav class="bread-hy">
 		<div class="nav-wrapper">
 			<div class="col s12">

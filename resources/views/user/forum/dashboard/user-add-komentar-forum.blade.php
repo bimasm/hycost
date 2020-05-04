@@ -34,7 +34,7 @@ Komentar Forum User
 
 						<div class="col s12 m12 l12">
 							<div class="input-field hy-infield">
-								<input placeholder="Judul" id="first_name" type="text" class="validate hy-input-border" name="judul">
+								<input placeholder="Subject" id="first_name" type="text" class="validate hy-input-border" name="judul">
 							</div>
 
 							<textarea id="full-featured-non-premium" name="konten"></textarea>

@@ -12,9 +12,10 @@ Detail
 <!-- Start ------------------------------------------------------------------------------------------- Slider -->
 <!-- End ------------------------------------------------------------------------------------------- /Slider -->
 <ul id='dropdown13' class='dropdown-content drop-hy-post-detail'>
-	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">arrow_downward</i>Lihat ke akhir Konten</a></li>
+	<li><a href="#end-content" class="hy-color-5"><i class="material-icons hy-color-5">arrow_downward</i>Lihat ke akhir Konten</a></li>
 	<li class="divider" tabindex="-1"></li>
 	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">bookmark_border</i>Simpan Post</a></li>
+	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">bookmark</i>Post disimpan</a></li>
 	<li class="divider" tabindex="-1"></li>
 	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">error_outline</i>Laporkan Post</a></li>
 </ul>
@@ -79,6 +80,7 @@ Detail
 										<p>Seperti tahun-tahun sebelumnya, kali ini KASKUS juga mau bagi-bagi cendol gratis buat Kaskuser di seluruh Indonesia. Berbeda dari kegiatan cendolin biasanya yang langsung kasih cendol seger ke Kaskuser, kali ini KASKUS mau ngajak Gan Sist untuk ikutan bagiin cendol ke sesama Kaskuser meskipun lagi dalam kondisi social distancing.</p><br>
 										<p>Nah, gimana caranya? Gampang kok, Agan Sista cuma perlu ikutan empat program yang udah KASKUS siapin ini. Cendol yang diterima dari program-program tersebut, nantinya akan masuk ke dalam gelas cendol yang dikumpulkan oleh seluruh Kaskuser dan bisa Gan Sist liat di cendolin.kaskus.co.id.</p>
 									</div>
+									<div id="end-content"></div>
 
 									<div class="col s12 m12 l12">
 										<div class="sub-footer-hy-post row valign-wrapper-hy">
@@ -196,7 +198,7 @@ Detail
 										</div>
 										<div class="footer-hy-post row center-align">
 											<div class="col s4">
-												<a href="#!" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">thumb_up</i>Suka</a>
+												<a href="#!" class='btn-large waves-effect btn-flat hy-btn-flat-4 unlike-btn'><i class="material-icons left">thumb_up</i>Suka</a>
 											</div>
 											<div class="col s4">
 												<a href="#!" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">add_comment</i>Komentar</a>

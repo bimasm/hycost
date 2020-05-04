@@ -106,7 +106,7 @@ Cari Label Baru User
 					</div>
 
 					<div id="tabelnya" class="col s12 m12 l12">
-						<div class="web-res">
+						<div>
 
 							<div id="tabel" class="animated fadeIn faster" style="display: block">
 								<table id="example" class="" style="width:100%">

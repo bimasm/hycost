@@ -27,8 +27,23 @@ Kebun Monitoring User
 					{{--  End Breadcumb --}}
 				</div>
 				<div class="col s12 m12 l6">
+					{{-- Start Search On Mobile --}}
+					<div class="search-cont mobile-res">
+						<div class="nav-wrapper">
+							<form>
+								<div class="input-field">
+									<input id="myInputTextField2" type="search" placeholder="Cari disini" required>
+									<label class="label-icon" for="search">
+										<i class="material-icons">search</i>
+									</label>
+									<i class="material-icons">close</i>
+								</div>
+							</form>
+						</div>
+					</div>
+					{{-- End Search On Mobile --}}
 
-					<ul class="hy-header-tols">
+					<ul class="hy-header-tols web-res">
 						<li>
 							{{-- Start Search On Web --}}
 							<div class="search-cont web-res">
@@ -45,22 +60,6 @@ Kebun Monitoring User
 								</div>
 							</div>
 							{{-- End Search On Web --}}
-
-							{{-- Start Search On Mobile --}}
-							<div class="search-cont mobile-res">
-								<div class="nav-wrapper">
-									<form>
-										<div class="input-field">
-											<input id="myInputTextField2" type="search" placeholder="Cari disini" required>
-											<label class="label-icon" for="search">
-												<i class="material-icons">search</i>
-											</label>
-											<i class="material-icons">close</i>
-										</div>
-									</form>
-								</div>
-							</div>
-							{{-- End Search On Mobile --}}
 						</li>
 						<li class="link">
 							<div class="web-res">
