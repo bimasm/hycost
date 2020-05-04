@@ -24,7 +24,7 @@ class CreatePostTable extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->string('judul');
-            $table->string('isi');
+            $table->text('isi', 255);
             $table->string('gambar');
             $table->timestamps();
         });
