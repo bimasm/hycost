@@ -119,7 +119,7 @@ Komentar Forum User
 									<tr>
 										<th style="width: 8%"></th>
 										<th>Judul</th>
-										<th>Status</th>
+										<th>Tanggal</th>
 									</tr>
 								</thead>
 							</table>
@@ -260,25 +260,22 @@ Komentar Forum User
 
 		return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
 		'<tr style="border: 0;">'+
-		'<td>Tag</td>'+
-		'<td>'+d.post+'</td>'+
+		'<td>User</td>'+
+		'<td>'+d.user+'</td>'+
 		'</tr>'+
 		'<tr style="border: 0;">'+
-		'<td>Tanggal</td>'+
-		'<td>'+d.tanggal+'</td>'+
+		'<td>Komentar</td>'+
+		'<td>'+d.komentar+'</td>'+
 		'</tr>'+
 		'<tr style="border: 0;">'+
 		'<td>Link</td>'+
-		'<td><button class="waves-effect btn-flat hy-btn-flat">Preview</button></td>'+
+		'<td><button class="waves-effect btn-flat hy-btn-flat">View</button></td>'+
 		'</tr>'+
 		'</table>'+
 		'<div style="border-top: 1px solid #0000001f">'+
 		'<div class="row" style="padding-top: 1.5em;">'+
-		'<div class="col s6">'+
+		'<div class="col s12">'+
 		'<button id="hapus" class="waves-effect btn-flat hy-btn-flat"><i class="material-icons left">delete</i>Hapus</button>'+
-		'</div>'+
-		'<div class="col s6">'+
-		'<button id="status" href="#modal1" class="waves-effect btn-flat hy-btn-flat modal-trigger"><i class="material-icons left">edit</i>Edit</button>'+
 		'</div>'+
 		'</div>'+
 		'</div>';
@@ -303,11 +300,19 @@ Komentar Forum User
 				"data":           null,
 				"defaultContent": ''
 			},
-			{ "targets": 1,"data": "user" },
-			{ "targets": 2,"data": "komentar" },
+			{ "targets": 1,"data": "post" },
+			{ "targets": 2,"data": "tanggal" },
 			],
 
-			'order': [[1, 'dsc']]
+			rowCallback: function(row, data, index) {
+				if (data.status == "belum") {
+					$(row).addClass("tabel-belum");
+				}
+			},
+
+			select: false,
+
+			'order': [[2, 'dsc']]
 		} );
 
 		oTable2 = $('#example2').DataTable();   //pay attention to capital D, which is mandatory to retrieve "api" datatables' object, as @Lionel said

@@ -399,29 +399,110 @@ Label Monitoring User
 	$(document).ready(function() {
 		function format ( d ) {
 
-			return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-			'<tr style="border: 0;">'+
-			'<td>Tag</td>'+
+			return '<div class="detail-tabel animated fadeIn faster">'+
+
+			'<div class="row">'+
+			'<div class="col s12 m12 l12">'+
+
+			'<div class="col s12 m12 l12">'+
+			'<div class="card card-hy-f white"><div class="card-content" style="padding:20px">'+
+			'<div class="row valign-wrapper" style="margin-bottom:0">'+
+			'<div class="col s12 m12 l4 valign">aa</div>'+
+			'<div class="col s12 m12 l8">'+
+			'<div class="row" style="margin-bottom:0">'+
+			'<div class="col s12 m12 l6 center-align">'+
+			'Suhu Air'+
+			'</div>'+
+			'<div class="col s12 m12 l6 center-align">'+
+			'60'+
+			'</div>'+
+			'</div>'+
+			'</div>'+
+			'</div>'+
+			'</div></div>'+
+			'</div>'+
+
+			'<div class="col s12 m12 l12">'+
+			'<div class="card card-hy-f white"><div class="card-content" style="padding:20px">'+
+			'<div class="row valign-wrapper" style="margin-bottom:0">'+
+			'<div class="col s12 m12 l4 valign">aa</div>'+
+			'<div class="col s12 m12 l8">'+
+			'<div class="row" style="margin-bottom:0">'+
+			'<div class="col s12 m12 l6 center-align">'+
+			'Suhu Air'+
+			'</div>'+
+			'<div class="col s12 m12 l6 center-align">'+
+			'60'+
+			'</div>'+
+			'</div>'+
+			'</div>'+
+			'</div>'+
+			'</div></div>'+
+			'</div>'+
+
+			'<div class="col s12 m12 l12">'+
+			'<div class="card card-hy-f white"><div class="card-content" style="padding:20px">'+
+			'<div class="row valign-wrapper" style="margin-bottom:0">'+
+			'<div class="col s12 m12 l4 valign">aa</div>'+
+			'<div class="col s12 m12 l8">'+
+			'<div class="row" style="margin-bottom:0">'+
+			'<div class="col s12 m12 l6 center-align">'+
+			'Suhu Air'+
+			'</div>'+
+			'<div class="col s12 m12 l6 center-align">'+
+			'60'+
+			'</div>'+
+			'</div>'+
+			'</div>'+
+			'</div>'+
+			'</div></div>'+
+			'</div>'+
+
+			'<div class="col s12 m12 l12">'+
+			'<div class="card card-hy-f white"><div class="card-content" style="padding:20px">'+
+			'<div class="row valign-wrapper" style="margin-bottom:0">'+
+			'<div class="col s12 m12 l4 valign">aa</div>'+
+			'<div class="col s12 m12 l8">'+
+			'<div class="row" style="margin-bottom:0">'+
+			'<div class="col s12 m12 l6 center-align">'+
+			'Suhu Air'+
+			'</div>'+
+			'<div class="col s12 m12 l6 center-align">'+
+			'60'+
+			'</div>'+
+			'</div>'+
+			'</div>'+
+			'</div>'+
+			'</div></div>'+
+			'</div>'+
+
+			'</div>'+
+			'<div class="col s12 m12 l12">'+
+			
+			'<table>'+
+			'<tbody>'+
+
+			'<tr>'+
+			'<th>Author</th>'+
 			'<td>'+d.author+'</td>'+
 			'</tr>'+
-			'<tr style="border: 0;">'+
-			'<td>Tanggal</td>'+
+
+			'<tr>'+
+			'<th>Tanggal Pemasangan</th>'+
 			'<td>'+d.tanggal+'</td>'+
 			'</tr>'+
-			'<tr style="border: 0;">'+
-			'<td>Link</td>'+
-			'<td><button class="waves-effect btn-flat hy-btn-flat">Preview</button></td>'+
+
+			'<tr>'+
+			'<th>Jumlah Pemakai</th>'+
+			'<td>300 User</td>'+
 			'</tr>'+
+
+			'</tbody>'+
 			'</table>'+
-			'<div style="border-top: 1px solid #0000001f">'+
-			'<div class="row" style="padding-top: 1.5em;">'+
-			'<div class="col s6">'+
-			'<button id="hapus" class="waves-effect btn-flat hy-btn-flat"><i class="material-icons left">delete</i>Hapus</button>'+
-			'</div>'+
-			'<div class="col s6">'+
-			'<button id="status" href="#modal1" class="waves-effect btn-flat hy-btn-flat modal-trigger"><i class="material-icons left">edit</i>Edit</button>'+
+
 			'</div>'+
 			'</div>'+
+
 			'</div>';
 		}
 

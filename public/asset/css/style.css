@@ -1156,7 +1156,9 @@ div.content-hy-dash-add > div.cont-hy-dash {
 	}
 
 	.content-hy-dash-add {
-		margin: 3em 0 0 0;
+		margin: 1em 0 0 0;
+		border: 0;
+		padding: 0.5em;
 	}
 
 	.cont-hy-dash {
@@ -1472,6 +1474,18 @@ div.search-cont > div.nav-wrapper > form > div.input-field {
 	margin-bottom: 0.7rem;
 }
 
+.search-cont-flek {
+	background-color: #f0f7e8;
+	padding: 2px;
+	border-radius: 12px;
+	width: 208px;
+}
+
+div.search-cont-flek > div.nav-wrapper > form > div.input-field {
+	margin-top: 0.7rem;
+	margin-bottom: 0.7rem;
+}
+
 
 /*tes*/
 
@@ -1517,6 +1531,13 @@ div.search-cont > div.nav-wrapper > form > div.input-field {
 		padding: 2px;
 		border-radius: 12px;
 		width: 100%;
+	}
+
+	.search-cont-flek {
+		background-color: #f0f7e8;
+		padding: 2px;
+		border-radius: 12px;
+		width: 174px;
 	}
 }
 

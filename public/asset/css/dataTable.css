@@ -310,3 +310,20 @@ tr.selected td:before {
    width: 150px;
    margin: 15px;
 }
+
+
+
+@media screen and (max-width: 640px) {
+    .detail-tabel {
+        margin: 0 5px
+    }
+
+    .cards tbody tr {
+       float: left;
+       width: 10.9rem;
+       margin: 0.5rem;
+       border: 1px solid #dadce0;
+       border-radius: 8px;
+       padding: 5px;
+   }
+}

@@ -153,9 +153,7 @@ Dashboard Forum User
 
 						<div class="col s12 m12 l12 center-align hy-cont-fot-add">
 							<div class="mobile-res">
-								<button type="submit" class="waves-effect waves-light btn hy-b-color-7" style="width: 100%"><i class="material-icons right">send</i>Publikasi Post</button>
-
-								<a href="{{ URL::previous() }}" class='waves-effect btn-flat hy-btn-flat-1'><i class="material-icons right"></i>Batal</a>
+								<button type="submit" class="btn-large waves-effect btn-flat hy-btn-flat-3" style="width: 100%"><i class="material-icons right">send</i>Publikasi Post</button>
 							</div>
 
 							<div class="web-res">

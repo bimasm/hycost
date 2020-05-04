@@ -151,7 +151,7 @@ Post Forum User
 									<tr>
 										<th style="width: 8%"></th>
 										<th>Judul</th>
-										<th>Status</th>
+										<th>Tanggal</th>
 									</tr>
 								</thead>
 							</table>
@@ -278,8 +278,8 @@ Post Forum User
 		'<td>'+d.tag+'</td>'+
 		'</tr>'+
 		'<tr style="border: 0;">'+
-		'<td>Tanggal</td>'+
-		'<td>'+d.tanggal+'</td>'+
+		'<td>Status</td>'+
+		'<td>'+d.status+'</td>'+
 		'</tr>'+
 		'<tr style="border: 0;">'+
 		'<td>Link</td>'+
@@ -318,7 +318,7 @@ Post Forum User
 				"defaultContent": ''
 			},
 			{ "targets": 1,"data": "judul" },
-			{ "targets": 2,"data": "status" },
+			{ "targets": 2,"data": "tanggal" },
 			],
 
 			'order': [[1, 'dsc']]

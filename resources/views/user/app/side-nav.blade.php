@@ -1,10 +1,10 @@
 <ul id="slide-out" class="sidenav sidenav-hy-tools">
 	<li>
 		<div class="row valign-wrapper">
-			<div class="col s12 m12 l3 valign">
+			<div class="col s3 valign">
 				<a class="btn-floating waves-effect transparent hy-btn-side-icon sidenav-close"><i class="material-icons grey-text text-darken-1">keyboard_arrow_left</i></a>
 			</div>
-			<div class="col s12 m12 l9"><h5>Akun anda</h5></div>
+			<div class="col s9"><h5>Akun anda</h5></div>
 		</div>
 	</li>
 	<li>
@@ -25,10 +25,10 @@
 <ul id="slide-out-2" class="sidenav sidenav-hy-tools notif">
 	<li>
 		<div class="row valign-wrapper">
-			<div class="col s12 m12 l3 valign">
+			<div class="col s3 valign">
 				<a class="btn-floating waves-effect transparent hy-btn-side-icon sidenav-close"><i class="material-icons grey-text text-darken-1">keyboard_arrow_left</i></a>
 			</div>
-			<div class="col s12 m12 l9"><h5>Notifikasi</h5></div>
+			<div class="col s9"><h5>Notifikasi</h5></div>
 		</div>
 	</li>
 	<li>
@@ -78,10 +78,10 @@
 <ul id="slide-out-3" class="sidenav sidenav-hy-tools tambah">
 	<li>
 		<div class="row valign-wrapper">
-			<div class="col s12 m12 l3 valign">
+			<div class="col s3 valign">
 				<a class="btn-floating waves-effect transparent hy-btn-side-icon sidenav-close"><i class="material-icons grey-text text-darken-1">keyboard_arrow_left</i></a>
 			</div>
-			<div class="col s12 m12 l9"><h5>Tambah Sesuatu</h5></div>
+			<div class="col s9"><h5>Tambah Sesuatu</h5></div>
 		</div>
 	</li>
 	<li><a class="subheader">Forum</a></li>

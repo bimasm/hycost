@@ -27,6 +27,7 @@ Cari Label Baru User
 					{{--  End Breadcumb --}}
 				</div>
 				<div class="col s12 m12 l5 valign">
+					
 					<ul class="hy-header-tols">
 						<li>
 							{{-- Start Search On Web --}}
@@ -44,6 +45,23 @@ Cari Label Baru User
 								</div>
 							</div>
 							{{-- End Search On Web --}}
+
+							{{-- Start Search On Mobile --}}
+							<div class="search-cont-flek mobile-res">
+								<div class="nav-wrapper">
+									<form>
+										<div class="input-field">
+											<input id="myInputTextField2" type="search" placeholder="Cari disini" required>
+											<label class="label-icon" for="search">
+												<i class="material-icons">search</i>
+											</label>
+											<i class="material-icons">close</i>
+										</div>
+									</form>
+								</div>
+							</div>
+							{{-- End Search On Mobile --}}
+
 						</li>
 						<li class="link">
 
@@ -105,7 +123,7 @@ Cari Label Baru User
 
 					</div>
 
-					<div id="tabelnya" class="col s12 m12 l12">
+					<div id="tabelnya" class="col s12 m12 l12 web-res">
 						<div>
 
 							<div id="tabel" class="animated fadeIn faster" style="display: block">
@@ -115,6 +133,28 @@ Cari Label Baru User
 											<th>Label</th>
 											<th>Sayur</th>
 											<th>Pemakai</th>
+											<th></th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+
+							<div id="grid" class="animated fadeIn faster" style="display: none">
+								<div id="items-container" class="row"></div>
+							</div>
+
+						</div>
+					</div>
+
+					<div id="tabelnya" class="col s12 m12 l12 mobile-res">
+						<div>
+
+							<div id="tabel" class="animated fadeIn faster" style="display: block">
+								<table id="example2" class="" style="width:100%">
+									<thead>
+										<tr>
+											<th>Label</th>
+											<th>Sayur</th>
 											<th></th>
 										</tr>
 									</thead>
@@ -140,20 +180,47 @@ Cari Label Baru User
 		<div class="container cont-hy-dash">
 
 			{{-- Start Header --}}
-			<div class="row bread-hy-cont animated fadeIn faster valign-wrapper-hy">
+			<div class="row bread-hy-cont animated fadeIn faster valign-wrapper-hy mobile-res">
+				<div class="col s3">
+					<ul class="hy-header-tols-2">
+						<li class="link">
+							<a id="btn-toList" onclick="toList()" class="btn-floating waves-effect waves-light hy-btn-icon-flat">
+								<i class="material-icons hy-color-2">close</i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col s9 valign">
+					<ul class="hy-header-tols-2">
+						<li class="right-align">
+							<div class="title"><span id="namas2"></span></div>
+						</li>
+					</ul>		
+				</div>
 
+				<div class="col s12">
+					<ul class="collection collect-table kanan">
+						<li class="collection-item avatar">
+							<img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
+							<span class="title">Tes</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row bread-hy-cont animated fadeIn faster valign-wrapper-hy web-res">
 				<div class="col s12 m12 l6">
 					<ul class="hy-header-tols-2">
 						<li class="link">
 							<a id="btn-toList" onclick="toList()" class="btn-floating waves-effect waves-light hy-btn-icon-flat">
-								<i class="material-icons hy-color-2">keyboard_arrow_left</i>
+								<i class="material-icons hy-color-2">close</i>
 							</a>
 						</li>
 						<li>
 							<div class="title"><span id="namas"></span></div>
 						</li>
 					</ul>		
-					
+
 				</div>
 				<div class="col s12 m12 l6 valign">
 					<ul class="collection collect-table kanan">
@@ -295,9 +362,6 @@ Cari Label Baru User
 
 	function toFill() {
 		var x = document.getElementById("fill");
-
-		// var hh = document.getElementById("tabelnya");
-
 		var i = document.getElementById("btn-tofill");
 		var j = document.getElementById("btn-nofill");
 
@@ -315,7 +379,6 @@ Cari Label Baru User
 
 	function toNFill() {
 		var x = document.getElementById("fill");
-
 		var j = document.getElementById("btn-tofill");
 		var i = document.getElementById("btn-nofill");
 
@@ -334,7 +397,6 @@ Cari Label Baru User
 	function toDetail() {
 		var x = document.getElementById("detail");
 		var y = document.getElementById("list");
-
 		var i = document.getElementById("btn-toDetail");
 		var j = document.getElementById("btn-toList");
 
@@ -350,7 +412,6 @@ Cari Label Baru User
 	function toList() {
 		var y = document.getElementById("detail");
 		var x = document.getElementById("list");
-
 		var j = document.getElementById("btn-toDetail");
 		var i = document.getElementById("btn-toList");
 
@@ -424,7 +485,7 @@ Cari Label Baru User
 			},
 
 			{
-				'className': 'btn-floating waves-effect waves-light hy-btn-icon-flat btn-append tooltipped toto',
+				'className': 'btn-floating waves-effect waves-light hy-btn-icon-flat btn-append tooltipped toto web-res',
 				'text': '<i class="hy-color-2 fa fa-th btn-append"></i>',
 				'action': function (e, dt, node) {
 
@@ -460,22 +521,6 @@ Cari Label Baru User
 					$('.nama-dat', $table).each(function () {
 						$(this).addClass('data-nama');
 					});
-
-					// var labels = [];
-					// $('thead th', $table).each(function () {
-					// 	labels.push($(this).text());
-					// });
-
-					// $('tbody tr', $table).each(function () {
-					// 	$(this).find('td').each(function (column) {
-					// 		$(this).attr('data-label', labels[column]);
-					// 	});
-					// });
-
-					// var max = 1;
-					// $('tbody tr', $table).each(function () {
-					// 	max = Math.max($(this).height(), max);
-					// }).height(max);
 
 				} else {
 
@@ -582,6 +627,209 @@ Cari Label Baru User
 
 		.on('select', function (e, dt, type, indexes) {
 			var rowData = table.rows(indexes).data().toArray()
+			$('#row-data').html(JSON.stringify(rowData));
+		})
+		.on('deselect', function () {
+			$('#row-data').empty();
+		})
+	});
+</script>
+
+<script type="text/javascript">
+
+	$(document).ready(function () {
+
+		var table2 = $('#example2').DataTable({
+			'dom':
+			"<'row'<'col-sm-12 col-md-6'><'col-sm-12 col-md-6'<'float-md-right ml-2'B>>>" +
+			"<'row'<'col-sm-12'tr>>" +
+			"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+
+			'ajax': '{{asset('asset/js/tabel-label.js')}}',
+
+
+			"columnDefs": [
+			{ 
+				"targets": 0,
+				"data": "nama",
+				"orderable": false,
+				"className": 'nama-dat',
+				render: function (data, type, row, meta) {
+					return '<a onclick="toDetail()" id="btn-toDetail" class="namaz waves-effect btn-flat hy-btn-flat">'+data+'</a>';
+				},
+			},
+			{ "targets": 1,"data": "sayur","orderable": false },
+			{
+				"targets": 2,
+				"data": "status",
+				"orderable": false,
+				"className": 'status-dat center-align',
+				render: function (data, type, row, meta) {
+
+					if (data == "Off") {
+						return '<button class="waves-effect btn-flat hy-btn-flat">Pasang</button>';
+					} else{
+						return '<button class="waves-effect btn-flat hy-btn-flat disabled">Terpasang</button>';
+					}
+
+				},
+			},
+			{ "targets": 3,"data": "id", "visible": false }
+			],
+
+
+			'buttons': [ 
+			{
+				extend: 'copy',
+
+				exportOptions: 
+				{ columns: [':visible'], rows: [':visible']},
+
+			},
+
+			{
+				'className': 'btn-floating waves-effect waves-light hy-btn-icon-flat btn-append tooltipped toto mobile-res',
+				'text': '<i class="hy-color-2 fa fa-th btn-append"></i>',
+				'action': function (e, dt, node) {
+
+					$(dt.table().node()).toggleClass('cards animated fadeIn faster');
+					$('.fa', node).toggleClass(['fa-list', 'fa-th']);
+
+					dt.draw('page');
+				},
+			}
+			],
+
+			'initComplete': function (settings, json) {
+				$("button").removeClass("dt-button");
+				$("div").removeClass("dt-buttons");
+			},
+			'drawCallback': function (settings) {
+				var api = this.api();
+				var $table = $(api.table().node());
+				
+
+				if ($table.hasClass('cards')) {
+
+					$('.toto').attr('data-tooltip', 'tabel view');
+
+					$('.jmlh', $table).each(function () {
+						$(this).addClass('data-juml');
+					});
+
+					$('.status-dat', $table).each(function () {
+						$(this).addClass('data-status');
+					});
+
+					$('.nama-dat', $table).each(function () {
+						$(this).addClass('data-nama');
+					});
+
+				} else {
+
+					$('.toto').attr('data-tooltip', 'grid view');
+
+					$('.jmlh', $table).each(function () {
+						$(this).removeClass('data-juml');
+					});
+
+					$('.status-dat', $table).each(function () {
+						$(this).removeClass('data-status');
+					});
+
+					$('.nama-dat', $table).each(function () {
+						$(this).removeClass('data-nama');
+					});
+
+					$('tbody td', $table).each(function () {
+						$(this).removeAttr('data-label');
+					});
+
+					$('tbody tr', $table).each(function () {
+						$(this).height('auto');
+					});
+				}
+			}
+		})
+
+		table2.buttons().container().appendTo( '#example_wrapper' );
+
+		$.fn.dataTable.ext.search.push(
+			function( settings, data, dataIndex ) {
+				var min = parseInt( $('#min').val(), 10 );
+				var max = parseInt( $('#max').val(), 10 );
+				var age = parseFloat( data[2] ) || 0;
+
+				if ( ( isNaN( min ) && isNaN( max ) ) ||
+					( isNaN( min ) && age <= max ) ||
+					( min <= age   && isNaN( max ) ) ||
+					( min <= age   && age <= max ) )
+				{
+					return true;
+				}
+				return false;
+			}
+			);
+
+		$(document).ready(function() {
+			var table2 = $('#example2').DataTable();
+
+			$('#min, #max').on('change', function () {
+				table2.draw();
+			} );
+		} );
+
+		var table2 =  $('#example2').DataTable();
+		$('#dropdown1').on('change', function () {
+			table2.columns(1).search( this.value ).draw();
+		} );
+
+		var table2 =  $('#example2').DataTable();
+		$('#terbarucek').on('change', function () {
+			if($(this).is(":checked")) {
+				table2.order([4, 'asc']).draw();
+			} else {
+				table2.order([4, 'dsc']).draw();
+			}
+		} );
+
+		$('#example2 tbody').on( 'click', 'button', function () { /////////////////////////////////// link
+			var data = table2.row( $(this).parents('tr') ).data();
+			window.location.href = "http://www.w3schools.com";
+		} );
+
+		$('#example2 tbody').on('click', 'td a.namaz', function () { ///////////////////////////// tab
+			var data2 = table2.row($(this).parents('tr')).data();
+			var namas2 = data2[ 'nama' ];
+			console.log(namas2);
+			document.getElementById("namas2").innerHTML = namas2;
+		} );
+
+		$("#hapus").on("click",function(){ /////////////////////////////////////////////////////////// hapus
+			var oAll =[];
+			$('#example tbody tr.selected').each(function(){
+				var data = table2.row($(this)).data();
+				var row = data[ 'id' ];
+				oAll.push(row);
+			});
+			console.log(oAll);
+			document.getElementById("datas2").innerHTML = oAll;
+		});
+
+		$('#status').click( function () { /////////////////////////////////////////////////////////// edit
+			var data = table2.row('.selected').data();
+			var number = data[ 'status' ];
+			document.getElementById("datas").innerHTML = number;
+		} );
+
+
+		oTable = $('#example2').DataTable(); ////////////////////////////////////////////////////// search @Lionel 
+		$('#myInputTextField2').keyup(function(){
+			oTable.search($(this).val()).draw();
+		})
+
+		.on('select', function (e, dt, type, indexes) {
+			var rowData = table2.rows(indexes).data().toArray()
 			$('#row-data').html(JSON.stringify(rowData));
 		})
 		.on('deselect', function () {
