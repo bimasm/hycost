@@ -53,7 +53,7 @@
 
 							@foreach($data as $dat)
 							<li class="collection-item">
-								<a href="{{route('UserLandingForumDetail', str_replace(" ", "-", $dat->judul))}}" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
+								<a href="{{route('UserLandingForumDetail', str_replace(" ", "-", $dat->judul))}}" class="tooltipped" data-position="top" data-tooltip="{{$dat->judul}}">
 									<div class="card card-hy-f">
 										<div class="card-content">
 
