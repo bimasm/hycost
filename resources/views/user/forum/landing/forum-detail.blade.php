@@ -31,7 +31,7 @@
 	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">link</i>Salin Link</a></li>
 </ul>
 
-<section id="tentang" name="tentang" class="hy-page-header-detail-2">
+<section id="tentang" name="tentang" class="hy-page-header-detail-2 web-res">
 	<div class="container hy-page-con left-align hy-page-pos">
 
 		<div>
