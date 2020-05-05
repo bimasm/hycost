@@ -48,23 +48,24 @@ Kategori
 					<div class="col s12 m12 l12">
 						<ul class="collection list-post">
 
+							@foreach($data as $dat)
 							<li class="collection-item">
-								<a href="{{route('UserLandingForumDetail')}}" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
+								<a href="{{route('UserLandingForumDetail', $dat->id)}}" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
 									<div class="card card-hy-f">
 										<div class="card-content">
 
 											<div class="row valign-wrapper-hy">
 												<div class="col s12 m12 l2 valign" style="margin-right: 0; padding: 0; text-align: center;">
-													<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
+													<img src="{{ str_replace('public/','../../../', $dat->gambar) }}">
 												</div>
 
 												<div class="col s12 m12 l10">
 													<div class="row valign-wrapper-hy">
 														<div class="col s12 m12 l8 valign">
-															<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
+															<h6><b>{{$dat->judul}}</b></h6>
 															<ul class="collection colection-hy-f">
 																<li class="collection-item colect-hy-f">
-																	By Ivan, 21 Juni 2020
+																	By {{ \App\User::where(['id' => $dat->id_user])->value('nama')}}, 21 Juni 2020
 																</li>
 															</ul>
 														</div>
@@ -89,174 +90,7 @@ Kategori
 									</div>
 								</a>
 							</li>
-
-							<li class="collection-item">
-								<a href="#!" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
-									<div class="card card-hy-f">
-										<div class="card-content">
-
-											<div class="row valign-wrapper-hy">
-												<div class="col s12 m12 l2 valign" style="margin-right: 0; padding: 0; text-align: center;">
-													<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
-												</div>
-
-												<div class="col s12 m12 l10">
-													<div class="row valign-wrapper-hy">
-														<div class="col s12 m12 l8 valign">
-															<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
-															<ul class="collection colection-hy-f">
-																<li class="collection-item colect-hy-f">
-																	By Ivan, 21 Juni 2020
-																</li>
-															</ul>
-														</div>
-														<div class="col s12 m12 l2 center-align">
-															<div class="hy-property-post">
-																<div class="nom">100</div>
-																<div class="text">Komerntar</div>
-															</div>
-														</div>
-														<div class="col s12 m12 l2 center-align">
-															<div class="hy-property-post">
-																<div class="nom">100</div>
-																<div class="text">Dibuka</div>
-															</div>
-														</div>
-													</div>
-													
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</a>
-							</li>
-
-							<li class="collection-item">
-								<a href="#!" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
-									<div class="card card-hy-f">
-										<div class="card-content">
-
-											<div class="row valign-wrapper-hy">
-												<div class="col s12 m12 l2 valign" style="margin-right: 0; padding: 0; text-align: center;">
-													<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
-												</div>
-
-												<div class="col s12 m12 l10">
-													<div class="row valign-wrapper-hy">
-														<div class="col s12 m12 l8 valign">
-															<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
-															<ul class="collection colection-hy-f">
-																<li class="collection-item colect-hy-f">
-																	By Ivan, 21 Juni 2020
-																</li>
-															</ul>
-														</div>
-														<div class="col s12 m12 l2 center-align">
-															<div class="hy-property-post">
-																<div class="nom">100</div>
-																<div class="text">Komerntar</div>
-															</div>
-														</div>
-														<div class="col s12 m12 l2 center-align">
-															<div class="hy-property-post">
-																<div class="nom">100</div>
-																<div class="text">Dibuka</div>
-															</div>
-														</div>
-													</div>
-													
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</a>
-							</li>
-
-							<li class="collection-item">
-								<a href="#!" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
-									<div class="card card-hy-f">
-										<div class="card-content">
-
-											<div class="row valign-wrapper-hy">
-												<div class="col s12 m12 l2 valign" style="margin-right: 0; padding: 0; text-align: center;">
-													<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
-												</div>
-
-												<div class="col s12 m12 l10">
-													<div class="row valign-wrapper-hy">
-														<div class="col s12 m12 l8 valign">
-															<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
-															<ul class="collection colection-hy-f">
-																<li class="collection-item colect-hy-f">
-																	By Ivan, 21 Juni 2020
-																</li>
-															</ul>
-														</div>
-														<div class="col s12 m12 l2 center-align">
-															<div class="hy-property-post">
-																<div class="nom">100</div>
-																<div class="text">Komerntar</div>
-															</div>
-														</div>
-														<div class="col s12 m12 l2 center-align">
-															<div class="hy-property-post">
-																<div class="nom">100</div>
-																<div class="text">Dibuka</div>
-															</div>
-														</div>
-													</div>
-													
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</a>
-							</li>
-
-							<li class="collection-item">
-								<a href="#!" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
-									<div class="card card-hy-f">
-										<div class="card-content">
-
-											<div class="row valign-wrapper-hy">
-												<div class="col s12 m12 l2 valign" style="margin-right: 0; padding: 0; text-align: center;">
-													<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
-												</div>
-
-												<div class="col s12 m12 l10">
-													<div class="row valign-wrapper-hy">
-														<div class="col s12 m12 l8 valign">
-															<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
-															<ul class="collection colection-hy-f">
-																<li class="collection-item colect-hy-f">
-																	By Ivan, 21 Juni 2020
-																</li>
-															</ul>
-														</div>
-														<div class="col s12 m12 l2 center-align">
-															<div class="hy-property-post">
-																<div class="nom">100</div>
-																<div class="text">Komerntar</div>
-															</div>
-														</div>
-														<div class="col s12 m12 l2 center-align">
-															<div class="hy-property-post">
-																<div class="nom">100</div>
-																<div class="text">Dibuka</div>
-															</div>
-														</div>
-													</div>
-													
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</a>
-							</li>
+							@endforeach
 
 						</ul>
 					</div>

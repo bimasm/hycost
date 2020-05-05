@@ -9,6 +9,7 @@ Detail
 @endsection
 
 @section('content-landing-page')
+
 <!-- Start ------------------------------------------------------------------------------------------- Slider -->
 <!-- End ------------------------------------------------------------------------------------------- /Slider -->
 <ul id='dropdown13' class='dropdown-content drop-hy-post-detail'>
@@ -53,6 +54,7 @@ Detail
 			<div class="col s12 m12 l8">
 				<div class="row">
 
+					@foreach($datas as $dat)
 					<div class="col s12 m12 l12 hy-pos-view">
 						<div class="card card-hy-f owner">
 							<div class="card-content">
@@ -63,9 +65,9 @@ Detail
 											<li class="collection-item avatar">
 
 												<img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
-												<span class="title user-post-hy">Nama User</span>
+												<span class="title user-post-hy">{{ \App\User::where(['id' => $dat->id_user])->value('nama')}}</span>
 
-												<span class="title tgl-post-hy">23, juni 2020</span>
+												<span id="tanggal" class="title tgl-post-hy"></span>
 
 												<a href="#!" data-target='dropdown13' class="secondary-content dropdown-trigger"><i class="material-icons hy-color-7">more_horiz</i></a>
 											</li>
@@ -73,12 +75,10 @@ Detail
 									</div>
 
 									<div class="col s12 m12 l12">
-										<h5>Kaskuser Bantu Indonesia Pulih dari Covid19! Yuk Barengan Penuhin Gelas Cendolnya Gan - Part 4</h5>
+										<h5 id="judul"></h5>
 									</div>
 									<div class="col s12 m12 l12 content-text">
-										<p>Event KASKUS Cendolin ada lagi nih Gan. Jangan lupa siapin gelas masing-masing buat ngisi cendolnya ya.</p><br>
-										<p>Seperti tahun-tahun sebelumnya, kali ini KASKUS juga mau bagi-bagi cendol gratis buat Kaskuser di seluruh Indonesia. Berbeda dari kegiatan cendolin biasanya yang langsung kasih cendol seger ke Kaskuser, kali ini KASKUS mau ngajak Gan Sist untuk ikutan bagiin cendol ke sesama Kaskuser meskipun lagi dalam kondisi social distancing.</p><br>
-										<p>Nah, gimana caranya? Gampang kok, Agan Sista cuma perlu ikutan empat program yang udah KASKUS siapin ini. Cendol yang diterima dari program-program tersebut, nantinya akan masuk ke dalam gelas cendol yang dikumpulkan oleh seluruh Kaskuser dan bisa Gan Sist liat di cendolin.kaskus.co.id.</p>
+										<div id="isi"></div>
 									</div>
 									<div id="end-content"></div>
 
@@ -112,8 +112,9 @@ Detail
 							</div>
 						</div>
 					</div>
+					@endforeach
 
-					<div class="col s12 m12 l12 hy-pos-view">
+					{{-- <div class="col s12 m12 l12 hy-pos-view">
 						<div class="card card-hy-f komen">
 							<div class="card-content">
 								<div class="row">
@@ -211,7 +212,7 @@ Detail
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> --}}
 
 				</div>
 			</div>
@@ -222,18 +223,32 @@ Detail
 		</div>
 	</div>
 </section>
-
-{{-- <div id="modal-share" class="modal">
-	<div class="modal-content">
-		<h4>Modal Header</h4>
-		<p>A bunch of text</p>
-	</div>
-	<div class="modal-footer">
-		<a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-	</div>
-</div> --}}
-
 @endsection
 
 @section('js-plus')
+@foreach($datas as $dat)
+<script>
+	var settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": "{{route('userlandingForumDataPost', $dat->id)}}",
+		"method": "GET"
+	}
+
+	$.ajax(settings).done(function (response) {
+		console.log(response);
+
+		for (var i=0;i<response.data.length;++i)
+		{
+			var judul = response.data[i].judul;
+			var isi = response.data[i].isi;
+			var tanggal = response.data[i].created_at;
+		}
+
+		$("#judul").append(judul);
+		$("#isi").append(isi);
+		$("#tanggal").append(tanggal);
+	});
+</script>
+@endforeach
 @endsection

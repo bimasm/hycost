@@ -34,13 +34,16 @@ Route::get('/staf', function() {
 //-- Start -------------------------------------------------------------------- Forum
 
 //-- Start --------------------------------------------------------- Landing
+Route::get('/forum/detail/dat/{id}', 'UserController@Data_Post_Detail')
+->name('userlandingForumDataPost');
+
 Route::get('/forum', 'UserController@User_Forum_Home')
 ->name('UserLandingForum');
 
-Route::get('/forum/kategori', 'UserController@User_Forum_Kategori')
+Route::get('/forum/kategori/{id}', 'UserController@User_Forum_Kategori')
 ->name('UserLandingForumKategori');
 
-Route::get('/forum/detail', 'UserController@User_Forum_Detail')
+Route::get('/forum/detail/{id}', 'UserController@User_Forum_Detail')
 ->name('UserLandingForumDetail');
 
 Route::get('/forum/detail/komentar', 'UserController@User_Forum_Komentar')

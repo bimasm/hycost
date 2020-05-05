@@ -51,28 +51,12 @@ Forum
 				</div>
 
 				<ul class="collection" style="border:0">
-					<li class="collection-item">
-						<div class="row valign-wrapper-hy" style="margin-bottom: 0">
-							<div class="col s12 m12 l6 valign">
-								<a href="{{route('UserLandingForumKategori')}}"><h5>Judul Kategori</h5></a>
-								<p>Learn more about the GitHub Community Forum and discover resources to help you get started.</p>
-							</div>
-							<div class="col s12 m12 l3 center-align">
-								<div class="hy-property-post">
-									<div class="nom">100</div>
-									<div class="text">Post</div>
-								</div>
-							</div>
-							<div class="col s12 m12 l3 center-align">
-								<a href="{{route('UserLandingForumKategori')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">keyboard_arrow_right</i>Detail</a>
-							</div>
-						</div>
-					</li>
 
+					@foreach($data as $dat)
 					<li class="collection-item">
 						<div class="row valign-wrapper-hy" style="margin-bottom: 0">
 							<div class="col s12 m12 l6 valign">
-								<a href="{{route('UserLandingForumKategori')}}"><h5>Judul Kategori</h5></a>
+								<a href="{{route('UserLandingForumKategori', $dat->id)}}"><h5>{{$dat->kategori}}</h5></a>
 								<p>Learn more about the GitHub Community Forum and discover resources to help you get started.</p>
 							</div>
 							<div class="col s12 m12 l3 center-align">
@@ -82,64 +66,12 @@ Forum
 								</div>
 							</div>
 							<div class="col s12 m12 l3 center-align">
-								<a href="{{route('UserLandingForumKategori')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">keyboard_arrow_right</i>Detail</a>
+								<a href="{{route('UserLandingForumKategori', $dat->id)}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">keyboard_arrow_right</i>Detail</a>
 							</div>
 						</div>
 					</li>
+					@endforeach
 
-					<li class="collection-item">
-						<div class="row valign-wrapper-hy" style="margin-bottom: 0">
-							<div class="col s12 m12 l6 valign">
-								<a href="{{route('UserLandingForumKategori')}}"><h5>Judul Kategori</h5></a>
-								<p>Learn more about the GitHub Community Forum and discover resources to help you get started.</p>
-							</div>
-							<div class="col s12 m12 l3 center-align">
-								<div class="hy-property-post">
-									<div class="nom">100</div>
-									<div class="text">Post</div>
-								</div>
-							</div>
-							<div class="col s12 m12 l3 center-align">
-								<a href="{{route('UserLandingForumKategori')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">keyboard_arrow_right</i>Detail</a>
-							</div>
-						</div>
-					</li>
-
-					<li class="collection-item">
-						<div class="row valign-wrapper-hy" style="margin-bottom: 0">
-							<div class="col s12 m12 l6 valign">
-								<a href="{{route('UserLandingForumKategori')}}"><h5>Judul Kategori</h5></a>
-								<p>Learn more about the GitHub Community Forum and discover resources to help you get started.</p>
-							</div>
-							<div class="col s12 m12 l3 center-align">
-								<div class="hy-property-post">
-									<div class="nom">100</div>
-									<div class="text">Post</div>
-								</div>
-							</div>
-							<div class="col s12 m12 l3 center-align">
-								<a href="{{route('UserLandingForumKategori')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">keyboard_arrow_right</i>Detail</a>
-							</div>
-						</div>
-					</li>
-
-					<li class="collection-item">
-						<div class="row valign-wrapper-hy" style="margin-bottom: 0">
-							<div class="col s12 m12 l6 valign">
-								<a href="{{route('UserLandingForumKategori')}}"><h5>Judul Kategori</h5></a>
-								<p>Learn more about the GitHub Community Forum and discover resources to help you get started.</p>
-							</div>
-							<div class="col s12 m12 l3 center-align">
-								<div class="hy-property-post">
-									<div class="nom">100</div>
-									<div class="text">Post</div>
-								</div>
-							</div>
-							<div class="col s12 m12 l3 center-align">
-								<a href="{{route('UserLandingForumKategori')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">keyboard_arrow_right</i>Detail</a>
-							</div>
-						</div>
-					</li>
 				</ul>
 			</div>
 

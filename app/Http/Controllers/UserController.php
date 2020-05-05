@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Kategori;
+use App\Post;
 use Auth;
 
 class UserController extends Controller
@@ -11,17 +13,31 @@ class UserController extends Controller
     //--- Start -------------------------------------------------------------------------- Forum
     public function User_Forum_Home()
     {
-        return view('user.forum.landing.forum-home');
+        $data = Kategori::all();
+
+        return view('user.forum.landing.forum-home',compact('data'));
     }
 
-    public function User_Forum_Kategori()
+    public function User_Forum_Kategori($id)
     {
-        return view('user.forum.landing.forum-kategori');
+        $data = Post::where('id_kategori', $id)->get();
+
+        return view('user.forum.landing.forum-kategori',compact('data'));
     }
 
-    public function User_Forum_Detail()
+    public function Data_Post_Detail($id)
     {
-        return view('user.forum.landing.forum-detail');
+        $data=Post::where('id', $id)->get();
+        $response= $data;
+
+        return response()->json(['data'=>$data]);
+    }
+
+    public function User_Forum_Detail($id)
+    {
+        $datas = Post::where('id', $id)->get();
+
+        return view('user.forum.landing.forum-detail',compact('datas'));
     }
 
     public function User_Forum_Komentar()

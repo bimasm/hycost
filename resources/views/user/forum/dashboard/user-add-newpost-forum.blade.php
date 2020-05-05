@@ -34,7 +34,7 @@ Dashboard Forum User
 
 						<div class="col s12 m12 l12">
 							<div class="input-field hy-infield">
-								<input placeholder="Judul" id="first_name" type="text" class="validate hy-input-border" name="judul">
+								<input p laceholder="Judul" id="first_name" type="text" class="validate hy-input-border" name="judul">
 							</div>
 
 							<textarea id="full-featured-non-premium" name="konten"></textarea>
@@ -49,7 +49,7 @@ Dashboard Forum User
 											<span class="card-title card-title-hy-f">Informasi</span>
 											<ul class="collection colection-hy-f">
 												<li class="collection-item colect-hy-f">Penulis
-													<div class="secondary-content-hy-f">Nama</div>
+													<div class="secondary-content-hy-f">{{ Auth::guard('user')->user()->nama }}</div>
 												</li>
 												<li class="collection-item colect-hy-f">Tanggal
 													<div class="secondary-content-hy-f">21 Juni 2020</div>
@@ -91,13 +91,13 @@ Dashboard Forum User
 														<p>
 															<label>
 																<input name="kategori" type="radio" value="1" />
-																<span>Red</span>
+																<span>Kebun</span>
 															</label>
 														</p>
 														<p>
 															<label>
 																<input name="kategori" type="radio" value="2"/>
-																<span>Yellow</span>
+																<span>Tanaman</span>
 															</label>
 														</p>
 													</div>
