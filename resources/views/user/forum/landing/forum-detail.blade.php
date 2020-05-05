@@ -36,10 +36,11 @@ Detail
 			<nav class="bread-hy-post">
 				<div class="nav-wrapper">
 					<div class="col s12">
-						<a href="#!" class="breadcrumb bread-hy-c-post">Hycost Forum</a>
-						<a href="#!" class="breadcrumb bread-hy-c-post">Kategori</a>
-						<a href="#!" class="breadcrumb bread-hy-c-post">Kebun</a>
-						<a href="#!" class="breadcrumb bread-hy-c-post">Judul Post</a>
+						<a href="{{route('UserLandingForum')}}" class="breadcrumb bread-hy-c-post">Hycost Forum</a>
+						@foreach($datas as $dat)
+						<a href="{{route('UserLandingForumKategori', str_replace(" ", "-", \App\Kategori::where(['id' => $dat->id_kategori])->value('kategori')))}}" class="breadcrumb bread-hy-c-post">{{ \App\Kategori::where(['id' => $dat->id_kategori])->value('kategori')}}</a>
+						<a href="#!" class="breadcrumb bread-hy-c-post">{{$dat->judul}}</a>
+						@endforeach
 					</div>
 				</div>
 			</nav>

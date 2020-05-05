@@ -19,9 +19,10 @@ Kategori
 			<nav class="bread-hy-post">
 				<div class="nav-wrapper">
 					<div class="col s12">
-						<a href="#!" class="breadcrumb bread-hy-c-post">Hycost Forum</a>
-						<a href="#!" class="breadcrumb bread-hy-c-post">Kategori</a>
-						<a href="#!" class="breadcrumb bread-hy-c-post">Kebun</a>
+						<a href="{{route('UserLandingForum')}}" class="breadcrumb bread-hy-c-post">Hycost Forum</a>
+						@foreach($data as $dat)
+						<a href="#!" class="breadcrumb bread-hy-c-post">{{ \App\Kategori::where(['id' => $dat->id_kategori])->value('kategori')}}</a>
+						@endforeach
 					</div>
 				</div>
 			</nav>
