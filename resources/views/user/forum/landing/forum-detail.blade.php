@@ -98,7 +98,8 @@
 												</a>
 											</div>
 										</div>
-										<div class="footer-hy-post row center-align">
+										@if(Auth::guard('user')->check())
+											<div class="footer-hy-post row center-align">
 											<div class="col s4">
 											@if(\App\Like::where('user_id', Auth::guard('user')->user()->id)->where('post_id',$dat->id)->count()>0)
 
@@ -129,6 +130,7 @@
 												<a href="#!" data-target='dropdown14' class='btn-large waves-effect btn-flat hy-btn-flat-4 dropdown-trigger'><i class="material-icons left">share</i>Bagikan</a>
 											</div>
 										</div>
+										@endif
 									</div>
 
 								</div>
