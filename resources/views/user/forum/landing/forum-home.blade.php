@@ -17,8 +17,8 @@ Forum
 			<h6>Kami di sini untuk membantu. Temukan solusi, bagikan ide, dan ikuti diskusi.</h6>
 		</div>
 
-		<div class="center-align" style="margin: 0 24%;">
-			<div class="search-cont" style="width: 500px">
+		<div class="center-align search-cont-landing-cont">
+			<div class="search-cont-landing">
 				<div class="nav-wrapper">
 					<form>
 						<div class="input-field">
@@ -45,7 +45,7 @@ Forum
 					<div class="col s12 m12 l6">
 						<h5>Kategori</h5>
 					</div>
-					<div class="col s12 m12 l6 valign right-align">
+					<div class="col s12 m12 l6 valign right-align-responsive">
 						<a href="{{route('UserPostAddNewPost')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons left">rate_review</i>Buat Post Baru Sekarang</a>
 					</div>
 				</div>
@@ -65,7 +65,7 @@ Forum
 									<div class="text">Post</div>
 								</div>
 							</div>
-							<div class="col s12 m12 l3 center-align">
+							<div class="col s12 m12 l3 center-align web-res">
 								<a href="{{route('UserLandingForumKategori', $dat->id)}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">keyboard_arrow_right</i>Detail</a>
 							</div>
 						</div>

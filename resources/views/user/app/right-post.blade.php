@@ -10,12 +10,12 @@
 					<div class="card card-hy-f">
 						<div class="card-content">
 
-							<div class="row valign-wrapper-hy">
-								<div class="col s12 m12 l4 valign">
+							<div class="row valign-wrapper">
+								<div class="col s4 valign">
 									<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
 								</div>
 
-								<div class="col s12 m12 l8">
+								<div class="col s8">
 									<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
 									<ul class="collection colection-hy-f">
 										<li class="collection-item colect-hy-f">
@@ -35,12 +35,12 @@
 					<div class="card card-hy-f">
 						<div class="card-content">
 
-							<div class="row valign-wrapper-hy">
-								<div class="col s12 m12 l4 valign">
+							<div class="row valign-wrapper">
+								<div class="col s4 valign">
 									<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
 								</div>
 
-								<div class="col s12 m12 l8">
+								<div class="col s8">
 									<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
 									<ul class="collection colection-hy-f">
 										<li class="collection-item colect-hy-f">
@@ -60,12 +60,12 @@
 					<div class="card card-hy-f">
 						<div class="card-content">
 
-							<div class="row valign-wrapper-hy">
-								<div class="col s12 m12 l4 valign">
+							<div class="row valign-wrapper">
+								<div class="col s4 valign">
 									<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
 								</div>
 
-								<div class="col s12 m12 l8">
+								<div class="col s8">
 									<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
 									<ul class="collection colection-hy-f">
 										<li class="collection-item colect-hy-f">
@@ -85,12 +85,12 @@
 					<div class="card card-hy-f">
 						<div class="card-content">
 
-							<div class="row valign-wrapper-hy">
-								<div class="col s12 m12 l4 valign">
+							<div class="row valign-wrapper">
+								<div class="col s4 valign">
 									<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
 								</div>
 
-								<div class="col s12 m12 l8">
+								<div class="col s8">
 									<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
 									<ul class="collection colection-hy-f">
 										<li class="collection-item colect-hy-f">
