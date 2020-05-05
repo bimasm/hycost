@@ -105,7 +105,7 @@
 											<form action="{{route('dislikes')}}" method="post">
 												@csrf
 												<input type="hidden" name="idpost" value="{{$dat->id}}">
-												<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">thumb_up</i>Suka</button>
+												<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i style="color: #80be42;" class="material-icons left">thumb_up</i>Suka</button>
 												
 											</form>
 
@@ -114,7 +114,7 @@
 											<form action="{{route('likes')}}" method="post">
 												@csrf
 												<input type="hidden" name="idpost" value="{{$dat->id}}">
-												<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i style="color: #80be42;" class="material-icons left">thumb_up</i>Suka</button>
+												<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">thumb_up</i>Suka</button>
 												
 											</form>
 
