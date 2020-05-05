@@ -18,9 +18,12 @@ class UserController extends Controller
         return view('user.forum.landing.forum-home',compact('data'));
     }
 
-    public function User_Forum_Kategori($id)
+    public function User_Forum_Kategori($kategori)
     {
-        $data = Post::where('id_kategori', $id)->get();
+        $kat=Kategori::where('kategori', str_replace("-", " ", $kategori))->value('id');
+
+        $data = Post::where('id_kategori', $kat)->get();
+        // dd($data);
 
         return view('user.forum.landing.forum-kategori',compact('data'));
     }
@@ -33,9 +36,9 @@ class UserController extends Controller
         return response()->json(['data'=>$data]);
     }
 
-    public function User_Forum_Detail($id)
+    public function User_Forum_Detail($judul)
     {
-        $datas = Post::where('id', $id)->get();
+        $datas = Post::where('judul', str_replace("-", " ", $judul))->get();
 
         return view('user.forum.landing.forum-detail',compact('datas'));
     }

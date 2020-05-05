@@ -56,7 +56,7 @@ Forum
 					<li class="collection-item">
 						<div class="row valign-wrapper-hy" style="margin-bottom: 0">
 							<div class="col s12 m12 l6 valign">
-								<a href="{{route('UserLandingForumKategori', $dat->id)}}"><h5>{{$dat->kategori}}</h5></a>
+								<a href="{{route('UserLandingForumKategori', str_replace(" ", "-", $dat->kategori))}}"><h5>{{$dat->kategori}}</h5></a>
 								<p>Learn more about the GitHub Community Forum and discover resources to help you get started.</p>
 							</div>
 							<div class="col s12 m12 l3 center-align">

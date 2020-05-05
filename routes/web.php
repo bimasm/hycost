@@ -40,10 +40,10 @@ Route::get('/forum/detail/dat/{id}', 'UserController@Data_Post_Detail')
 Route::get('/forum', 'UserController@User_Forum_Home')
 ->name('UserLandingForum');
 
-Route::get('/forum/kategori/{id}', 'UserController@User_Forum_Kategori')
+Route::get('/forum/kategori/{kategori}', 'UserController@User_Forum_Kategori')
 ->name('UserLandingForumKategori');
 
-Route::get('/forum/detail/{id}', 'UserController@User_Forum_Detail')
+Route::get('/forum/{judul}', 'UserController@User_Forum_Detail')
 ->name('UserLandingForumDetail');
 
 Route::get('/forum/detail/komentar', 'UserController@User_Forum_Komentar')
