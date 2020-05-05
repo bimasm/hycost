@@ -1,7 +1,9 @@
 @extends('aapp.app')
 
 @section('title')
-Detail
+@foreach($datas as $dat)
+{{ \App\Kategori::where(['id' => $dat->id_kategori])->value('kategori')}} | {{$dat->judul}}
+@endforeach
 @endsection
 
 @section('nav-landing-page')
