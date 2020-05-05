@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/Zo4VzY9.png" width="400"></p>
+<p align="center"><img src="https://i.imgur.com/Zo4VzY9.png" width="800"></p>
 
 
 ## About Hycost
