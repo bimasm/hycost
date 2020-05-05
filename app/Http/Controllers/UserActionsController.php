@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Like;
+
 use Auth;
 
 class UserActionsController extends Controller
@@ -26,8 +28,33 @@ class UserActionsController extends Controller
         $x->gambar='public/img/'.$file_name;
     	// $x->gambar=$request->gambar;
     	// dd($x);
+        $x->like=0;
     	$x->save();
     	return redirect()->route('UserPostAddNewPost');
 
+    }
+    public function like(Request $Request)
+    {
+        $like=new Like();
+        $like->user_id=Auth::guard('user')->user()->id;
+        $like->post_id=$Request->input('idpost');
+        $like->save();
+        $post=Post::find($like->post_id);
+        $jumlah=Post::where('id',$like->post_id)->value('like');
+        $post->like=$jumlah+1;
+        $post->save();
+        return back();
+    }
+    public function dislike(Request $Request)
+    {
+        $pid=$Request->input('idpost');
+        $like=Like::where('post_id',$pid)->where('user_id',Auth::guard('user')->user()->id)->value('id');
+        $dis=Like::find($like);
+        $dis->delete();
+        $post=Post::find($pid);
+        $jumlah=Post::where('id',$pid)->value('like');
+        $post->like=$jumlah-1;
+        $post->save();
+        return back();
     }
 }

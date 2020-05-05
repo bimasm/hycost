@@ -26,6 +26,7 @@ class CreatePostTable extends Migration
             $table->string('judul');
             $table->text('isi', 255);
             $table->string('gambar');
+            $table->integer('like');
             $table->timestamps();
         });
     }

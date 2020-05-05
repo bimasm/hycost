@@ -100,7 +100,27 @@
 										</div>
 										<div class="footer-hy-post row center-align">
 											<div class="col s4">
-												<a href="#!" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">thumb_up</i>Suka</a>
+											@if(\App\Like::where('user_id', Auth::guard('user')->user()->id)->where('post_id',$dat->id)->count()>0)
+
+											<form action="{{route('dislikes')}}" method="post">
+												@csrf
+												<input type="hidden" name="idpost" value="{{$dat->id}}">
+												<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">thumb_up</i>Suka</button>
+												
+											</form>
+
+											@else
+
+											<form action="{{route('likes')}}" method="post">
+												@csrf
+												<input type="hidden" name="idpost" value="{{$dat->id}}">
+												<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i style="color: #80be42;" class="material-icons left">thumb_up</i>Suka</button>
+												
+											</form>
+
+											@endif
+											
+												
 											</div>
 											<div class="col s4">
 												<a href="{{route('UserLandingForumKomentar')}}" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">add_comment</i>Komentar</a>

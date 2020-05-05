@@ -92,3 +92,6 @@ Route::get('/kebun', 'UserController@User_SemuaKebun_Monitor')
 Route::get('/setting', 'UserController@User_Setting')
 ->name('UserSetting')->middleware('auth:user');
 //-- End ---------------------------------------------------------------------------------------- /User
+
+Route::post('like', 'UserActionsController@like')->name('likes')->middleware('auth:user');
+Route::post('dislike', 'UserActionsController@dislike')->name('dislikes')->middleware('auth:user');
