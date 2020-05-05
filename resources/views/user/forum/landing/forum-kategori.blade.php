@@ -64,7 +64,7 @@
 
 												<div class="col s12 m12 l10">
 													<div class="row valign-wrapper-hy">
-														<div class="col s12 m12 l8 valign">
+														<div class="col s12 m12 l8 valign" style="min-width: 400px">
 															<h6><b>{{$dat->judul}}</b></h6>
 															<ul class="collection colection-hy-f">
 																<li class="collection-item colect-hy-f">
