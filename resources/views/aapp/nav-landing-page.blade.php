@@ -16,7 +16,15 @@
           <li><a class="button-collapse hy-nav-a" href="#tentang">Tentang Kami</a></li>
           <li><a class="button-collapse hy-nav-a" href="#fitur">Fitur</a></li>
           <li><a class="button-collapse hy-nav-a" href="{{route('UserLandingForum')}}">Forum</a></li>
-          <li><a href="/login" class="waves-effect waves-light btn hy-btn-bor-ijo-nav">Masuk</a></li>
+          
+          @if (Auth::guard('user'))
+          @auth('user')
+          <li><a href="/user" class="waves-effect waves-light btn hy-btn-bor-ijo-nav">Dashboard</a></li>
+          @else
+         <li><a href="/login" class="waves-effect waves-light btn hy-btn-bor-ijo-nav">Masuk</a></li>
+          @endauth
+          @endif
+          
           @endif
         </ul>
       </div>
