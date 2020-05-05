@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Kategori;
 use App\Post;
+use App\Like;
 use Auth;
 
 class UserController extends Controller
@@ -39,8 +40,15 @@ class UserController extends Controller
     public function User_Forum_Detail($judul)
     {
         $datas = Post::where('judul', str_replace("-", " ", $judul))->get();
+        $post = Post::where('judul', str_replace("-", " ", $judul))->value('id');
+        $like=Like::where('post_id', $post)->orderByDesc('id')->limit(2)->get();
+        // dd($like);
+        $jml=Like::where('post_id', $post)->count();
+        $tot=$jml-2;
+        
+        
 
-        return view('user.forum.landing.forum-detail',compact('datas'));
+        return view('user.forum.landing.forum-detail',compact('datas','like','tot'));
     }
 
     public function User_Forum_Komentar()

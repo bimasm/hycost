@@ -89,7 +89,20 @@
 										<div class="sub-footer-hy-post row valign-wrapper-hy">
 											<div class="col s12 m12 l6 suka valign">
 												<a href="#!" class="loss text-atr-komen hy-who-like-btn tooltipped" data-delay="50" data-html="true" data-position="bottom" data-tooltip='Anggit <br> Bima <br> Ivan <br> Izha'>
-													<span>Anggit, Bima dan 2</span><span> Orang Menyukai</span>
+													<span>
+														@foreach ($like as $lk)
+														@if ($lk->user_id==Auth::guard('user')->user()->id)
+														anda
+														@else
+														{{ \App\User::where('id', $lk->user_id)->value('nama') }}
+														@endif
+														,
+														
+														@endforeach
+														@if ($tot!=0)
+														dan {{ $tot }} Orang 
+														@endif
+													</span><span>Menyukai</span>
 												</a>
 											</div>
 											<div class="col s12 m12 l6 komentar">
@@ -99,28 +112,28 @@
 											</div>
 										</div>
 										@if(Auth::guard('user')->check())
-											<div class="footer-hy-post row center-align">
+										<div class="footer-hy-post row center-align">
 											<div class="col s4">
-											@if(\App\Like::where('user_id', Auth::guard('user')->user()->id)->where('post_id',$dat->id)->count()>0)
+												@if(\App\Like::where('user_id', Auth::guard('user')->user()->id)->where('post_id',$dat->id)->count()>0)
 
-											<form action="{{route('dislikes')}}" method="post">
-												@csrf
-												<input type="hidden" name="idpost" value="{{$dat->id}}">
-												<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i style="color: #80be42;" class="material-icons left">thumb_up</i>Suka</button>
+												<form action="{{route('dislikes')}}" method="post">
+													@csrf
+													<input type="hidden" name="idpost" value="{{$dat->id}}">
+													<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i style="color: #80be42;" class="material-icons left">thumb_up</i>Suka</button>
+													
+												</form>
+
+												@else
+
+												<form action="{{route('likes')}}" method="post">
+													@csrf
+													<input type="hidden" name="idpost" value="{{$dat->id}}">
+													<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">thumb_up</i>Suka</button>
+													
+												</form>
+
+												@endif
 												
-											</form>
-
-											@else
-
-											<form action="{{route('likes')}}" method="post">
-												@csrf
-												<input type="hidden" name="idpost" value="{{$dat->id}}">
-												<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">thumb_up</i>Suka</button>
-												
-											</form>
-
-											@endif
-											
 												
 											</div>
 											<div class="col s4">
