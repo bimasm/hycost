@@ -26,8 +26,6 @@
 <ul id='dropdown14' class='dropdown-content drop-hy-post-detail'>
 	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">web</i>Ke Media Sosial</a></li>
 	<li class="divider" tabindex="-1"></li>
-	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">library_books</i>Ke Post Anda</a></li>
-	<li class="divider" tabindex="-1"></li>
 	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">link</i>Salin Link</a></li>
 </ul>
 

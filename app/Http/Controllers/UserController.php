@@ -23,29 +23,12 @@ class UserController extends Controller
     public function User_Forum_Kategori($kategori)
     {
         $kat=Kategori::where('kategori', str_replace("-", " ", $kategori))->value('id');
-
         $data = Post::where('id_kategori', $kat)->get();
         $datas = DB::table('Post')->where('id_kategori', $kat)->limit(1)->get();
 
         // dd($data);
 
         return view('user.forum.landing.forum-kategori',compact('data','datas'));
-    }
-
-    public function Data_Post_Detail($id)
-    {
-        $data=Post::where('id', $id)->get();
-        $response= $data;
-
-        return response()->json(['data'=>$data]);
-    }
-
-    public function Data_Post_Kategori($id)
-    {
-        $data=Post::where('id_kategori', $id)->get();
-        $response= $data;
-
-        return response()->json(['data'=>$data]);
     }
 
     public function User_Forum_Detail($judul)
@@ -56,8 +39,6 @@ class UserController extends Controller
         // dd($like);
         $jml=Like::where('post_id', $post)->count();
         $tot=$jml-2;
-        
-        
 
         return view('user.forum.landing.forum-detail',compact('datas','like','tot'));
     }
