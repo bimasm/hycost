@@ -36,6 +36,8 @@ Route::get('/staf', function() {
 //-- Start --------------------------------------------------------- Landing
 Route::get('/forum/detail/dat/{id}', 'UserController@Data_Post_Detail')
 ->name('userlandingForumDataPost');
+Route::get('/forum/kategori/dat/{id}', 'UserController@Data_Post_Kategori')
+->name('userlandingForumDataKategori');
 
 Route::get('/forum', 'UserController@User_Forum_Home')
 ->name('UserLandingForum');

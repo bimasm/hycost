@@ -68,7 +68,7 @@
 															<h6><b>{{$dat->judul}}</b></h6>
 															<ul class="collection colection-hy-f">
 																<li class="collection-item colect-hy-f">
-																	By {{ \App\User::where(['id' => $dat->id_user])->value('nama')}}, 21 Juni 2020
+																	By {{ \App\User::where(['id' => $dat->id_user])->value('nama')}}, <span id="tanggal{{$dat->id}}"></span>
 																</li>
 															</ul>
 														</div>
@@ -125,4 +125,27 @@
 		</div>
 	</div>
 </section>
+@endsection
+
+@section('js-plus')
+@foreach($data as $dat)
+<script>
+	var settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": "{{route('userlandingForumDataKategori', $dat->id_kategori)}}",
+		"method": "GET"
+	}
+
+	$.ajax(settings).done(function (response) {
+		console.log(response);
+
+		for (var i=0;i<response.data.length;++i)
+		{
+			var tanggal = response.data[i].created_at;
+		}
+		$("#tanggal{{$dat->id}}").append(tanggal);
+	});
+</script>
+@endforeach
 @endsection

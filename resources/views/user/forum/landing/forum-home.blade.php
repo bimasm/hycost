@@ -61,7 +61,7 @@ Forum
 							</div>
 							<div class="col s12 m12 l3 center-align">
 								<div class="hy-property-post">
-									<div class="nom">100</div>
+									<div class="nom">{{ \App\Post::all()->count() }}</div>
 									<div class="text">Post</div>
 								</div>
 							</div>

@@ -37,6 +37,14 @@ class UserController extends Controller
         return response()->json(['data'=>$data]);
     }
 
+    public function Data_Post_Kategori($id)
+    {
+        $data=Post::where('id', $id)->get();
+        $response= $data;
+
+        return response()->json(['data'=>$data]);
+    }
+
     public function User_Forum_Detail($judul)
     {
         $datas = Post::where('judul', str_replace("-", " ", $judul))->get();
