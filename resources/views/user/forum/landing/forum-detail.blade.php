@@ -98,10 +98,17 @@
 														,
 														
 														@endforeach
-														@if ($tot!=0)
-														dan {{ $tot }} Orang 
+														@if ($tot>0)
+														dan {{ $tot }} Orang
+														
 														@endif
-													</span><span>Menyukai</span>
+													</span><span>
+														@if ($tot<-1)
+															0 Orang Menyukai
+														@else
+															Menyukai
+														@endif
+													</span>
 												</a>
 											</div>
 											<div class="col s12 m12 l6 komentar">
