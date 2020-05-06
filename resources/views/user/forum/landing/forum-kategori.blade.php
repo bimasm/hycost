@@ -51,6 +51,9 @@
 					<div class="col s12 m12 l12">
 						<ul class="collection list-post">
 
+							@php
+							$no=0;
+							@endphp
 							@foreach($data as $dat)
 							<li class="collection-item">
 								<a href="{{route('UserLandingForumDetail', str_replace(" ", "-", $dat->judul))}}" class="tooltipped" data-position="top" data-tooltip="{{$dat->judul}}">
@@ -68,7 +71,7 @@
 															<h6><b>{{$dat->judul}}</b></h6>
 															<ul class="collection colection-hy-f">
 																<li class="collection-item colect-hy-f">
-																	By {{ \App\User::where(['id' => $dat->id_user])->value('nama')}}, <span id="tanggal{{$dat->id}}"></span>
+																	By {{ \App\User::where(['id' => $dat->id_user])->value('nama')}}, <span id="tanggal{{$dat->id}}{{$no++}}"></span>
 																</li>
 															</ul>
 														</div>
@@ -140,15 +143,21 @@
 	$.ajax(settings).done(function (response) {
 		console.log(response);
 
+		@php
+		$nos=0;
+		@endphp
+
+		@php
+		$noz=0;
+		@endphp
+
+		@foreach($data as $dat)
+		var tanggal{{$dat->id}}= response.data[{{$nos++}}].created_at;
+		$("#tanggal{{$dat->id}}{{$noz++}}").append(tanggal{{$dat->id}});
+
 		
-		for (var i=0;i<response.data.length;++i)
-		{
-			@foreach($data as $dat)
-			var tanggal{{$dat->id}} = response.data[i].created_at;
-			$("#tanggal{{$dat->id}}").append(tanggal{{$dat->id}});
-			@endforeach
-		}
-		
+		@endforeach
+
 	});
 	
 </script>
