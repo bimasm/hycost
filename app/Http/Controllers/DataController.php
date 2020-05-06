@@ -39,4 +39,16 @@ class DataController extends Controller
 
 		return response()->json(['data'=>$data]);
 	}
+
+	public function Data_Post_Komen($id)
+	{
+		$data=Post::where('id', $id)->get();
+
+		foreach ($data as $dt) {
+			$asu=$dt->comments;
+		}
+		$response= $asu;
+
+		return response()->json(['data'=>$response]);
+	}
 }
