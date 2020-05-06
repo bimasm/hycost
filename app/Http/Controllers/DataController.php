@@ -30,10 +30,12 @@ class DataController extends Controller
 
 	public function Data_Post_User()
 	{
-		
-
 		$data=Post::where('id_user', Auth::guard('user')->user()->id)->get();
 		$response= $data;
+
+		foreach ($data as $key=>$dat){
+			$data[$key]['id_kategori'] = \App\Kategori::where(['id' => $dat->id_kategori])->value('kategori');
+		}
 
 		return response()->json(['data'=>$data]);
 	}
