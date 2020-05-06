@@ -227,7 +227,7 @@ Post Forum User
 			{
 				"targets": -1,
 				"data": null,
-				"defaultContent": "<button class='waves-effect btn-flat hy-btn-flat'>Preview</button>"
+				"defaultContent": "<a class='preview waves-effect btn-flat hy-btn-flat'>Preview</a>"
 			}
 			],
 
@@ -237,9 +237,14 @@ Post Forum User
 		} );
 
 
-		$('#example tbody').on( 'click', 'button', function () { /////////////////////////////////// link
+		$('#example tbody').on( 'click', 'a.preview', function () { /////////////////////////////////// link
 			var data = table.row( $(this).parents('tr') ).data();
-			window.location.href = "http://www.w3schools.com";
+			var judul = data[ 'judul' ];
+
+			var url = '{{route('UserLandingForumDetail', str_replace(" ", "-", ":judul"))}}';
+			url = url.replace(':judul', judul);
+
+			window.location.href = url;
 		} );
 
 		$("#hapus").on("click",function(){ /////////////////////////////////////////////////////////// hapus

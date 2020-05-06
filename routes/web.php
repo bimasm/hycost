@@ -50,6 +50,9 @@ Route::get('/forum/{judul}', 'UserController@User_Forum_Detail')
 
 Route::get('/forum/detail/komentar', 'UserController@User_Forum_Komentar')
 ->name('UserLandingForumKomentar')->middleware('auth:user');
+
+Route::get('/forum/detail/subkomentar', 'UserController@User_SubForum_Komentar')
+->name('UserLandingForumSubKomentar')->middleware('auth:user');
 //-- End ----------------------------------------------------------- Landing
 
 //-- Start --------------------------------------------------------- Dashboard
