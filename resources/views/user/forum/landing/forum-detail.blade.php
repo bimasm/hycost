@@ -86,6 +86,7 @@
 									<div id="end-content"></div>
 
 									<div class="col s12 m12 l12">
+										@if(Auth::guard('user')->check())
 										<div class="sub-footer-hy-post row valign-wrapper-hy">
 											<div class="col s12 m12 l6 suka valign">
 												<a href="#!" class="loss text-atr-komen hy-who-like-btn tooltipped" data-delay="50" data-html="true" data-position="bottom" data-tooltip='Anggit <br> Bima <br> Ivan <br> Izha'>
@@ -111,7 +112,7 @@
 												</a>
 											</div>
 										</div>
-										@if(Auth::guard('user')->check())
+										
 										<div class="footer-hy-post row center-align">
 											<div class="col s4">
 												@if(\App\Like::where('user_id', Auth::guard('user')->user()->id)->where('post_id',$dat->id)->count()>0)
