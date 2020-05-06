@@ -57,7 +57,7 @@ Forum
 						<div class="row valign-wrapper-hy" style="margin-bottom: 0">
 							<div class="col s12 m12 l6 valign">
 								<a href="{{route('UserLandingForumKategori', str_replace(" ", "-", $dat->kategori))}}"><h5>{{$dat->kategori}}</h5></a>
-								<p>Learn more about the GitHub Community Forum and discover resources to help you get started.</p>
+								<p>{{$dat->desc}}</p>
 							</div>
 							<div class="col s12 m12 l3 center-align">
 								<div class="hy-property-post">
