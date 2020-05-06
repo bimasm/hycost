@@ -9,14 +9,14 @@
  						<li class="collection-item avatar">
  							<img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
  							<span class="title user-post-hy">{{ $comment->user->nama }}</span>
- 							<span class="title tgl-post-hy">{{ $comment->user->created_at }}</span>
+ 							<span id="tanggalkom" class="title tgl-post-hy"></span>
  							<a href="#!" data-target='dropdown13' class="secondary-content dropdown-trigger"><i class="material-icons hy-color-7">more_horiz</i></a>
  						</li>
  					</ul>
  				</div>
 
  				<div class="col s12 m12 l12 content-text">
- 					{{ $comment->body }}
+ 					<div id="body"></div>
  				</div>
 
  				<div class="col s12 m12 l12">

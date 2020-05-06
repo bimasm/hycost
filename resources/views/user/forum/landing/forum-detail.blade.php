@@ -204,5 +204,26 @@
 		$("#tanggal").append(tanggal);
 	});
 </script>
+<script>
+	var settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": "{{route('userlandingForumDataKomentar', $dat->id)}}",
+		"method": "GET"
+	}
+
+	$.ajax(settings).done(function (response) {
+		console.log(response);
+
+		for (var i=0;i<response.data.length;++i)
+		{
+			var body = response.data[i].body;
+			var tanggalkom = response.data[i].created_at;
+		}
+
+		$("#body").append(body);
+		$("#tanggalkom").append(tanggalkom);
+	});
+</script>
 @endforeach
 @endsection
