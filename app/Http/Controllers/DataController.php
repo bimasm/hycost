@@ -8,6 +8,7 @@ use App\Kategori;
 use App\Post;
 use App\Like;
 use DB;
+use App\Comment;
 use Auth;
 
 class DataController extends Controller
@@ -46,6 +47,17 @@ class DataController extends Controller
 
 		foreach ($data as $dt) {
 			$asu=$dt->comments;
+		}
+		$response= $asu;
+
+		return response()->json(['data'=>$response]);
+	}
+	public function Data_Post_Reply($id)
+	{
+		$data=Comment::where('id', $id)->get();
+
+		foreach ($data as $dt) {
+			$asu=$dt->replies;
 		}
 		$response= $asu;
 

@@ -40,6 +40,8 @@ Route::get('/forum/kategori/dat/{id}', 'DataController@Data_Post_Kategori')
 ->name('userlandingForumDataKategori');
 Route::get('/forum/komentar/dat/{id}', 'DataController@Data_Post_Komen')
 ->name('userlandingForumDataKomentar');
+Route::get('/forum/reply/dat/{id}', 'DataController@Data_Post_Reply')
+->name('userlandingForumDataReplyKomentar');
 
 Route::get('/forum', 'UserController@User_Forum_Home')
 ->name('UserLandingForum');
