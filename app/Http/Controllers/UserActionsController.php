@@ -33,18 +33,6 @@ class UserActionsController extends Controller
     	return redirect()->route('UserPostAddNewPost');
 
     }
-    public function like(Request $Request)
-    {
-        $like=new Like();
-        $like->user_id=Auth::guard('user')->user()->id;
-        $like->post_id=$Request->input('idpost');
-        $like->save();
-        $post=Post::find($like->post_id);
-        $jumlah=Post::where('id',$like->post_id)->value('like');
-        $post->like=$jumlah+1;
-        $post->save();
-        return back();
-    }
     public function dislike(Request $Request)
     {
         $pid=$Request->input('idpost');
@@ -57,4 +45,17 @@ class UserActionsController extends Controller
         $post->save();
         return back();
     }
+    public function like(Request $Request)
+    {
+        $like=new Like();
+        $like->user_id=Auth::guard('user')->user()->id;
+        $like->post_id=$Request->input('idpost');
+        $like->save();
+        $post=Post::find($like->post_id);
+        $jumlah=Post::where('id',$like->post_id)->value('like');
+        $post->like=$jumlah+1;
+        $post->save();
+        return back();
+    }
+    
 }
