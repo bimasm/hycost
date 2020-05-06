@@ -134,8 +134,8 @@ Post Forum User
 									<tr>
 										<th style="width: 8%"></th>
 										<th>Judul</th>
-										<th>Tag</th>
-										<th>Status</th>
+										<th>Kategori</th>
+										<th>Like</th>
 										<th>Tanggal</th>
 										<th>Link</th>
 									</tr>
@@ -201,7 +201,7 @@ Post Forum User
 			"<'row'<'col s12 m12 l5'><'col s12 m12 l7'p>>",
 
 			"ajax": {
-				"url": "{{asset('asset/js/tabel-post.js')}}"
+				"url": "{{route('UserDashboardPostData')}}"
 			},
 
 			"columnDefs": [
@@ -221,9 +221,9 @@ Post Forum User
 				}
 			},
 			{ "targets": 1,"data": "judul" },
-			{ "targets": 2,"data": "tag" },
-			{ "targets": 3,"data": "status" },
-			{ "targets": 4,"data": "tanggal" },
+			{ "targets": 2,"data": "id_kategori" },
+			{ "targets": 3,"data": "like" },
+			{ "targets": 4,"data": "created_at" },
 			{
 				"targets": -1,
 				"data": null,
@@ -275,11 +275,11 @@ Post Forum User
 		return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
 		'<tr style="border: 0;">'+
 		'<td>Tag</td>'+
-		'<td>'+d.tag+'</td>'+
+		'<td>'+d.id_kategori+'</td>'+
 		'</tr>'+
 		'<tr style="border: 0;">'+
 		'<td>Status</td>'+
-		'<td>'+d.status+'</td>'+
+		'<td>'+d.like+' Like</td>'+
 		'</tr>'+
 		'<tr style="border: 0;">'+
 		'<td>Link</td>'+
@@ -306,7 +306,7 @@ Post Forum User
 			"<'row'<'col s12 m12 l5'><'col s12 m12 l7'p>>",
 
 			"ajax": {
-				"url": "{{asset('asset/js/tabel-post.js')}}"
+				"url": "{{route('UserDashboardPostData')}}"
 			},
 
 			"columnDefs": [
@@ -318,7 +318,7 @@ Post Forum User
 				"defaultContent": ''
 			},
 			{ "targets": 1,"data": "judul" },
-			{ "targets": 2,"data": "tanggal" },
+			{ "targets": 2,"data": "created_at" },
 			],
 
 			'order': [[1, 'dsc']]

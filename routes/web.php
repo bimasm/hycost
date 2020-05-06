@@ -53,6 +53,9 @@ Route::get('/forum/detail/komentar', 'UserController@User_Forum_Komentar')
 //-- End ----------------------------------------------------------- Landing
 
 //-- Start --------------------------------------------------------- Dashboard
+Route::get('/post/data', 'DataController@Data_Post_User')
+->name('UserDashboardPostData');
+
 Route::get('/user', 'UserController@User_Dashboard_Forum')
 ->name('UserDashboardForum')->middleware('auth:user');
 

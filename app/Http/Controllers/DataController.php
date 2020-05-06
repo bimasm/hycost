@@ -27,4 +27,14 @@ class DataController extends Controller
 
 		return response()->json(['data'=>$data]);
 	}
+
+	public function Data_Post_User()
+	{
+		
+
+		$data=Post::where('id_user', Auth::guard('user')->user()->id)->get();
+		$response= $data;
+
+		return response()->json(['data'=>$data]);
+	}
 }
