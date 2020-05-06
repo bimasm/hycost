@@ -143,7 +143,7 @@
 												
 											</div>
 											<div class="col s4">
-												<a href="{{route('UserLandingForumKomentar')}}" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">add_comment</i>Komentar</a>
+												<a href="{{route('UserLandingForumKomentar', str_replace(" ", "-", $dat->judul))}}" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">add_comment</i>Komentar</a>
 											</div>
 											<div class="col s4">
 												<a href="#!" data-target='dropdown14' class='btn-large waves-effect btn-flat hy-btn-flat-4 dropdown-trigger'><i class="material-icons left">share</i>Bagikan</a>

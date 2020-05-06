@@ -48,10 +48,10 @@ Route::get('/forum/kategori/{kategori}', 'UserController@User_Forum_Kategori')
 Route::get('/forum/{judul}', 'UserController@User_Forum_Detail')
 ->name('UserLandingForumDetail');
 
-Route::get('/forum/detail/komentar', 'UserController@User_Forum_Komentar')
+Route::get('/forum/komentar/{judul}', 'UserController@User_Forum_Komentar')
 ->name('UserLandingForumKomentar')->middleware('auth:user');
 
-Route::get('/forum/detail/subkomentar', 'UserController@User_SubForum_Komentar')
+Route::get('/forum/reply/{judul}/{id}', 'UserController@User_SubForum_Komentar')
 ->name('UserLandingForumSubKomentar')->middleware('auth:user');
 //-- End ----------------------------------------------------------- Landing
 

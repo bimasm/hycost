@@ -44,14 +44,17 @@ class UserController extends Controller
         return view('user.forum.landing.forum-detail',compact('datas','like','tot','posts'));
     }
 
-    public function User_Forum_Komentar()
+    public function User_Forum_Komentar($judul)
     {
-        return view('user.forum.dashboard.user-add-komentar-forum');
+        $post=Post::where('judul', str_replace("-", " ", $judul))->get();
+        return view('user.forum.dashboard.user-add-komentar-forum', compact("post"));
     }
 
-    public function User_SubForum_Komentar()
+    public function User_SubForum_Komentar($judul,$id)
     {
-        return view('user.forum.dashboard.user-add-subkomentar-forum');
+        $post=Post::where('judul', str_replace("-", " ", $judul))->value('id');
+        $cm=$id;
+        return view('user.forum.dashboard.user-add-subkomentar-forum', compact("post","cm"));
     }
 
     //---------------------------------------------------------------- Dashboard

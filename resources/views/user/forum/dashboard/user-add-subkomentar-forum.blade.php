@@ -14,8 +14,10 @@ Komentar Forum User
 
 @section('content-user')
 <section>
-	<form action="" method="POST">
+	<form action="{{ route('reply.add') }}" method="POST">
 		@csrf
+		<input type="hidden" name="post_id" value="{{ $post }}" />
+        <input type="hidden" name="comment_id" value="{{ $cm }}" />
 		<div class="content-hy-dash-add">
 			<div class="container cont-hy-dash">
 
@@ -37,7 +39,7 @@ Komentar Forum User
 								<input placeholder="Subject" id="first_name" type="text" class="validate hy-input-border" name="judul">
 							</div>
 
-							<textarea id="full-featured-non-premium" name="konten"></textarea>
+							<textarea id="full-featured-non-premium" name="comment_body"></textarea>
 						</div>
 
 						<div class="col s12 m12 l12 hy-pos-view hy-komen-ke">
