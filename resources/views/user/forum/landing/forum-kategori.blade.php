@@ -1,7 +1,7 @@
 @extends('aapp.app')
 
 @section('title')
-@foreach($data as $dat)
+@foreach($datas as $dat)
 {{ \App\Kategori::where(['id' => $dat->id_kategori])->value('kategori')}}
 @endforeach
 @endsection
@@ -22,7 +22,7 @@
 				<div class="nav-wrapper">
 					<div class="col s12">
 						<a href="{{route('UserLandingForum')}}" class="breadcrumb bread-hy-c-post">Hycost Forum</a>
-						@foreach($data as $dat)
+						@foreach($datas as $dat)
 						<a href="#!" class="breadcrumb bread-hy-c-post">{{ \App\Kategori::where(['id' => $dat->id_kategori])->value('kategori')}}</a>
 						@endforeach
 					</div>
@@ -128,24 +128,29 @@
 @endsection
 
 @section('js-plus')
-@foreach($data as $dat)
+@foreach($datas as $dats)
 <script>
 	var settings = {
 		"async": true,
 		"crossDomain": true,
-		"url": "{{route('userlandingForumDataKategori', $dat->id_kategori)}}",
+		"url": "{{route('userlandingForumDataKategori', $dats->id_kategori)}}",
 		"method": "GET"
 	}
-
+	
 	$.ajax(settings).done(function (response) {
 		console.log(response);
 
+		
 		for (var i=0;i<response.data.length;++i)
 		{
-			var tanggal = response.data[i].created_at;
+			@foreach($data as $dat)
+			var tanggal{{$dat->id}} = response.data[i].created_at;
+			$("#tanggal{{$dat->id}}").append(tanggal{{$dat->id}});
+			@endforeach
 		}
-		$("#tanggal{{$dat->id}}").append(tanggal);
+		
 	});
+	
 </script>
 @endforeach
 @endsection

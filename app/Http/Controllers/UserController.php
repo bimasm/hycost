@@ -7,6 +7,7 @@ use App\User;
 use App\Kategori;
 use App\Post;
 use App\Like;
+use DB;
 use Auth;
 
 class UserController extends Controller
@@ -24,9 +25,11 @@ class UserController extends Controller
         $kat=Kategori::where('kategori', str_replace("-", " ", $kategori))->value('id');
 
         $data = Post::where('id_kategori', $kat)->get();
+        $datas = DB::table('Post')->where('id_kategori', $kat)->limit(1)->get();
+
         // dd($data);
 
-        return view('user.forum.landing.forum-kategori',compact('data'));
+        return view('user.forum.landing.forum-kategori',compact('data','datas'));
     }
 
     public function Data_Post_Detail($id)
@@ -39,7 +42,7 @@ class UserController extends Controller
 
     public function Data_Post_Kategori($id)
     {
-        $data=Post::where('id', $id)->get();
+        $data=Post::where('id_kategori', $id)->get();
         $response= $data;
 
         return response()->json(['data'=>$data]);
