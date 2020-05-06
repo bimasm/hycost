@@ -30,7 +30,7 @@ class UserActionsController extends Controller
     	// dd($x);
         $x->like=0;
     	$x->save();
-    	return redirect()->route('UserPostAddNewPost');
+    	return redirect()->route('UserLandingForumDetail',str_replace(" ", "-", $x->judul));
 
     }
     public function dislike(Request $Request)

@@ -16,8 +16,9 @@ class CommentController extends Controller
         $comment->user()->associate($request->user());
         $post = Post::find($request->get('post_id'));
         $post->comments()->save($comment);
+        $url=Post::where('id',$request->get('post_id'))->value('judul');
 
-        return back();
+        return redirect()->route('UserLandingForumDetail',str_replace(" ", "-", $url));
     }
     public function replyStore(Request $request)
     {
@@ -29,7 +30,9 @@ class CommentController extends Controller
 
         $post->comments()->save($reply);
 
-        return back();
+        $url=Post::where('id',$request->get('post_id'))->value('judul');
+
+        return redirect()->route('UserLandingForumDetail',str_replace(" ", "-", $url));
 
     }
 }
