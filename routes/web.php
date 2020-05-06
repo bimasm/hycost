@@ -100,3 +100,5 @@ Route::get('/setting', 'UserController@User_Setting')
 
 Route::post('like', 'UserActionsController@like')->name('likes')->middleware('auth:user');
 Route::post('dislike', 'UserActionsController@dislike')->name('dislikes')->middleware('auth:user');
+Route::post('/comment/store', 'CommentController@store')->name('comment.add')->middleware('auth:user');
+Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add')->middleware('auth:user');

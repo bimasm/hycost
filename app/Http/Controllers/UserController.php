@@ -35,12 +35,13 @@ class UserController extends Controller
     {
         $datas = Post::where('judul', str_replace("-", " ", $judul))->get();
         $post = Post::where('judul', str_replace("-", " ", $judul))->value('id');
+        $posts=Post::find($post);
         $like=Like::where('post_id', $post)->orderByDesc('id')->limit(2)->get();
         // dd($like);
         $jml=Like::where('post_id', $post)->count();
         $tot=$jml-2;
 
-        return view('user.forum.landing.forum-detail',compact('datas','like','tot'));
+        return view('user.forum.landing.forum-detail',compact('datas','like','tot','posts'));
     }
 
     public function User_Forum_Komentar()
