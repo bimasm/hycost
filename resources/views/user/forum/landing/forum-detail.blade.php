@@ -198,36 +198,5 @@
 		$("#tanggal").append(tanggal);
 	});
 </script>
-<script>
-	var settings2 = {
-		"async": true,
-		"crossDomain": true,
-		"url": "{{route('userlandingForumDataKomentar', $dat->id)}}",
-		"method": "GET"
-	}
-
-	$.ajax(settings2).done(function (response) {
-		console.log(response);
-
-		@php
-		$not=0;
-		@endphp
-
-		@php
-		$noh=0;
-		@endphp
-
-		for (var i=0;i<response.data.length;++i)
-		{
-			var body = response.data[i].body;
-			var tanggalkom = response.data[i].created_at;
-
-			$("#body{{$noh++}}").append(body);
-			$("#tanggalkom{{$not++}}").append(tanggalkom);
-			console.log(tanggalkom);
-		}
-		
-	});
-</script>
 @endforeach
 @endsection
