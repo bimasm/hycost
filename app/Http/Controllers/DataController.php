@@ -52,6 +52,7 @@ class DataController extends Controller
 
 		return response()->json(['data'=>$response]);
 	}
+	
 	public function Data_Post_Reply($id)
 	{
 		$data=Comment::where('id', $id)->get();

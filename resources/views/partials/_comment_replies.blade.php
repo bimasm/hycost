@@ -1,3 +1,10 @@
+ @php
+ $nox=0;
+ @endphp
+
+ @php
+ $nol=0;
+ @endphp
  @foreach($comments as $comment)
  <div class="col s12 m12 l12 hy-pos-view">
  	<div class="card card-hy-f komen" style="margin-left: 3em">
@@ -9,14 +16,14 @@
  						<li class="collection-item avatar">
  							<img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
  							<span class="title user-post-hy">{{ $comment->user->nama }}</span>
- 							<span id="tanggalkom" class="title tgl-post-hy"></span>
+ 							<span class="title tgl-post-hy">{{ $comment->created_at }}</span>
  							<a href="#!" data-target='dropdown13' class="secondary-content dropdown-trigger"><i class="material-icons hy-color-7">more_horiz</i></a>
  						</li>
  					</ul>
  				</div>
 
  				<div class="col s12 m12 l12 content-text">
- 					<div id="body"></div>
+ 					<div>{{ $comment->body }}</div>
  				</div>
 
  				<div class="col s12 m12 l12">

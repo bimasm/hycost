@@ -104,9 +104,9 @@
 														@endif
 													</span><span>
 														@if ($tot<-1)
-															0 Orang Menyukai
+														0 Orang Menyukai
 														@else
-															Menyukai
+														Menyukai
 														@endif
 													</span>
 												</a>
@@ -158,15 +158,9 @@
 					</div>
 					@include('partials._comment_replies', ['comments' => $posts->comments, 'post_id' => $posts->id])
 					@endforeach
-					{{-- @foreach($posts->comments as $comment)
-                        <div class="display-comment">
-                            <strong>{{ $comment->user->name }}</strong>
-                            <p>{{ $comment->body }}</p>
-                        </div>
-                    @endforeach --}}
- 
 
-					
+
+
 
 				</div>
 			</div>
@@ -205,24 +199,34 @@
 	});
 </script>
 <script>
-	var settings = {
+	var settings2 = {
 		"async": true,
 		"crossDomain": true,
 		"url": "{{route('userlandingForumDataKomentar', $dat->id)}}",
 		"method": "GET"
 	}
 
-	$.ajax(settings).done(function (response) {
+	$.ajax(settings2).done(function (response) {
 		console.log(response);
+
+		@php
+		$not=0;
+		@endphp
+
+		@php
+		$noh=0;
+		@endphp
 
 		for (var i=0;i<response.data.length;++i)
 		{
 			var body = response.data[i].body;
 			var tanggalkom = response.data[i].created_at;
-		}
 
-		$("#body").append(body);
-		$("#tanggalkom").append(tanggalkom);
+			$("#body{{$noh++}}").append(body);
+			$("#tanggalkom{{$not++}}").append(tanggalkom);
+			console.log(tanggalkom);
+		}
+		
 	});
 </script>
 @endforeach

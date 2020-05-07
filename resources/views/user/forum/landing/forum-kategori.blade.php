@@ -154,8 +154,6 @@
 		@foreach($data as $dat)
 		var tanggal{{$dat->id}}= response.data[{{$nos++}}].created_at;
 		$("#tanggal{{$dat->id}}{{$noz++}}").append(tanggal{{$dat->id}});
-
-		
 		@endforeach
 
 	});
