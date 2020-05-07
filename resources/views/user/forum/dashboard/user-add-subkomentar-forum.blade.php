@@ -17,7 +17,7 @@ Komentar Forum User
 	<form action="{{ route('reply.add') }}" method="POST">
 		@csrf
 		<input type="hidden" name="post_id" value="{{ $post }}" />
-        <input type="hidden" name="comment_id" value="{{ $cm }}" />
+		<input type="hidden" name="comment_id" value="{{ $cm }}" />
 		<div class="content-hy-dash-add">
 			<div class="container cont-hy-dash">
 
@@ -54,13 +54,26 @@ Komentar Forum User
 												<li class="collection-item avatar">
 													<img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
 													<span class="title user-post-hy">{{ \App\User::where('id',\App\Comment::where('id',$cm)->value('user_id'))->value('nama') }}</span>
-													<span class="title tgl-post-hy">{{ \App\Comment::where('id',$cm)->value('created_at') }}</span>
+													{{-- <span class="title tgl-post-hy">
+														{{ date('H:i', strtotime($dat->created_at)) }}
+													</span>
+													<span class="title tgl-post-hy">
+														{{ date('j F Y', strtotime(\App\Comment::where('id',$cm)->value('created_at'))) }}
+													</span> --}}
+
+													<span class="title tgl-post-hy">
+														{{ date('H:i', strtotime(\App\Comment::where('id',$cm)->value('created_at'))) }}
+													</span>
+
+													<span class="title tgl-post-hy">
+														{{ date('j F Y', strtotime(\App\Comment::where('id',$cm)->value('created_at'))) }}
+													</span>
 												</li>
 											</ul>
 										</div>
 
 										<div class="col s12 m12 l12 content-text">
-											{{ \App\Comment::where('id',$cm)->value('body') }}
+											{!! \App\Comment::where('id',$cm)->value('body') !!}
 										</div>
 									</div>
 								</div>

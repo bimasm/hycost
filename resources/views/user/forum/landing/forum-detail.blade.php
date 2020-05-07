@@ -66,9 +66,15 @@
 											<li class="collection-item avatar">
 
 												<img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
-												<span class="title user-post-hy">{{ \App\User::where(['id' => $dat->id_user])->value('nama')}}</span>
-
-												<span id="tanggal" class="title tgl-post-hy"></span>
+												<span class="title user-post-hy">
+													{{ \App\User::where(['id' => $dat->id_user])->value('nama')}}
+												</span>
+												<span class="title tgl-post-hy">
+													{{ date('H:i', strtotime($dat->created_at)) }}
+												</span>
+												<span class="title tgl-post-hy">
+													{{ date('j F Y', strtotime($dat->created_at)) }}
+												</span>
 
 												<a href="#!" data-target='dropdown13' class="secondary-content dropdown-trigger"><i class="material-icons hy-color-7">more_horiz</i></a>
 											</li>

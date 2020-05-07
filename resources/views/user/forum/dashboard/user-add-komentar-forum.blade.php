@@ -17,7 +17,7 @@ Komentar Forum User
 	<form action="{{ route('comment.add') }}" method="POST">
 		@csrf
 		@foreach ($post as $pos)
-			 <input type="hidden" name="post_id" value="{{ $pos->id }}" />
+		<input type="hidden" name="post_id" value="{{ $pos->id }}" />
 		
 		<div class="content-hy-dash-add">
 			<div class="container cont-hy-dash">
@@ -55,13 +55,20 @@ Komentar Forum User
 												<li class="collection-item avatar">
 													<img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
 													<span class="title user-post-hy">{{ \App\User::where('id',$pos->id_user)->value('nama') }}</span>
-													<span class="title tgl-post-hy">{{ $pos->created_at }}</span>
+													{{-- <span class="title tgl-post-hy">{{ $pos->created_at }}</span> --}}
+
+													<span class="title tgl-post-hy">
+														{{ date('H:i', strtotime($pos->created_at)) }}
+													</span>
+													<span class="title tgl-post-hy">
+														{{ date('j F Y', strtotime($pos->created_at)) }}
+													</span>
 												</li>
 											</ul>
 										</div>
 
 										<div class="col s12 m12 l12 content-text">
-											{{ $pos->isi }}
+											{!! $pos->isi !!}
 										</div>
 									</div>
 								</div>

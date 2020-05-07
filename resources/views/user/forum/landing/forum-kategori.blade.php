@@ -78,10 +78,10 @@
 														<div class="col s5 center-align">
 															<div class="hy-property-post web-res">
 																<div class="nom">{{ \App\Comment::where('commentable_id', $dat->id)->count() }}</div>
-																<div class="text">Komerntar</div>
+																<div class="text">Komentar</div>
 															</div>
 															<div class="hy-property-post mobile-res">
-																<div class="text">100 Komen</div>
+																<div class="text">{{ \App\Comment::where('commentable_id', $dat->id)->count() }} Komen</div>
 															</div>
 														</div>
 														{{-- <div class="col s5 center-align">

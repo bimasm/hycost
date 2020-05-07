@@ -16,7 +16,8 @@
  						<li class="collection-item avatar">
  							<img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
  							<span class="title user-post-hy">{{ $comment->user->nama }}</span>
- 							<span class="title tgl-post-hy">{{ date('j F, Y', strtotime($comment->created_at)) }}</span>
+ 							<span class="title tgl-post-hy">{{ date('H:i', strtotime($comment->created_at)) }}</span>
+ 							<span class="title tgl-post-hy">{{ date('j F Y', strtotime($comment->created_at)) }}</span>
  							{{-- <a href="#!" data-target='dropdown13' class="secondary-content dropdown-trigger"><i class="material-icons hy-color-7">more_horiz</i></a> --}}
  						</li>
  					</ul>
