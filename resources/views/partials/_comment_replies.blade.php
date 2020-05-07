@@ -36,6 +36,7 @@
  						</div>
  					</div> --}}
  					<div class="footer-hy-post row center-align">
+ 						<div class="col s6"></div>
  						<div class="col s6">
  							<a href="{{ route('UserLandingForumSubKomentar',[str_replace(" ", "-", $dat->judul),$comment->id]) }}" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">add_comment</i>Balas</a>
  						</div>

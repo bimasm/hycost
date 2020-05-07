@@ -54,6 +54,7 @@ Komentar Forum User
 												<li class="collection-item avatar">
 													<img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
 													<span class="title user-post-hy">{{ \App\User::where('id',\App\Comment::where('id',$cm)->value('user_id'))->value('nama') }}</span>
+
 													{{-- <span class="title tgl-post-hy">
 														{{ date('H:i', strtotime($dat->created_at)) }}
 													</span>
@@ -107,7 +108,6 @@ Komentar Forum User
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.2.1/tinymce.min.js"></script>
 
 <script>
-
 	$('.chips-placeholder').chips({
 		placeholder: 'Tambahkan tag',
 		secondaryPlaceholder: '+Tag',
@@ -136,6 +136,5 @@ Komentar Forum User
 
 		content_css: '{{asset('asset/css/tyni.css')}}',
 	});
-
 </script>
 @endsection
