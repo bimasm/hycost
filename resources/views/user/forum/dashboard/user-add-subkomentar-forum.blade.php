@@ -35,9 +35,9 @@ Komentar Forum User
 					<div class="row">
 
 						<div class="col s12 m12 l12">
-							<div class="input-field hy-infield">
+							{{-- <div class="input-field hy-infield">
 								<input placeholder="Subject" id="first_name" type="text" class="validate hy-input-border" name="judul">
-							</div>
+							</div> --}}
 
 							<textarea id="full-featured-non-premium" name="comment_body"></textarea>
 						</div>
@@ -53,15 +53,14 @@ Komentar Forum User
 											<ul class="collection user hy-user">
 												<li class="collection-item avatar">
 													<img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
-													<span class="title user-post-hy">Nama User</span>
-													<span class="title tgl-post-hy">23, juni 2020</span>
+													<span class="title user-post-hy">{{ \App\User::where('id',\App\Comment::where('id',$cm)->value('user_id'))->value('nama') }}</span>
+													<span class="title tgl-post-hy">{{ \App\Comment::where('id',$cm)->value('created_at') }}</span>
 												</li>
 											</ul>
 										</div>
 
 										<div class="col s12 m12 l12 content-text">
-											<p>Event KASKUS Cendolin ada lagi nih Gan. Jangan lupa siapin gelas masing-masing buat ngisi cendolnya ya.</p><br>
-											<p>Seperti tahun-tahun sebelumnya, kali ini KASKUS juga mau bagi-bagi cendol gratis buat Kaskuser di seluruh Indonesia. Berbeda dari kegiatan cendolin biasanya yang langsung kasih cendol seger ke Kaskuser, kali ini KASKUS mau ngajak Gan Sist untuk ikutan bagiin cendol ke sesama Kaskuser meskipun lagi dalam kondisi social distancing.</p>
+											{{ \App\Comment::where('id',$cm)->value('body') }}
 										</div>
 									</div>
 								</div>

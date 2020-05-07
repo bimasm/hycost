@@ -52,7 +52,7 @@ Dashboard Forum User
 													<div class="secondary-content-hy-f">{{ Auth::guard('user')->user()->nama }}</div>
 												</li>
 												<li class="collection-item colect-hy-f">Tanggal
-													<div class="secondary-content-hy-f">21 Juni 2020</div>
+													<div class="secondary-content-hy-f">{{ \Carbon\Carbon::now() }}</div>
 												</li>
 												<li class="collection-item colect-hy-f">Status
 													<div class="secondary-content-hy-f">-</div>
@@ -88,18 +88,21 @@ Dashboard Forum User
 														</a>
 													</div>
 													<div class="collapsible-body">
-														<p>
+
+														@foreach ($kategori as $kat)
+															<p>
 															<label>
-																<input name="kategori" type="radio" value="1" />
-																<span>Kebun</span>
+																<input name="kategori" type="radio" value="{{ $kat->id }}" />
+																<span>{{ $kat->kategori }}</span>
 															</label>
 														</p>
-														<p>
+														@endforeach
+														{{-- <p>
 															<label>
 																<input name="kategori" type="radio" value="2"/>
 																<span>Tanaman</span>
 															</label>
-														</p>
+														</p> --}}
 													</div>
 												</li>
 												<li>

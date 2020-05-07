@@ -113,7 +113,7 @@
 											</div>
 											<div class="col s12 m12 l6 komentar">
 												<a href="#!" class="text-atr-komen hy-who-like-btn">
-													<span>2</span><span> Komentar</span>
+													<span>{{ \App\Comment::where('commentable_id', $dat->id)->count() }}</span><span> Komentar</span>
 												</a>
 											</div>
 										</div>

@@ -77,14 +77,14 @@
 														</div>
 														<div class="col s5 center-align">
 															<div class="hy-property-post web-res">
-																<div class="nom">100</div>
+																<div class="nom">{{ \App\Comment::where('commentable_id', $dat->id)->count() }}</div>
 																<div class="text">Komerntar</div>
 															</div>
 															<div class="hy-property-post mobile-res">
 																<div class="text">100 Komen</div>
 															</div>
 														</div>
-														<div class="col s5 center-align">
+														{{-- <div class="col s5 center-align">
 															<div class="hy-property-post web-res">
 																<div class="nom">100</div>
 																<div class="text">Dibuka</div>
@@ -92,7 +92,7 @@
 															<div class="hy-property-post mobile-res">
 																<div class="text">100 Dibuka</div>
 															</div>
-														</div>
+														</div> --}}
 													</div>
 													
 												</div>

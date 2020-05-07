@@ -70,7 +70,8 @@ class UserController extends Controller
 
     public function User_AddNewPost_Forum()
     {
-    	return view('user.forum.dashboard.user-add-newpost-forum');
+        $kategori=Kategori::all();
+    	return view('user.forum.dashboard.user-add-newpost-forum', compact('kategori'));
     }
     //---------------------------------------------------------------- Komentar
     public function User_SemuaKomentar_Forum()
