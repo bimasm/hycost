@@ -52,7 +52,7 @@ Dashboard Forum User
 													<div class="secondary-content-hy-f">{{ Auth::guard('user')->user()->nama }}</div>
 												</li>
 												<li class="collection-item colect-hy-f">Tanggal
-													<div class="secondary-content-hy-f">{{ \Carbon\Carbon::now() }}</div>
+													<div class="secondary-content-hy-f">{{ date('H:i, j F Y', strtotime(\Carbon\Carbon::now())) }}</div>
 												</li>
 												<li class="collection-item colect-hy-f">Status
 													<div class="secondary-content-hy-f">-</div>

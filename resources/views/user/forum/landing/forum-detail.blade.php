@@ -96,7 +96,8 @@
 												<a href="#!" class="loss text-atr-komen hy-who-like-btn tooltipped" data-delay="50" data-html="true" data-position="bottom" data-tooltip='
 												@foreach($likes as $lik)
 												{{\App\User::where('id', $lik->user_id)->value('nama')}}<br>
-												@endforeach'>
+												@endforeach
+												'>
 												<span>
 													@foreach ($like as $lk)
 													@if ($lk->user_id==Auth::guard('user')->user()->id)

@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Kategori;
 use App\Post;
 use App\Like;
 use App\Comment;
-use DB;
 use Auth;
 
 class UserController extends Controller
@@ -24,7 +24,7 @@ class UserController extends Controller
     public function User_Forum_Kategori($kategori)
     {
         $kat=Kategori::where('kategori', str_replace("-", " ", $kategori))->value('id');
-        $data = Post::where('id_kategori', $kat)->get();
+        $data = Post::where('id_kategori', $kat)->paginate(6);
         $datas = DB::table('Post')->where('id_kategori', $kat)->limit(1)->get();
 
         // dd($data);

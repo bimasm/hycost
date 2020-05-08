@@ -107,15 +107,28 @@
 						</ul>
 					</div>
 					<div class="col s12 m12 l12 center">
+						@if ($data->hasPages())
 						<ul class="pagination">
-							<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-							<li class="active"><a href="#!">1</a></li>
-							<li class="waves-effect"><a href="#!">2</a></li>
-							<li class="waves-effect"><a href="#!">3</a></li>
-							<li class="waves-effect"><a href="#!">4</a></li>
-							<li class="waves-effect"><a href="#!">5</a></li>
-							<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+							<li class="waves-effect"><a href="{{$data->previousPageUrl()}}"><i class="material-icons">chevron_left</i></a></li>
+
+							@foreach(range(1, $data->lastPage()) as $i)
+
+							@if($i >= $data->currentPage() - 2 && $i <= $data->currentPage() + 2)
+							@if ($i == $data->currentPage())
+
+							<li class="active"><a href="#!">{{ $i }}</a></li>
+
+							@else
+
+							<li class="waves-effect"><a href="{{ $data->url($i) }}">{{ $i }}</a></li>
+
+							@endif
+							@endif
+							@endforeach
+
+							<li class="waves-effect"><a href="{{$data->nextPageUrl()}}"><i class="material-icons">chevron_right</i></a></li>
 						</ul>
+						@endif
 					</div>
 					
 				</div>
