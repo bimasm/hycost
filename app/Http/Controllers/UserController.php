@@ -17,8 +17,9 @@ class UserController extends Controller
     public function User_Forum_Home()
     {
         $data = Kategori::all();
+        $rekomendasi = DB::table('Post')->limit(5)->get();
 
-        return view('user.forum.landing.forum-home',compact('data'));
+        return view('user.forum.landing.forum-home',compact('data','rekomendasi'));
     }
 
     public function User_Forum_Kategori($kategori)
@@ -27,9 +28,11 @@ class UserController extends Controller
         $data = Post::where('id_kategori', $kat)->paginate(6);
         $datas = DB::table('Post')->where('id_kategori', $kat)->limit(1)->get();
 
+        $rekomendasi = Post::where('id_kategori', $kat)->limit(5)->get();
+
         // dd($data);
 
-        return view('user.forum.landing.forum-kategori',compact('data','datas'));
+        return view('user.forum.landing.forum-kategori',compact('data','datas','rekomendasi'));
     }
 
     public function User_Forum_Detail($judul)
@@ -43,7 +46,9 @@ class UserController extends Controller
         $likes=Like::where('post_id', $post)->orderByDesc('id')->get();
         $tot=$jml-2;
 
-        return view('user.forum.landing.forum-detail',compact('datas','like','tot','posts','likes'));
+        $rekomendasi = DB::table('Post')->limit(5)->get();
+
+        return view('user.forum.landing.forum-detail',compact('datas','like','tot','posts','likes','rekomendasi'));
     }
 
     public function User_Forum_Komentar($judul)
@@ -59,6 +64,13 @@ class UserController extends Controller
         return view('user.forum.dashboard.user-add-subkomentar-forum', compact("post","cm"));
     }
 
+    // public function User_Forum_Rekomendasi()
+    // {
+    //     $data=Post::all()->orderByDesc('id')->limit(4)->get();
+
+    //     return view('user.app.right-post', compact("data"));
+    // }
+
     //---------------------------------------------------------------- Dashboard
     public function User_Dashboard_Forum()
     {
@@ -73,7 +85,7 @@ class UserController extends Controller
     public function User_AddNewPost_Forum()
     {
         $kategori=Kategori::all();
-    	return view('user.forum.dashboard.user-add-newpost-forum', compact('kategori'));
+        return view('user.forum.dashboard.user-add-newpost-forum', compact('kategori'));
     }
     //---------------------------------------------------------------- Komentar
     public function User_SemuaKomentar_Forum()

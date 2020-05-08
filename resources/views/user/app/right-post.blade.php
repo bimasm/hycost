@@ -5,21 +5,24 @@
 		</div>
 
 		<ul class="collection list-post">
+
+			@if(request()->routeIs('UserLandingForumKategori'))
+			@foreach($rekomendasi as $rekom)
 			<li class="collection-item">
-				<a href="#!" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
+				<a href="{{route('UserLandingForumDetail', str_replace(" ", "-", $rekom->judul))}}" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
 					<div class="card card-hy-f">
 						<div class="card-content">
 
 							<div class="row valign-wrapper">
 								<div class="col s4 valign">
-									<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
+									<img src="{{ str_replace('public/','../../../', $rekom->gambar) }}">
 								</div>
 
 								<div class="col s8">
-									<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
+									<h6><b>{{$rekom->judul}}</b></h6>
 									<ul class="collection colection-hy-f">
 										<li class="collection-item colect-hy-f">
-											Kebun
+											{{ \App\Kategori::where('id', $rekom->id_kategori)->value('kategori') }}
 										</li>
 									</ul>
 								</div>
@@ -29,22 +32,26 @@
 					</div>
 				</a>
 			</li>
+			@endforeach
+			@endif
 
+			@if(request()->routeIs('UserLandingForum'))
+			@foreach($rekomendasi as $rekom)
 			<li class="collection-item">
-				<a href="#!" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
+				<a href="{{route('UserLandingForumDetail', str_replace(" ", "-", $rekom->judul))}}" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
 					<div class="card card-hy-f">
 						<div class="card-content">
 
 							<div class="row valign-wrapper">
 								<div class="col s4 valign">
-									<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
+									<img src="{{ str_replace('public/','../../../', $rekom->gambar) }}">
 								</div>
 
 								<div class="col s8">
-									<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
+									<h6><b>{{$rekom->judul}}</b></h6>
 									<ul class="collection colection-hy-f">
 										<li class="collection-item colect-hy-f">
-											Kebun
+											{{ \App\Kategori::where('id', $rekom->id_kategori)->value('kategori') }}
 										</li>
 									</ul>
 								</div>
@@ -54,22 +61,26 @@
 					</div>
 				</a>
 			</li>
+			@endforeach
+			@endif
 
+			@if(request()->routeIs('UserLandingForumDetail'))
+			@foreach($rekomendasi as $rekom)
 			<li class="collection-item">
-				<a href="#!" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
+				<a href="{{route('UserLandingForumDetail', str_replace(" ", "-", $rekom->judul))}}" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
 					<div class="card card-hy-f">
 						<div class="card-content">
 
 							<div class="row valign-wrapper">
 								<div class="col s4 valign">
-									<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
+									<img src="{{ str_replace('public/','../../../', $rekom->gambar) }}">
 								</div>
 
 								<div class="col s8">
-									<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
+									<h6><b>{{$rekom->judul}}</b></h6>
 									<ul class="collection colection-hy-f">
 										<li class="collection-item colect-hy-f">
-											Kebun
+											{{ \App\Kategori::where('id', $rekom->id_kategori)->value('kategori') }}
 										</li>
 									</ul>
 								</div>
@@ -79,31 +90,9 @@
 					</div>
 				</a>
 			</li>
+			@endforeach
+			@endif
 
-			<li class="collection-item">
-				<a href="#!" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
-					<div class="card card-hy-f">
-						<div class="card-content">
-
-							<div class="row valign-wrapper">
-								<div class="col s4 valign">
-									<img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1579790778/ljwbwwpqqqzv3au5vsnn.jpg">
-								</div>
-
-								<div class="col s8">
-									<h6><b>7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur</b></h6>
-									<ul class="collection colection-hy-f">
-										<li class="collection-item colect-hy-f">
-											Kebun
-										</li>
-									</ul>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</a>
-			</li>
 		</ul>
 	</div>
 
