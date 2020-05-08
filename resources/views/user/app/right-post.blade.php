@@ -9,7 +9,7 @@
 			@if(request()->routeIs('UserLandingForumKategori'))
 			@foreach($rekomendasi as $rekom)
 			<li class="collection-item">
-				<a href="{{route('UserLandingForumDetail', str_replace(" ", "-", $rekom->judul))}}" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
+				<a href="{{route('UserLandingForumDetail', str_replace(" ", "-", $rekom->judul))}}" class="tooltipped" data-position="top" data-tooltip="{{$rekom->judul}}">
 					<div class="card card-hy-f">
 						<div class="card-content">
 
@@ -38,7 +38,7 @@
 			@if(request()->routeIs('UserLandingForum'))
 			@foreach($rekomendasi as $rekom)
 			<li class="collection-item">
-				<a href="{{route('UserLandingForumDetail', str_replace(" ", "-", $rekom->judul))}}" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
+				<a href="{{route('UserLandingForumDetail', str_replace(" ", "-", $rekom->judul))}}" class="tooltipped" data-position="top" data-tooltip="{{$rekom->judul}}">
 					<div class="card card-hy-f">
 						<div class="card-content">
 
@@ -67,7 +67,7 @@
 			@if(request()->routeIs('UserLandingForumDetail'))
 			@foreach($rekomendasi as $rekom)
 			<li class="collection-item">
-				<a href="{{route('UserLandingForumDetail', str_replace(" ", "-", $rekom->judul))}}" class="tooltipped" data-position="top" data-tooltip="7 Rekomendasi Film Bertema Wabah Virus Untuk Menghibur">
+				<a href="{{route('UserLandingForumDetail', str_replace(" ", "-", $rekom->judul))}}" class="tooltipped" data-position="top" data-tooltip="{{$rekom->judul}}">
 					<div class="card card-hy-f">
 						<div class="card-content">
 

@@ -1,7 +1,7 @@
   <div class="navbar-fixed">
     <nav class="hy-nav">
       <div class="nav-wrapper container">
-        <a id="logo-container" href="http://hycost.com/" class="brand-logo">
+        <a id="logo-container" href="/" class="brand-logo">
           <img src="{{asset('asset/img/logo-hy.png')}}" class="img-logo">
         </a>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger">

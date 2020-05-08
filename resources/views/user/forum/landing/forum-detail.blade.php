@@ -167,24 +167,37 @@
 					</div>
 				</div>
 
-			@php
-			$nol=0;
-			@endphp
-			@include('partials._comment_replies', ['comments' => $posts->comments, 'post_id' => $posts->id])
-			@endforeach
+				@php
+				$nol=0;
+				@endphp
+				@include('partials._comment_replies', ['comments' => $posts->comments, 'post_id' => $posts->id])
+				@endforeach
 
 
 
 
+			</div>
+		</div>
+
+		<div class="col s12 m12 l4 rightbar-post-hy">
+			@include('user.app.right-post')
 		</div>
 	</div>
-
-	<div class="col s12 m12 l4 rightbar-post-hy">
-		@include('user.app.right-post')
-	</div>
-</div>
 </div>
 </section>
+
+<div id="modal-bagikan" class="modal white" style="width: 30%">
+	<div class="modal-content">
+		<h5>Bagikan ke Media Sosial</h5>
+	</div>
+	<div class="collection" style="border-right:0;border-left:0">
+		<a href="" class="collection-item fb-share" id="share-fb" target="_blank">Facebook</a>
+		<a href="" class="collection-item twitter-share-button" id="share-twitter" data-size="large" target="_blank">Twitter</a>
+	</div>
+	<div class="modal-footer white">
+		<a href="#!" class='modal-close waves-effect btn-flat hy-btn-flat hy-color-6'>Batal</a>
+	</div>
+</div>
 @endsection
 
 @section('js-plus')
@@ -198,6 +211,9 @@
 		M.toast({html: 'Salin Link Berhasil'})
 	});
 	$("#input-url").val(location.href);
+	$("#share-fb").attr('href','https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F'+location.href);
+	$("#share-twitter").attr('href','https://twitter.com/intent/tweet?text='+location.href);
+
 	//safari
 	if (navigator.vendor.indexOf("Apple")==0 && /\sSafari\//.test(navigator.userAgent)) {
 		$('.btn-copy').on('click', function() {
@@ -231,4 +247,14 @@
 	});
 </script>
 @endforeach
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.fb-share').click(function(e) {
+			e.preventDefault();
+			window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+			return false;
+		});
+	});
+</script>
 @endsection

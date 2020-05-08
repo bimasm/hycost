@@ -11,8 +11,8 @@
 		<div class="row">
 			<div class="col s12 m12 l4"></div>
 			<div class="col s12 m12 l8">
-				<h6>Ivan Priyambudi</h6>
-				<h6>Email.com</h6>
+				<h6>{{ Auth::guard('user')->user()->nama }}</h6>
+				<h6>{{ Auth::guard('user')->user()->email }}</h6>
 			</div>
 		</div>
 	</li>

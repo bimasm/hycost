@@ -35,6 +35,7 @@
  							</a>
  						</div>
  					</div> --}}
+ 					@if(Auth::guard('user')->check())
  					<div class="footer-hy-post row center-align">
  						<div class="col s6"></div>
  						<div class="col s6">
@@ -44,6 +45,7 @@
  							<a href="#!" data-target='dropdown14' class='btn-large waves-effect btn-flat hy-btn-flat-4 dropdown-trigger'><i class="material-icons left">share</i>Bagikan</a>
  						</div> --}}
  					</div>
+ 					@endif
  				</div>
  			</div>
  		</div>

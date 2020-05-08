@@ -1,9 +1,7 @@
 @extends('aapp.app')
 
 @section('title')
-{{-- @foreach($datas as $dat)
-{{ \App\Kategori::where(['id' => $dat->id_kategori])->value('kategori')}}
-@endforeach --}}
+Hasil Pencarian Forum
 @endsection
 
 @section('nav-landing-page')
@@ -47,8 +45,8 @@
 			<div class="col s12 m12 l8">
 
 				<div class="hy-title-list row valign-wrapper-hy">
-					<div class="col s12 m12 l6">
-						<h5>Search Result</h5>
+					<div class="col s12 m12 l12">
+						<h5>Hasil Pencarian</h5>
 					</div>
 					{{-- <div class="col s12 m12 l6 valign right-align-responsive">
 						<a href="{{route('UserPostAddNewPost')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons left">rate_review</i>Buat Post Baru Sekarang</a>
@@ -78,8 +76,13 @@
 														<div class="col s8 valign cont-post-list">
 															<h6><b>{{$dat->judul}}</b></h6>
 															<ul class="collection colection-hy-f">
+																<li class="collection-item colect-hy-f" style="border: 0; padding: 0"><span>{{\App\Kategori::where(['id' => $dat->id_kategori])->value('kategori')}}</span>
+																</li>
 																<li class="collection-item colect-hy-f">
-																	By {{ \App\User::where(['id' => $dat->id_user])->value('nama')}}, <span id="tanggal{{$dat->id}}{{$no++}}"></span>
+																	By {{ \App\User::where(['id' => $dat->id_user])->value('nama')}}, 
+																	<span>
+																		{{ date('j F Y', strtotime($dat->created_at)) }}
+																	</span>
 																</li>
 															</ul>
 														</div>
@@ -152,33 +155,4 @@
 @endsection
 
 @section('js-plus')
-{{-- @foreach($datas as $dats)
-<script>
-	var settings = {
-		"async": true,
-		"crossDomain": true,
-		"url": "{{route('userlandingForumDataKategori', $dats->id_kategori)}}",
-		"method": "GET"
-	}
-	
-	$.ajax(settings).done(function (response) {
-		console.log(response);
-
-		@php
-		$nos=0;
-		@endphp
-
-		@php
-		$noz=0;
-		@endphp
-
-		@foreach($data as $dat)
-		var tanggal{{$dat->id}}= response.data[{{$nos++}}].created_at;
-		$("#tanggal{{$dat->id}}{{$noz++}}").append(tanggal{{$dat->id}});
-		@endforeach
-
-	});
-	
-</script>
-@endforeach --}}
 @endsection

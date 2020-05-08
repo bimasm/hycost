@@ -66,6 +66,7 @@ class UserActionsController extends Controller
                 ->orderBy('like', 'desc')
                 ->limit(5)
                 ->get();
+                
         // dd($rekomendasi);
         return view('user.forum.landing.search',compact('data','rekomendasi'));
 

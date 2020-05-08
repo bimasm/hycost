@@ -34,11 +34,7 @@
 			<div class="row">
 				<div class="input-field col s12">
 					<input id="last_name" type="text" class="validate">
-					<label for="last_name">Nama Depan</label>
-				</div>
-				<div class="input-field col s12">
-					<input id="last_name" type="text" class="validate">
-					<label for="last_name">Nama Belakang</label>
+					<label for="last_name">Nama</label>
 				</div>
 			</div>
 		</div>

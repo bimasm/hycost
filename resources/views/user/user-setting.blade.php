@@ -50,7 +50,7 @@ Setting User
 									<a href="#edit-nama" class="collection-item modal-trigger">
 										<div class="row">
 											<div class="col s14 title">Nama</div>
-											<div class="col s14">Nama User</div>
+											<div class="col s14">{{ Auth::guard('user')->user()->nama }}</div>
 											<div class="col s14 icon">
 												<div class="secondary-content">
 													<i class="material-icons">keyboard_arrow_right</i>
@@ -72,7 +72,7 @@ Setting User
 									<a href="#edit-password" class="collection-item akhir modal-trigger">
 										<div class="row">
 											<div class="col s14 title">Password</div>
-											<div class="col s14">Password User</div>
+											<div class="col s14"></div>
 											<div class="col s14 icon">
 												<div class="secondary-content">
 													<i class="material-icons">keyboard_arrow_right</i>
@@ -97,7 +97,7 @@ Setting User
 									<a href="#edit-email" class="collection-item modal-trigger">
 										<div class="row">
 											<div class="col s14 title">Email</div>
-											<div class="col s14">email user</div>
+											<div class="col s14">{{ Auth::guard('user')->user()->email }}</div>
 											<div class="col s14 icon">
 												<div class="secondary-content">
 													<i class="material-icons">keyboard_arrow_right</i>

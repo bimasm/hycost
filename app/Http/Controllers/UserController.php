@@ -64,13 +64,6 @@ class UserController extends Controller
         return view('user.forum.dashboard.user-add-subkomentar-forum', compact("post","cm"));
     }
 
-    // public function User_Forum_Rekomendasi()
-    // {
-    //     $data=Post::all()->orderByDesc('id')->limit(4)->get();
-
-    //     return view('user.app.right-post', compact("data"));
-    // }
-
     //---------------------------------------------------------------- Dashboard
     public function User_Dashboard_Forum()
     {
