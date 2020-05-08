@@ -1834,3 +1834,7 @@ div.hy-pos-view > div.owner > div.card-content > div.row > div.content-text {
 	border-top: 1px solid #eee;
 	margin-top: 30px
 }
+
+.hy-komen-mar {
+	margin-left: 3em !important;
+}

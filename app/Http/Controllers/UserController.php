@@ -7,6 +7,7 @@ use App\User;
 use App\Kategori;
 use App\Post;
 use App\Like;
+use App\Comment;
 use DB;
 use Auth;
 
@@ -39,9 +40,10 @@ class UserController extends Controller
         $like=Like::where('post_id', $post)->orderByDesc('id')->limit(2)->get();
         // dd($like);
         $jml=Like::where('post_id', $post)->count();
+        $likes=Like::where('post_id', $post)->orderByDesc('id')->get();
         $tot=$jml-2;
 
-        return view('user.forum.landing.forum-detail',compact('datas','like','tot','posts'));
+        return view('user.forum.landing.forum-detail',compact('datas','like','tot','posts','likes'));
     }
 
     public function User_Forum_Komentar($judul)

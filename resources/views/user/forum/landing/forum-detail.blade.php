@@ -93,89 +93,96 @@
 										@if(Auth::guard('user')->check())
 										<div class="sub-footer-hy-post row valign-wrapper-hy">
 											<div class="col s12 m12 l6 suka valign">
-												<a href="#!" class="loss text-atr-komen hy-who-like-btn tooltipped" data-delay="50" data-html="true" data-position="bottom" data-tooltip='Anggit <br> Bima <br> Ivan <br> Izha'>
-													<span>
-														@foreach ($like as $lk)
-														@if ($lk->user_id==Auth::guard('user')->user()->id)
-														anda
-														@else
-														{{ \App\User::where('id', $lk->user_id)->value('nama') }}
-														@endif
-														,
-														
-														@endforeach
-														@if ($tot>0)
-														dan {{ $tot }} Orang
-														
-														@endif
-													</span><span>
-														@if ($tot<-1)
-														0 Orang Menyukai
-														@else
-														Menyukai
-														@endif
-													</span>
-												</a>
-											</div>
-											<div class="col s12 m12 l6 komentar">
-												<a href="#!" class="text-atr-komen hy-who-like-btn">
-													<span>{{ \App\Comment::where('commentable_id', $dat->id)->count() }}</span><span> Komentar</span>
-												</a>
-											</div>
+												<a href="#!" class="loss text-atr-komen hy-who-like-btn tooltipped" data-delay="50" data-html="true" data-position="bottom" data-tooltip='
+												@foreach($likes as $lik)
+												{{\App\User::where('id', $lik->user_id)->value('nama')}}<br>
+												@endforeach'>
+												<span>
+													@foreach ($like as $lk)
+													@if ($lk->user_id==Auth::guard('user')->user()->id)
+													anda
+													@else
+													{{ \App\User::where('id', $lk->user_id)->value('nama') }}
+													@endif
+													,
+
+													@endforeach
+													@if ($tot>0)
+													dan {{ $tot }} Orang
+
+													@endif
+												</span><span>
+													@if ($tot<-1)
+													0 Orang Menyukai
+													@else
+													Menyukai
+													@endif
+												</span>
+											</a>
 										</div>
-										
-										<div class="footer-hy-post row center-align">
-											<div class="col s4">
-												@if(\App\Like::where('user_id', Auth::guard('user')->user()->id)->where('post_id',$dat->id)->count()>0)
-
-												<form action="{{route('dislikes')}}" method="post">
-													@csrf
-													<input type="hidden" name="idpost" value="{{$dat->id}}">
-													<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i style="color: #80be42;" class="material-icons left">thumb_up</i>Suka</button>
-													
-												</form>
-
-												@else
-
-												<form action="{{route('likes')}}" method="post">
-													@csrf
-													<input type="hidden" name="idpost" value="{{$dat->id}}">
-													<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">thumb_up</i>Suka</button>
-													
-												</form>
-
-												@endif
-												
-												
-											</div>
-											<div class="col s4">
-												<a href="{{route('UserLandingForumKomentar', str_replace(" ", "-", $dat->judul))}}" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">add_comment</i>Komentar</a>
-											</div>
-											<div class="col s4">
-												<a href="#!" data-target='dropdown14' class='btn-large waves-effect btn-flat hy-btn-flat-4 dropdown-trigger'><i class="material-icons left">share</i>Bagikan</a>
-											</div>
+										<div class="col s12 m12 l6 komentar">
+											<a href="#!" class="text-atr-komen hy-who-like-btn">
+												<span>{{ \App\Comment::where('commentable_id', $dat->id)->count() }}</span><span> Komentar</span>
+											</a>
 										</div>
-										@endif
 									</div>
 
+									<div class="footer-hy-post row center-align">
+										<div class="col s4">
+											@if(\App\Like::where('user_id', Auth::guard('user')->user()->id)->where('post_id',$dat->id)->count()>0)
+
+											<form action="{{route('dislikes')}}" method="post">
+												@csrf
+												<input type="hidden" name="idpost" value="{{$dat->id}}">
+												<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i style="color: #80be42;" class="material-icons left">thumb_up</i>Suka</button>
+
+											</form>
+
+											@else
+
+											<form action="{{route('likes')}}" method="post">
+												@csrf
+												<input type="hidden" name="idpost" value="{{$dat->id}}">
+												<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">thumb_up</i>Suka</button>
+
+											</form>
+
+											@endif
+
+
+										</div>
+										<div class="col s4">
+											<a href="{{route('UserLandingForumKomentar', str_replace(" ", "-", $dat->judul))}}" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">add_comment</i>Komentar</a>
+										</div>
+										<div class="col s4">
+											<a href="#!" data-target='dropdown14' class='btn-large waves-effect btn-flat hy-btn-flat-4 dropdown-trigger'><i class="material-icons left">share</i>Bagikan</a>
+										</div>
+									</div>
+									@endif
 								</div>
+
 							</div>
 						</div>
 					</div>
-					@include('partials._comment_replies', ['comments' => $posts->comments, 'post_id' => $posts->id])
-					@endforeach
-
-
-
-
 				</div>
-			</div>
 
-			<div class="col s12 m12 l4 rightbar-post-hy">
-				@include('user.app.right-post')
+				@php
+				$nol=0;
+				@endphp
+				@include('partials._comment_replies', ['comments' => $posts->comments, 'post_id' => $posts->id])
+				@endforeach
+
+
+
+
 			</div>
 		</div>
+
+		<div class="col s12 m12 l4 rightbar-post-hy">
+			@include('user.app.right-post')
+		</div>
 	</div>
+</div>
 </section>
 @endsection
 
