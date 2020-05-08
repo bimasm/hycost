@@ -8,6 +8,7 @@ use App\Post;
 use App\Like;
 
 use Auth;
+use DB;
 
 class UserActionsController extends Controller
 {
@@ -56,6 +57,18 @@ class UserActionsController extends Controller
         $post->like=$jumlah+1;
         $post->save();
         return back();
+    }
+    public function search(Request $request){
+        $data=Post::where('judul', 'like','%'.$request->search.'%')->get();
+        // dd($data);
+        
+        $rekomendasi=DB::table('post')
+                ->orderBy('like', 'desc')
+                ->limit(5)
+                ->get();
+        // dd($rekomendasi);
+        return view('user.forum.landing.search',compact('data','rekomendasi'));
+
     }
     
 }

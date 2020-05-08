@@ -20,9 +20,10 @@ Forum
 		<div class="center-align search-cont-landing-cont">
 			<div class="search-cont-landing">
 				<div class="nav-wrapper">
-					<form>
+					<form action="{{ route('Usersearch') }}" method="post">
+						@csrf
 						<div class="input-field">
-							<input type="search" placeholder="Cari disini" required>
+							<input type="search" name="search" placeholder="Cari disini" required>
 							<label class="label-icon" for="search">
 								<i class="material-icons">search</i>
 							</label>

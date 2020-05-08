@@ -109,3 +109,5 @@ Route::post('like', 'UserActionsController@like')->name('likes')->middleware('au
 Route::post('dislike', 'UserActionsController@dislike')->name('dislikes')->middleware('auth:user');
 Route::post('/comment/store', 'CommentController@store')->name('comment.add')->middleware('auth:user');
 Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add')->middleware('auth:user');
+Route::post('/forum/search', 'UserActionsController@search')
+->name('Usersearch');
