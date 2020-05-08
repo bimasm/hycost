@@ -61,6 +61,7 @@
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src='https://cdn.jsdelivr.net/clipboard.js/1.5.10/clipboard.min.js'></script>
   <script type="text/javascript" src="{{asset('asset/js/materialize.min.js')}}"></script>
 
   {{-- datatable --}}

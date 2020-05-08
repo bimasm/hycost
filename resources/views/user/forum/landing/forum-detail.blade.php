@@ -24,9 +24,9 @@
 </ul>
 
 <ul id='dropdown14' class='dropdown-content drop-hy-post-detail'>
-	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">web</i>Ke Media Sosial</a></li>
+	<li><a href="#!" data-target="modal-bagikan" class="hy-color-5 modal-trigger"><i class="material-icons hy-color-5">web</i>Ke Media Sosial</a></li>
 	<li class="divider" tabindex="-1"></li>
-	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">link</i>Salin Link</a></li>
+	<li><a href="#!" class="btn-copy hy-color-5"><i class="material-icons hy-color-5">link</i>Salin Link</a></li>
 </ul>
 
 <section id="tentang" name="tentang" class="hy-page-header-detail-2 web-res">
@@ -50,11 +50,11 @@
 </section>
 
 <section id="fitur" name="fitur">
+	<input type="hidden" id="input-url" value="Copied!">
 	<div class="container hy-page-con hy-page-pos">
 		<div class="row">
 			<div class="col s12 m12 l8">
 				<div class="row">
-
 					@foreach($datas as $dat)
 					<div class="col s12 m12 l12 hy-pos-view">
 						<div class="card card-hy-f owner">
@@ -167,27 +167,45 @@
 					</div>
 				</div>
 
-				@php
-				$nol=0;
-				@endphp
-				@include('partials._comment_replies', ['comments' => $posts->comments, 'post_id' => $posts->id])
-				@endforeach
+			@php
+			$nol=0;
+			@endphp
+			@include('partials._comment_replies', ['comments' => $posts->comments, 'post_id' => $posts->id])
+			@endforeach
 
 
 
 
-			</div>
-		</div>
-
-		<div class="col s12 m12 l4 rightbar-post-hy">
-			@include('user.app.right-post')
 		</div>
 	</div>
+
+	<div class="col s12 m12 l4 rightbar-post-hy">
+		@include('user.app.right-post')
+	</div>
+</div>
 </div>
 </section>
 @endsection
 
 @section('js-plus')
+<script type="text/javascript">
+	var clipboard = new Clipboard('.btn-copy', {
+		text: function() {
+			return document.querySelector('input[type=hidden]').value;
+		}
+	});
+	clipboard.on('success', function(e) {
+		M.toast({html: 'Salin Link Berhasil'})
+	});
+	$("#input-url").val(location.href);
+	//safari
+	if (navigator.vendor.indexOf("Apple")==0 && /\sSafari\//.test(navigator.userAgent)) {
+		$('.btn-copy').on('click', function() {
+			var msg = window.prompt("Copy this link", location.href);
+
+		});
+	}
+</script>
 @foreach($datas as $dat)
 <script>
 	var settings = {
