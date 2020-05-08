@@ -67,7 +67,7 @@ Forum
 								</div>
 							</div>
 							<div class="col s12 m12 l3 center-align web-res">
-								<a href="{{route('UserLandingForumKategori', $dat->id)}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">keyboard_arrow_right</i>Detail</a>
+								<a href="{{route('UserLandingForumKategori', str_replace(" ", "-", $dat->kategori))}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">keyboard_arrow_right</i>Detail</a>
 							</div>
 						</div>
 					</li>
