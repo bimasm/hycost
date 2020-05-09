@@ -93,6 +93,35 @@
 			@endforeach
 			@endif
 
+			@if(request()->routeIs('Usersearch'))
+			@foreach($rekomendasi as $rekom)
+			<li class="collection-item">
+				<a href="{{route('UserLandingForumDetail', str_replace(" ", "-", $rekom->judul))}}" class="tooltipped" data-position="top" data-tooltip="{{$rekom->judul}}">
+					<div class="card card-hy-f">
+						<div class="card-content">
+
+							<div class="row valign-wrapper">
+								<div class="col s4 valign">
+									<img src="{{ str_replace('public/','../../../', $rekom->gambar) }}">
+								</div>
+
+								<div class="col s8">
+									<h6><b>{{$rekom->judul}}</b></h6>
+									<ul class="collection colection-hy-f">
+										<li class="collection-item colect-hy-f">
+											{{ \App\Kategori::where('id', $rekom->id_kategori)->value('kategori') }}
+										</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</a>
+			</li>
+			@endforeach
+			@endif
+
 		</ul>
 	</div>
 
