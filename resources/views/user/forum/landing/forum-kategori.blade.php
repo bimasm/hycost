@@ -11,27 +11,7 @@
 @endsection
 
 @section('content-landing-page')
-<!-- Start ------------------------------------------------------------------------------------------- Slider -->
-<!-- End ------------------------------------------------------------------------------------------- /Slider -->
-
-<section id="tentang" name="tentang" class="hy-page-header-detail-2 web-res">
-	<div class="container hy-page-con left-align hy-page-pos">
-
-		<div>
-			<nav class="bread-hy-post">
-				<div class="nav-wrapper">
-					<div class="col s12">
-						<a href="{{route('UserLandingForum')}}" class="breadcrumb bread-hy-c-post">Hycost Forum</a>
-						@foreach($datas as $dat)
-						<a href="#!" class="breadcrumb bread-hy-c-post">{{ \App\Kategori::where(['id' => $dat->id_kategori])->value('kategori')}}</a>
-						@endforeach
-					</div>
-				</div>
-			</nav>
-		</div>
-
-	</div>
-</section>
+@include('user.app.breadcumb-landing')
 
 <section id="fitur" name="fitur">
 	<div class="container hy-page-con hy-page-pos-list">
@@ -43,7 +23,9 @@
 						<h5>Post Terbaru</h5>
 					</div>
 					<div class="col s12 m12 l6 valign right-align-responsive">
-						<a href="{{route('UserPostAddNewPost')}}" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons left">rate_review</i>Buat Post Baru Sekarang</a>
+						<a href="{{route('UserPostAddNewPost')}}" class='waves-effect btn-flat hy-btn-flat-2'>
+							<i class="material-icons left">rate_review</i>Buat Post Baru Sekarang
+						</a>
 					</div>
 				</div>
 				
@@ -51,9 +33,6 @@
 					<div class="col s12 m12 l12">
 						<ul class="collection list-post">
 
-							@php
-							$no=0;
-							@endphp
 							@foreach($data as $dat)
 							<li class="collection-item">
 								<a href="{{route('UserLandingForumDetail', str_replace(" ", "-", $dat->judul))}}" class="tooltipped" data-position="top" data-tooltip="{{$dat->judul}}">
@@ -71,7 +50,7 @@
 															<h6><b>{{$dat->judul}}</b></h6>
 															<ul class="collection colection-hy-f">
 																<li class="collection-item colect-hy-f">
-																	By {{ \App\User::where(['id' => $dat->id_user])->value('nama')}}, <span id="tanggal{{$dat->id}}{{$no++}}"></span>
+																	By {{ \App\User::where(['id' => $dat->id_user])->value('nama')}}, <span>{{ date('j F Y', strtotime($dat->created_at)) }}</span>
 																</li>
 															</ul>
 														</div>
@@ -136,41 +115,11 @@
 			</div>
 
 			<div class="col s12 m12 l4 rightbar-post-hy">
+				<!-- Start ------------------------------------------------------------------------ Right Post -->
 				@include('user.app.right-post')
+				<!-- End -------------------------------------------------------------------------- /Right Post -->
 			</div>
 		</div>
 	</div>
 </section>
-@endsection
-
-@section('js-plus')
-@foreach($datas as $dats)
-<script>
-	var settings = {
-		"async": true,
-		"crossDomain": true,
-		"url": "{{route('userlandingForumDataKategori', $dats->id_kategori)}}",
-		"method": "GET"
-	}
-	
-	$.ajax(settings).done(function (response) {
-		console.log(response);
-
-		@php
-		$nos=0;
-		@endphp
-
-		@php
-		$noz=0;
-		@endphp
-
-		@foreach($data as $dat)
-		var tanggal{{$dat->id}}= response.data[{{$nos++}}].created_at;
-		$("#tanggal{{$dat->id}}{{$noz++}}").append(tanggal{{$dat->id}});
-		@endforeach
-
-	});
-	
-</script>
-@endforeach
 @endsection
