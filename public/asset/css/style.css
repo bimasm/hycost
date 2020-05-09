@@ -1807,6 +1807,10 @@ a.chip-hy:hover {
 	overflow: inherit;
 }
 
+div.hy-pos-view {
+	padding: 0 !important
+}
+
 div.hy-pos-view > div.owner {
 	border:0;
 }
