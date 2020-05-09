@@ -60,7 +60,7 @@
 									<div id="end-content"></div>
 
 									<div class="col s12 m12 l12">
-										@if(Auth::guard('user')->check())
+										
 										<div class="sub-footer-hy-post row valign-wrapper-hy">
 											<div class="col s12 m12 l6 suka valign">
 
@@ -70,7 +70,9 @@
 												@endforeach
 												'>
 												<span>
+													@if(Auth::guard('user')->check())
 													@foreach ($like as $lk)
+
 													@if ($lk->user_id==Auth::guard('user')->user()->id)
 													anda
 													@else
@@ -79,6 +81,15 @@
 													,
 
 													@endforeach
+
+													@else
+													@foreach ($like as $lk)
+													{{ \App\User::where('id', $lk->user_id)->value('nama') }}
+													,
+
+													@endforeach
+													@endif
+
 													@if ($tot>0)
 													dan {{ $tot }} Orang
 
@@ -103,6 +114,7 @@
 									<div class="footer-hy-post row center-align">
 										<div class="col s4">
 
+											@if(Auth::guard('user')->check())
 											@if(\App\Like::where('user_id', Auth::guard('user')->user()->id)->where('post_id',$dat->id)->count()>0)
 
 											<form action="{{route('dislikes')}}" method="post">
@@ -118,19 +130,26 @@
 												<input type="hidden" name="idpost" value="{{$dat->id}}">
 												<button type="submit" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">thumb_up</i>Suka</button>
 											</form>
+											@endif
 
+											@else
+											<a data-target="modal-must-login" class='btn-large waves-effect btn-flat hy-btn-flat-4 modal-trigger'><i class="material-icons left">thumb_up</i>Suka</a>
 											@endif
 
 
 										</div>
 										<div class="col s4">
+											@if(Auth::guard('user')->check())
 											<a href="{{route('UserLandingForumKomentar', str_replace(" ", "-", $dat->judul))}}" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">add_comment</i>Komentar</a>
+											@else
+											<a data-target="modal-must-login" class='btn-large waves-effect btn-flat hy-btn-flat-4 modal-trigger'><i class="material-icons left">add_comment</i>Komentar</a>
+											@endif
 										</div>
 										<div class="col s4">
 											<a href="#!" data-target='dropdown14' class='btn-large waves-effect btn-flat hy-btn-flat-4 dropdown-trigger'><i class="material-icons left">share</i>Bagikan</a>
 										</div>
 									</div>
-									@endif
+									
 								</div>
 
 							</div>

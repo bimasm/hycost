@@ -1,9 +1,9 @@
 <div id="modal-laporkan" class="modal white" style="width: 40%">
+
+	@if(Auth::guard('user')->check())
 	<div class="modal-content center-align">
 		<h5>Laporkan Post</h5>
 	</div>
-
-	@if(Auth::guard('user')->check())
 	<div class="modal-content">
 		<form action="" method="POST">
 			@csrf
@@ -42,21 +42,23 @@
 	</div>
 	@else
 	<div class="modal-content center-align">
-		<div class="row">
-			<div class="col s12 m12 l12">
-				<span class="material-icons" style="font-size: 7em">error_outline</span>
-			</div>
-			<div class="col s12 m12 l12">
-				<p>
-					Anda mau melaporkan Post ini ?<br>
-					Silahkan login terlebih dahulu pada link di bawah ini
-				</p>
-				<a href="/login" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">arrow_forward</i>Login</a>
-			</div>
-		</div>
+		<h5>Mau Berakvitas ?</h5>
+		<p>Login dulu Slurr</p>
+		<a href="/login" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">arrow_forward</i>Login</a>
 	</div>
 	@endif
 
+	<div class="modal-footer white">
+		<a href="#!" class='modal-close waves-effect btn-flat hy-btn-flat hy-color-6'>Batal</a>
+	</div>
+</div>
+
+<div id="modal-must-login" class="modal white" style="width: 40%">
+	<div class="modal-content center-align">
+		<h5>Mau Berakvitas ?</h5>
+		<p>Login dulu Slurr</p>
+		<a href="/login" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">arrow_forward</i>Login</a>
+	</div>
 	<div class="modal-footer white">
 		<a href="#!" class='modal-close waves-effect btn-flat hy-btn-flat hy-color-6'>Batal</a>
 	</div>

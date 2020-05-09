@@ -9,8 +9,21 @@
         </a>
         <ul class="right hide-on-med-and-down">
 
+
           @if(request()->routeIs('login-page','regis'))
           <li><a class="button-collapse hy-nav-a" href="/">Beranda</a></li>
+
+          @elseif(request()->routeIs('UserLandingForumKategori','UserLandingForum','UserLandingForumDetail','Usersearch'))
+          <li><a class="button-collapse hy-nav-a" href="/">Beranda</a></li>
+          <li><a class="button-collapse hy-nav-a" href="{{route('UserLandingForum')}}">Forum</a></li>
+          @if (Auth::guard('user'))
+          @auth('user')
+          <li><a href="/user" class="waves-effect waves-light btn hy-btn-bor-ijo-nav">Dashboard</a></li>
+          @else
+          <li><a href="/login" class="waves-effect waves-light btn hy-btn-bor-ijo-nav">Masuk</a></li>
+          @endauth
+          @endif
+
           @else
           <li><a class="button-collapse hy-nav-a" href="#beranda">Beranda</a></li>
           <li><a class="button-collapse hy-nav-a" href="#tentang">Tentang Kami</a></li>
@@ -21,7 +34,7 @@
           @auth('user')
           <li><a href="/user" class="waves-effect waves-light btn hy-btn-bor-ijo-nav">Dashboard</a></li>
           @else
-         <li><a href="/login" class="waves-effect waves-light btn hy-btn-bor-ijo-nav">Masuk</a></li>
+          <li><a href="/login" class="waves-effect waves-light btn hy-btn-bor-ijo-nav">Masuk</a></li>
           @endauth
           @endif
           

@@ -35,17 +35,18 @@
  							</a>
  						</div>
  					</div> --}}
- 					@if(Auth::guard('user')->check())
+ 					
  					<div class="footer-hy-post row center-align">
  						<div class="col s6"></div>
  						<div class="col s6">
+ 							@if(Auth::guard('user')->check())
  							<a href="{{ route('UserLandingForumSubKomentar',[str_replace(" ", "-", $dat->judul),$comment->id]) }}" class='btn-large waves-effect btn-flat hy-btn-flat-4'><i class="material-icons left">add_comment</i>Balas</a>
+ 							@else
+ 							<a data-target="modal-must-login" class='btn-large waves-effect btn-flat hy-btn-flat-4 modal-trigger'><i class="material-icons left">add_comment</i>Balas</a>
+ 							@endif
  						</div>
- 						{{-- <div class="col s6">
- 							<a href="#!" data-target='dropdown14' class='btn-large waves-effect btn-flat hy-btn-flat-4 dropdown-trigger'><i class="material-icons left">share</i>Bagikan</a>
- 						</div> --}}
  					</div>
- 					@endif
+
  				</div>
  			</div>
  		</div>

@@ -101,7 +101,7 @@
   <script type="text/javascript">
 
     $(window).scroll(function() {
-      if ($(document).scrollTop() > 70) {
+      if ($(document).scrollTop() > 50) {
         $('.hy-nav').addClass('hy-nav-2');
         $('.hy-nav-a').addClass('hy-nav-a-2');
         $('.hy-btn-bor-ijo-nav').addClass('hy-btn-bor-wh-nav');
