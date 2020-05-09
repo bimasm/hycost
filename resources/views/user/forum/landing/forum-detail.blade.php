@@ -11,23 +11,52 @@
 @endsection
 
 @section('content-landing-page')
-
-<!-- Start ------------------------------------------------------------------------------------------- Slider -->
-<!-- End ------------------------------------------------------------------------------------------- /Slider -->
+<!-- Start ------------------------------------------------------------------------------------------ Dropdown -->
 <ul id='dropdown13' class='dropdown-content drop-hy-post-detail'>
-	<li><a href="#end-content" class="hy-color-5"><i class="material-icons hy-color-5">arrow_downward</i>Lihat ke akhir Konten</a></li>
+	<li>
+		<a href="#end-content" class="hy-color-5">
+			<i class="material-icons hy-color-5">arrow_downward</i>Lihat ke akhir Konten
+		</a>
+	</li>
 	<li class="divider" tabindex="-1"></li>
-	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">bookmark_border</i>Simpan Post</a></li>
-	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">bookmark</i>Post disimpan</a></li>
+	<li>
+		<a href="#!" class="hy-color-5">
+			<i class="material-icons hy-color-5">bookmark_border</i>Simpan Post
+		</a>
+	</li>
+	<li>
+		<a href="#!" class="hy-color-5">
+			<i class="material-icons hy-color-5">bookmark</i>Post disimpan
+		</a>
+	</li>
 	<li class="divider" tabindex="-1"></li>
-	<li><a href="#!" class="hy-color-5"><i class="material-icons hy-color-5">error_outline</i>Laporkan Post</a></li>
+	<li>
+		<a href="#!" data-target="modal-laporkan" class="hy-color-5 modal-trigger">
+			<i class="material-icons hy-color-5">error_outline</i>Laporkan Post
+		</a>
+	</li>
 </ul>
 
 <ul id='dropdown14' class='dropdown-content drop-hy-post-detail'>
-	<li><a href="#!" data-target="modal-bagikan" class="hy-color-5 modal-trigger"><i class="material-icons hy-color-5">web</i>Ke Media Sosial</a></li>
+	<li>
+		<a href="#!" class="hy-color-5 fb-share" id="share-fb" target="_blank">
+			<i class="fab fa-facebook icon-fontaw"></i>Bagikan ke Facebook
+		</a>
+	</li>
 	<li class="divider" tabindex="-1"></li>
-	<li><a href="#!" class="btn-copy hy-color-5"><i class="material-icons hy-color-5">link</i>Salin Link</a></li>
+	<li>
+		<a href="#!" class="hy-color-5 twitter-share-button" id="share-twitter" data-size="large" target="_blank">
+			<i class="fab fa-twitter-square icon-fontaw"></i>Bagikan ke Twitter
+		</a>
+	</li>
+	<li class="divider" tabindex="-1"></li>
+	<li>
+		<a href="#!" class="btn-copy hy-color-5">
+			<i class="material-icons hy-color-5">link</i>Salin Link
+		</a>
+	</li>
 </ul>
+<!-- End ------------------------------------------------------------------------------------------- /Dropdown -->
 
 <section id="tentang" name="tentang" class="hy-page-header-detail-2 web-res">
 	<div class="container hy-page-con left-align hy-page-pos">
@@ -186,14 +215,65 @@
 </div>
 </section>
 
-<div id="modal-bagikan" class="modal white" style="width: 30%">
+<div id="modal-laporkan" class="modal white" style="width: 40%">
+	<div class="modal-content center-align">
+		<h5>Laporkan Post</h5>
+	</div>
+
+	@if(Auth::guard('user')->check())
 	<div class="modal-content">
-		<h5>Bagikan ke Media Sosial</h5>
+		<form action="" method="POST">
+			@csrf
+			<div class="input-field hy-infield">
+				<h6><b>Identitas Pelapor</b></h6>
+				<div class="divider" tabindex="-1"></div>
+			</div>
+			<div class="input-field hy-infield">
+				<input disabled  id="nama" type="text" class="validate hy-input" name="nama" value="{{ Auth::guard('user')->user()->nama }}">
+				<label class="hy-label" for="nama">Nama</label>
+			</div>
+			<div class="input-field hy-infield">
+				<input disabled  id="email" type="text" class="validate hy-input" name="email" value="{{ Auth::guard('user')->user()->email }}">
+				<label class="hy-label" for="email">Email</label>
+			</div>
+			<div class="input-field hy-infield">
+				<h6><b>Detail Laporan</b></h6>
+				<div class="divider" tabindex="-1"></div>
+			</div>
+			<div class="input-field hy-infield">
+				<select class="browser-default">
+					<option value="" disabled selected>Jenis Laporan</option>
+					<option value="1">Sara</option>
+					<option value="2">Insult</option>
+					<option value="3">Piracy</option>
+					<option value="3">Other</option>
+				</select>
+			</div>
+			<div class="input-field hy-infield">
+				<textarea id="textarea2" class="materialize-textarea hy-input-border" name="alasan" data-length="120" style="min-height: 50px;" placeholder="Alasan"></textarea>
+			</div>
+			<div class="input-field center-align">
+				<button type="submit" href="#!" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">send</i>Kirim Laporan</button>
+			</div>
+		</form>
 	</div>
-	<div class="collection" style="border-right:0;border-left:0">
-		<a href="" class="collection-item fb-share" id="share-fb" target="_blank">Facebook</a>
-		<a href="" class="collection-item twitter-share-button" id="share-twitter" data-size="large" target="_blank">Twitter</a>
+	@else
+	<div class="modal-content center-align">
+		<div class="row">
+			<div class="col s12 m12 l12">
+				<span class="material-icons" style="font-size: 7em">error_outline</span>
+			</div>
+			<div class="col s12 m12 l12">
+				<p>
+					Anda mau melaporkan Post ini ?<br>
+					Silahkan login terlebih dahulu pada link di bawah ini
+				</p>
+				<a href="/login" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">arrow_forward</i>Login</a>
+			</div>
+		</div>
 	</div>
+	@endif
+
 	<div class="modal-footer white">
 		<a href="#!" class='modal-close waves-effect btn-flat hy-btn-flat hy-color-6'>Batal</a>
 	</div>
@@ -202,6 +282,10 @@
 
 @section('js-plus')
 <script type="text/javascript">
+	$(document).ready(function() {
+		$('input#input_text, textarea#textarea2').characterCounter();
+	});
+
 	var clipboard = new Clipboard('.btn-copy', {
 		text: function() {
 			return document.querySelector('input[type=hidden]').value;
