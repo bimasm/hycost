@@ -17,9 +17,15 @@
 	</li>
 	<li class="divider" tabindex="-1"></li>
 	<li>
+		@if(Auth::guard('user')->check())
 		<a href="#!" data-target="modal-laporkan" class="hy-color-5 modal-trigger">
 			<i class="material-icons hy-color-5">error_outline</i>Laporkan Post
 		</a>
+		@else
+		<a href="#!" data-target="modal-must-login" class="hy-color-5 modal-trigger">
+			<i class="material-icons hy-color-5">error_outline</i>Laporkan Post
+		</a>
+		@endif
 	</li>
 </ul>
 

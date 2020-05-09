@@ -1,6 +1,5 @@
+@if(Auth::guard('user')->check())
 <div id="modal-laporkan" class="modal white" style="width: 40%">
-
-	@if(Auth::guard('user')->check())
 	<div class="modal-content center-align">
 		<h5>Laporkan Post</h5>
 	</div>
@@ -40,26 +39,37 @@
 			</div>
 		</form>
 	</div>
-	@else
-	<div class="modal-content center-align">
-		<h5>Mau Berakvitas ?</h5>
-		<p>Login dulu Slurr</p>
-		<a href="/login" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">arrow_forward</i>Login</a>
-	</div>
-	@endif
 
 	<div class="modal-footer white">
 		<a href="#!" class='modal-close waves-effect btn-flat hy-btn-flat hy-color-6'>Batal</a>
 	</div>
 </div>
+@endif
 
-<div id="modal-must-login" class="modal white" style="width: 40%">
-	<div class="modal-content center-align">
-		<h5>Mau Berakvitas ?</h5>
-		<p>Login dulu Slurr</p>
-		<a href="/login" class='waves-effect btn-flat hy-btn-flat-2'><i class="material-icons right">arrow_forward</i>Login</a>
-	</div>
-	<div class="modal-footer white">
-		<a href="#!" class='modal-close waves-effect btn-flat hy-btn-flat hy-color-6'>Batal</a>
+<div id="modal-must-login" class="modal white" style="width: 25%">
+	<div class="modal-content" style="padding: 35px">
+		<div class="">
+			<h5 class="hy-color-2">Mau Beraktivitas ?</h5>
+			<h6 class="hy-color-2">Login dulu SLurr</h6>
+			<br>
+		</div>
+
+		<form action="/loginEW" method="post">
+			@csrf
+			<div class="input-field hy-infield">
+				<input id="email" type="text" class="validate hy-input" name="email">
+				<label class="hy-label" for="email">Email</label>
+			</div>
+			<div class="input-field hy-infield">
+				<input id="password" type="password" class="validate hy-input" name="password">
+				<label class="hy-label" for="password">Password</label>
+			</div>
+			<div class="input-field">
+				<button type="submit" class='waves-effect btn-flat hy-btn-flat-2' style="width: 100%">Masuk</button>
+			</div>
+			<div class="center">
+				<a href="/regis" class="hy-color-2">Daftar</a>
+			</div>
+		</form>
 	</div>
 </div>

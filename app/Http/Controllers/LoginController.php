@@ -48,6 +48,25 @@ class LoginController extends Controller
  }
 
 }
+
+  public function postLoginEW(Request $request)
+  {
+    if (Auth::guard('admin')->attempt(['username' => $request->email, 'password' => $request->password])) {
+     return back();
+
+   } else if (Auth::guard('staf')->attempt(['username' => $request->email, 'password' => $request->password])) {
+    return back();
+
+  } else if (Auth::guard('user')->attempt(['email' => $request->email, 'password' => $request->password])) {
+
+    alert()->success('Selamat Datang '.$request->email, 'di Dashboard Hycost');
+    return back();
+    
+  } else{
+   return back();
+ }
+
+}
 //---- End -------------------------------------------------------------------------------------- /Login BackEnd
 
 

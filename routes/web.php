@@ -11,6 +11,7 @@ Route::get('/', function () {
 Route::get('/regis', 'LoginController@getRegis')->name('regis')->middleware('guest');
 Route::get('/login', 'LoginController@getLogin')->name('login-page')->middleware('guest');
 Route::post('/login', 'LoginController@postLogin')->name('login');
+Route::post('/loginEW', 'LoginController@postLoginEW')->name('loginEW');
 Route::post('/regis', 'LoginController@register');
 Route::get('/logout', 'LoginController@logout');
 //-- End ---------------------------------------------------------------------------------------- /Login
