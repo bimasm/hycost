@@ -111,3 +111,4 @@ Route::post('/comment/store', 'CommentController@store')->name('comment.add')->m
 Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add')->middleware('auth:user');
 Route::post('/forum/search', 'UserActionsController@search')
 ->name('Usersearch');
+
