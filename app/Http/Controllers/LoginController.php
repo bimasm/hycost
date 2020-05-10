@@ -59,7 +59,7 @@ class LoginController extends Controller
 
   } else if (Auth::guard('user')->attempt(['email' => $request->email, 'password' => $request->password])) {
 
-    alert()->success('Selamat Datang '.$request->email, 'di Dashboard Hycost');
+    alert()->success('Selamat Datang '.$request->email, 'selamat beraktivitas');
     return back();
     
   } else{

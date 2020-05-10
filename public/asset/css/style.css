@@ -1846,3 +1846,38 @@ div.hy-pos-view > div.owner > div.card-content > div.row > div.content-text {
 .icon-fontaw {
 	font-size: 1.5em;
 }
+
+.modal.modal-fixed-header {
+    width: 70%; 
+    overflow-y: hidden
+}
+
+.modal.modal-fixed-header .modal-content {
+    position: absolute;
+    height: calc(100% - 56px);
+    max-height: 100%;
+    width: 100%;
+    overflow-y: auto
+}
+
+.modal.modal-fixed-header .modal-header {
+    position: relative; 
+    background-color: #fff; 
+    height: auto; padding: 0;
+}
+
+.modal .modal-header {
+    border-radius: 0 0 2px 2px;
+    background-color: #fafafa;
+    padding: 4px 6px 10px 6px;
+    height: 56px;
+    width: 100%;
+    text-align: right
+}
+
+.modal-header-cont {
+	margin: 1rem 1.5rem 0 1.5rem; 
+	border-bottom: 1px solid #eee; 
+	background-color: #fff; 
+	height: 66px
+}

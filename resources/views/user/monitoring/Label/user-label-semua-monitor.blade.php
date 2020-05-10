@@ -14,15 +14,6 @@ Label Monitoring User
 
 @section('content-user')
 
-{{-- Start Add New Post On Mobile --}}
-{{-- <div class="fixed-action-btn mobile-res">
-	<a href="{{route('UserPostAddNewPost')}}" class="btn-floating btn-large hy-b-color-7">
-		<i class="large material-icons">add</i>
-	</a>
-</div> --}}
-{{-- End Add New Post On Mobile --}}
-
-
 <section>
 	<div class="content-hy-dash">
 		<div class="container cont-hy-dash">
@@ -179,6 +170,8 @@ Label Monitoring User
 		<a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
 	</div>
 </div>
+
+@include('user.app.modal-label')
 @endsection
 
 @section('js-plus')
@@ -192,7 +185,7 @@ Label Monitoring User
 			return '<div class="detail-tabel animated fadeIn faster">'+
 
 			'<div class="row">'+
-			'<div class="col s12 m12 l8">'+
+			'<div class="col s12 m12 l6">'+
 
 			'<div class="col s12 m12 l12">'+
 			'<div class="card card-hy-f white"><div class="card-content" style="padding:20px">'+
@@ -267,7 +260,7 @@ Label Monitoring User
 			'</div>'+
 
 			'</div>'+
-			'<div class="col s12 m12 l4">'+
+			'<div class="col s12 m12 l6">'+
 			
 			'<table>'+
 			'<tbody>'+
@@ -285,6 +278,11 @@ Label Monitoring User
 			'<tr>'+
 			'<th>Jumlah Pemakai</th>'+
 			'<td>300 User</td>'+
+			'</tr>'+
+
+			'<tr>'+
+			'<th>Aktif Pada Kebun</th>'+
+			'<td>Kebun A</td>'+
 			'</tr>'+
 
 			'</tbody>'+
@@ -329,7 +327,7 @@ Label Monitoring User
 				"targets": 4,
 				"data": null,
 				"orderable": false,
-				"defaultContent": "<button class='waves-effect btn-flat hy-btn-flat'>Preview</button>"
+				"defaultContent": "<a data-target='modal-label' class='btn-detail waves-effect btn-flat hy-btn-flat modal-trigger'>Lihat Detail</a>"
 			},
 			{
 				'targets': -1,
@@ -345,9 +343,11 @@ Label Monitoring User
 		} );
 
 
-		$('#example tbody').on( 'click', 'button', function () { /////////////////////////////////// link
+		$('#example tbody').on( 'click', 'a.btn-detail', function () { /////////////////////////////////// link
 			var data = table.row( $(this).parents('tr') ).data();
-			window.location.href = "http://www.w3schools.com";
+			var nama = data[ 'nama' ];
+			document.getElementById("nama-label").innerHTML = nama;
+			window.location.href = "#!";
 		} );
 
 		$('#example tbody').on('click', 'td a.ss', function () { ///////////////////////////// tab
