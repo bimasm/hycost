@@ -3,9 +3,20 @@
 <div id="edit-foto" class="modal white" style="width: 30%">
 	<form action="" method="">
 		@csrf
+		<div class="modal-header header-nf">
+
+			<div class="row modal-header-cont-nf valign-wrapper">
+				<div class="col s10 left-align">
+					<h5 class="hy-color-2">Edit Foto</h5>
+				</div>
+				<div class="col s2 valign">
+					<a class="modal-action modal-close btn-floating waves-effect waves-light hy-b-color-6 hy-btn-float"><i class="material-icons hy-color-2">close</i></a>
+				</div>
+			</div>
+
+		</div>
 		<div class="modal-content">
-			<h4>Edit Foto</h4>
-			<div class="row" style="margin-top: 80px">
+			<div class="row">
 				<div class="file-field input-field">
 					<div class="btn">
 						<span>Foto Profil</span>
@@ -29,8 +40,18 @@
 <div id="edit-nama" class="modal white" style="width: 30%">
 	<form action="" method="">
 		@csrf
+		<div class="modal-header header-nf">
+			<div class="row modal-header-cont-nf valign-wrapper">
+				<div class="col s10 left-align">
+					<h5 class="hy-color-2">Edit Nama</h5>
+				</div>
+				<div class="col s2 valign">
+					<a class="modal-action modal-close btn-floating waves-effect waves-light hy-b-color-6 hy-btn-float"><i class="material-icons hy-color-2">close</i></a>
+				</div>
+			</div>
+		</div>
+
 		<div class="modal-content">
-			<h4>Edit Nama</h4>
 			<div class="row">
 				<div class="input-field col s12">
 					<input id="last_name" type="text" class="validate">
@@ -50,9 +71,18 @@
 <div id="edit-jeniskelamin" class="modal white" style="width: 30%">
 	<form action="" method="">
 		@csrf
+		<div class="modal-header header-nf">
+			<div class="row modal-header-cont-nf valign-wrapper">
+				<div class="col s10 left-align">
+					<h5 class="hy-color-2">Jenis Kelamin</h5>
+				</div>
+				<div class="col s2 valign">
+					<a class="modal-action modal-close btn-floating waves-effect waves-light hy-b-color-6 hy-btn-float"><i class="material-icons hy-color-2">close</i></a>
+				</div>
+			</div>
+		</div>
 		<div class="modal-content">
-			<h4>Edit Jenis Kelamin</h4>
-			<div class="row" style="margin-top: 80px">
+			<div class="row">
 				<div class="input-field col s12">
 					<select>
 						<option value="" disabled selected>Pilih jenis kelamin anda</option>
@@ -75,9 +105,18 @@
 <div id="edit-password" class="modal white" style="width: 30%">
 	<form action="" method="">
 		@csrf
+		<div class="modal-header header-nf">
+			<div class="row modal-header-cont-nf valign-wrapper">
+				<div class="col s10 left-align">
+					<h5 class="hy-color-2">Edit Password</h5>
+				</div>
+				<div class="col s2 valign">
+					<a class="modal-action modal-close btn-floating waves-effect waves-light hy-b-color-6 hy-btn-float"><i class="material-icons hy-color-2">close</i></a>
+				</div>
+			</div>
+		</div>
 		<div class="modal-content">
-			<h4>Edit Password</h4>
-			<div class="row" style="margin-top: 80px">
+			<div class="row">
 				<div class="input-field col s12">
 					<input id="last_name" type="password" class="validate">
 					<label for="last_name">Password</label>
@@ -96,9 +135,18 @@
 <div id="edit-email" class="modal white" style="width: 30%">
 	<form action="" method="">
 		@csrf
+		<div class="modal-header header-nf">
+			<div class="row modal-header-cont-nf valign-wrapper">
+				<div class="col s10 left-align">
+					<h5 class="hy-color-2">Edit Email</h5>
+				</div>
+				<div class="col s2 valign">
+					<a class="modal-action modal-close btn-floating waves-effect waves-light hy-b-color-6 hy-btn-float"><i class="material-icons hy-color-2">close</i></a>
+				</div>
+			</div>
+		</div>
 		<div class="modal-content">
-			<h4>Edit Email</h4>
-			<div class="row" style="margin-top: 80px">
+			<div class="row">
 				<div class="input-field col s12">
 					<input id="last_name" type="email" class="validate">
 					<label for="last_name">Email</label>
@@ -117,9 +165,18 @@
 <div id="edit-notelepon" class="modal white" style="width: 30%">
 	<form action="" method="">
 		@csrf
+		<div class="modal-header header-nf">
+			<div class="row modal-header-cont-nf valign-wrapper">
+				<div class="col s10 left-align">
+					<h5 class="hy-color-2">Edit No Telepon</h5>
+				</div>
+				<div class="col s2 valign">
+					<a class="modal-action modal-close btn-floating waves-effect waves-light hy-b-color-6 hy-btn-float"><i class="material-icons hy-color-2">close</i></a>
+				</div>
+			</div>
+		</div>
 		<div class="modal-content">
-			<h4>Edit No Telepon</h4>
-			<div class="row" style="margin-top: 80px">
+			<div class="row">
 				<div class="input-field col s12">
 					<input id="last_name" type="number" class="validate">
 					<label for="last_name">No Telepon</label>

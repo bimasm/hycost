@@ -117,8 +117,9 @@ Label Monitoring User
 									<tr>
 										<th style="width: 8%"></th>
 										<th>Nama Label</th>
-										<th>Author</th>
 										<th>Status</th>
+										<th>Tanaman</th>
+										<th></th>
 										<th></th>
 										<th></th>
 									</tr>
@@ -320,22 +321,45 @@ Label Monitoring User
 					'selectAllRender': '<div class="checkbox"><input type="checkbox" class="filled-in"><span style="top:5px"></span></div>'
 				}
 			},
-			{ "targets": 1,"data": "nama" },
-			{ "targets": 2,"data": "author" },
-			{ "targets": 3,"data": "status" },
+			{ 
+				"targets": 1,
+				"data": {nama : "nama", author : "author"},
+				mRender : function(data, type, full) {
+					return data.nama+'<br>'+'<div class="grey-text text-darken-1">'+data.author+'</div>'; 
+				},  
+			},
+			{ 
+				"targets": 2,
+				"data": "status",
+				render: function (data, type, row) {
+					if (data == "On") {
+						return '<div class="pulse-cont-tyni-on btn-floating pulse"></div><span class="hy-color-2">'+data+'</span>';
+					} else {
+						return '<div class="pulse-cont-tyni-off btn-floating"></div><span class="grey-text">'+data+'</span>';
+					}
+				}, 
+			},
+			{ "targets": 3,"data": "sayur" },
 			{
 				"targets": 4,
 				"data": null,
 				"orderable": false,
 				"defaultContent": "<a data-target='modal-label' class='btn-detail waves-effect btn-flat hy-btn-flat modal-trigger'>Lihat Detail</a>"
 			},
+			{ "visible": false, "targets": 5,"data": "tanggal" },
 			{
 				'targets': -1,
 				"orderable":      false,
 				"data":           null,
 				"defaultContent": '<a class="ss btn-floating waves-effect waves-light hy-b-color-6 hy-btn-float"><i class="gg material-icons hy-color-2">keyboard_arrow_right</i></a>'
-			}
+			},
 			],
+
+			// rowCallback: function(row, data, index) {
+			// 	if (data.status == "On") {
+			// 		$(row).addClass("tabel-on-label");
+			// 	}
+			// },
 
 			select: false,
 			

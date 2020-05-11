@@ -46,14 +46,20 @@
 </div>
 @endif
 
-<div id="modal-must-login" class="modal white" style="width: 25%">
-	<div class="modal-content" style="padding: 35px">
-		<div class="">
-			<h5 class="hy-color-2">Mau Beraktivitas ?</h5>
-			<h6 class="hy-color-2">Login dulu SLurr</h6>
-			<br>
+<div id="modal-must-login" class="modal modal-fixed-header white" style="width: 25%">
+	<div class="modal-header">
+
+		<div class="row modal-header-cont valign-wrapper">
+			<div class="col s10 left-align">
+				<h5 class="hy-color-2">Login</h5>
+			</div>
+			<div class="col s2 valign">
+				<a class="modal-action modal-close btn-floating waves-effect waves-light hy-b-color-6 hy-btn-float"><i class="material-icons hy-color-2">close</i></a>
+			</div>
 		</div>
 
+	</div>
+	<div class="modal-content" style="padding: 35px">
 		<form action="/loginEW" method="post">
 			@csrf
 			<div class="input-field hy-infield">

@@ -1443,10 +1443,10 @@ div.hy-modal-title > div.row > div.col > div.title {
 
 .modal.modal-fixed-header {
 	padding: 0;
-	height: 70%
+	height: 80%
 }
 
-.modal.modal-fixed-header .modal-content {
+/*.modal.modal-fixed-header .modal-content {
 	position: absolute;
 	height: calc(100% - 56px);
 	max-height: 100%;
@@ -1458,11 +1458,15 @@ div.hy-modal-title > div.row > div.col > div.title {
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
 	position: absolute;
 	bottom: 0
-}
+}*/
 /*--- END ------------------------------------------------------------------------------------ MODAL ---*/
 
 .tabel-belum {
 	background-color: #fff9c4;
+}
+
+.tabel-on-label {
+	background-color: #e8f5d9;
 }
 
 .collect-pp {
@@ -1868,7 +1872,7 @@ div.hy-pos-view > div.owner > div.card-content > div.row > div.content-text {
 
 .modal .modal-header {
     border-radius: 0 0 2px 2px;
-    background-color: #fafafa;
+    background-color: #fff;
     padding: 4px 6px 10px 6px;
     height: 56px;
     width: 100%;
@@ -1880,4 +1884,32 @@ div.hy-pos-view > div.owner > div.card-content > div.row > div.content-text {
 	border-bottom: 1px solid #eee; 
 	background-color: #fff; 
 	height: 66px
+}
+
+.modal-header-cont-nf {
+	margin: 0rem 1.5rem 2rem 1.5rem; 
+	border-bottom: 1px solid #eee; 
+	background-color: #fff; 
+	height: 66px
+}
+
+.header-nf {
+	margin-bottom: 2rem
+}
+
+.pulse-cont-tyni-on {
+	width: 0.75rem;
+	height: 0.75rem;
+	margin-right: 0.5rem;
+	vertical-align: unset;
+	background-color: #80BE42 !important;
+}
+
+.pulse-cont-tyni-off {
+	width: 0.75rem;
+	height: 0.75rem;
+	margin-right: 0.5rem;
+	vertical-align: unset;
+	box-shadow: none !important;
+	background-color: #e0e0e0 !important;
 }

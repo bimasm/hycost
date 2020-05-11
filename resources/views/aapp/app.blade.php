@@ -201,6 +201,10 @@
     $(document).ready(function(){
       $('.tooltipped').tooltip();
     });
+
+    $(document).ready(function(){
+      $('.tabs').tabs();
+    });
   </script>
 </body>
 </html>
