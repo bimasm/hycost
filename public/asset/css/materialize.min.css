@@ -5784,6 +5784,12 @@ body.keyboard-focused .dropdown-content li:focus {
     padding: 2rem
 }
 
+.collapsible-np {
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 0 !important
+}
+
 .sidenav .collapsible,
 .sidenav.fixed .collapsible {
     border: none;

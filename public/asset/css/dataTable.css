@@ -258,6 +258,14 @@ tr.shown > td > a.ss {
     padding: 20px;
 }
 
+.filter-container-2 {
+    padding: 10px;
+}
+
+.filter-cont-2 {
+    border-right: 1px solid #eee;
+}
+
 div.filter-container > div.row > div.input-field {
 
 }

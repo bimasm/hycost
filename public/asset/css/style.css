@@ -1913,3 +1913,26 @@ div.hy-pos-view > div.owner > div.card-content > div.row > div.content-text {
 	box-shadow: none !important;
 	background-color: #e0e0e0 !important;
 }
+
+.collapsible.collap2 li.active i {
+  transform: rotate(180deg);
+  transition: all .5s;
+}
+
+.collapsible.collap2 li i {
+  transform: rotate(0deg);
+  transition: all .5s;
+}
+
+.collapsible-header.collap2 {
+    position: relative;
+}
+
+.collapsible-header.collap2 i {
+    right: 0px;
+    position: absolute;
+}
+
+.collapsible-np ul.collection li {
+	padding: 10px 0
+}

@@ -66,6 +66,15 @@ Label Monitoring User
 								<a href="#modal-add-label" class='waves-effect btn-flat hy-btn-flat-2 modal-trigger'><i class="material-icons left">add</i>Label Baru</a>
 							</div>
 						</li>
+						<li class="link">
+							<a id="btn-tofill" onclick="toFill()" class="btn-floating waves-effect waves-light hy-btn-icon-flat tooltipped" data-position="bottom" data-tooltip="Filter">
+								<i class="material-icons hy-color-2">filter_list</i>
+							</a>
+
+							<a id="btn-nofill" onclick="toNFill()" class="btn-floating waves-effect waves-light hy-b-color-8 hy-btn-icon-flat tooltipped" style="display: none" data-position="bottom" data-tooltip="Filter">
+								<i class="material-icons hy-color-2">filter_list</i>
+							</a>
+						</li>
 					</ul>
 					{{-- Start Search On Web --}}
 					
@@ -109,7 +118,73 @@ Label Monitoring User
 			<div class="cont-hy-dash-all animated fadeIn faster">
 				<div class="row">
 
-					<div class="col s12 m12 l12">
+					<div id="fill" class="col s12 m12 l3 animated fadeIn faster filter-cont-2" style="display: none">
+						<h6>Filter</h6>
+						<div class="filter-container-2">
+							<div class="row" style="margin-bottom: 0">
+
+								<div class="col s12">
+									<ul class="collapsible collap2" style="box-shadow: none; border: 0">
+										<li>
+											<div class="collapsible-header collap2" style="border: 0">
+												Tanaman
+												<i class="material-icons right">keyboard_arrow_down</i>
+											</div>
+											<div class="collapsible-body collapsible-np">
+												<ul class="collection">
+													<li class="collection-item">
+														<label>
+															<input id="cektanaman" name="sayur" type="checkbox" class="filled-in" value="Kangkung" />
+															<span>Kangkung</span>
+														</label>
+													</li>
+													<li class="collection-item">
+														<label>
+															<input id="cektanaman" name="sayur" type="checkbox" class="filled-in" value="Pakcoy" />
+															<span>Pakcoy</span>
+														</label>
+													</li>
+													<li class="collection-item">
+														<label>
+															<input id="cektanaman" name="sayur" type="checkbox" class="filled-in" value="Selada" />
+															<span>Selada</span>
+														</label>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="input-field col s12 center-align">
+									<select id="dropdown1">
+										<option value="">-- Semua Sayur --</option>
+										<option value="Selada">Selada</option>
+										<option value="Pakcoy">Pakcoy</option>
+										<option value="Kangkung">Kangkung</option>
+									</select>
+								</div>
+
+								<div class="input-field col s12 center-align">
+									<select id="status1" type="text">
+										<option value="">-- Semua Status --</option>
+										<option value="On">On</option>
+										<option value="Off">Off</option>
+									</select>
+								</div>
+
+								<div class="input-field col s12 left-align">
+									<div>
+										<label>
+											<input id="terbarucek" type="checkbox" class="filled-in" />
+											<span>Terbaru</span>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="tabelnya" class="col s12 m12 l12">
 						{{-- Start Tabel Web Version --}}
 						<div class="web-res">
 							<table id="example" class="" style="width:100%">
@@ -117,8 +192,8 @@ Label Monitoring User
 									<tr>
 										<th style="width: 8%"></th>
 										<th>Nama Label</th>
-										<th>Status</th>
 										<th>Tanaman</th>
+										<th>Status</th>
 										<th></th>
 										<th></th>
 										<th></th>
@@ -179,6 +254,40 @@ Label Monitoring User
 
 {{-- jquery tampilan web --}}
 <script type="text/javascript">
+
+	function toFill() {
+		var x = document.getElementById("fill");
+		var i = document.getElementById("btn-tofill");
+		var j = document.getElementById("btn-nofill");
+
+		if (x.style.display === "none" || i.style.display === "block") {
+			x.style.display = "block";
+
+			$("#tabelnya").removeClass('l12');
+			$("#tabelnya").addClass('tabel-w-fil');
+			$("#tabelnya").addClass('l9');
+
+			j.style.display = "block";
+			i.style.display = "none";
+		}
+	}
+
+	function toNFill() {
+		var x = document.getElementById("fill");
+		var j = document.getElementById("btn-tofill");
+		var i = document.getElementById("btn-nofill");
+
+		if (x.style.display === "none" || i.style.display === "block") {
+			x.style.display = "none";
+
+			$("#tabelnya").removeClass('l9');
+			$("#tabelnya").addClass('l12');
+			$("#tabelnya").removeClass('tabel-w-fil');
+
+			j.style.display = "block";
+			i.style.display = "none";
+		}
+	}
 
 	$(document).ready(function() {
 		function format ( d ) {
@@ -328,8 +437,9 @@ Label Monitoring User
 					return data.nama+'<br>'+'<div class="grey-text text-darken-1">'+data.author+'</div>'; 
 				},  
 			},
+			{ "targets": 2,"data": "sayur" },
 			{ 
-				"targets": 2,
+				"targets": 3,
 				"data": "status",
 				render: function (data, type, row) {
 					if (data == "On") {
@@ -339,7 +449,6 @@ Label Monitoring User
 					}
 				}, 
 			},
-			{ "targets": 3,"data": "sayur" },
 			{
 				"targets": 4,
 				"data": null,
@@ -350,7 +459,7 @@ Label Monitoring User
 			{
 				'targets': -1,
 				"orderable":      false,
-				"data":           null,
+				"data":          null,
 				"defaultContent": '<a class="ss btn-floating waves-effect waves-light hy-b-color-6 hy-btn-float"><i class="gg material-icons hy-color-2">keyboard_arrow_right</i></a>'
 			},
 			],
@@ -362,8 +471,49 @@ Label Monitoring User
 			// },
 
 			select: false,
+
+			searchPane: {
+				container: '.searchPanes',
+				threshold: 0
+			},
 			
 			'order': [[1, 'dsc']]
+		} );
+
+		$(document).ready(function() {
+			var table = $('#example').DataTable();
+
+			$('#min, #max').on('change', function () {
+				table.draw();
+			} );
+		} );
+
+		var table =  $('#example').DataTable();
+		$('#dropdown1').on('change', function () {
+			table.columns(2).search( this.value ).draw();
+		} );
+
+		var table =  $('#example').DataTable();
+		$('#status1').on('change', function () {
+			table.columns(3).search( this.value ).draw();
+		} );
+
+		var table2 =  $('#example').DataTable();
+		$('#terbarucek').on('change', function () {
+			if($(this).is(":checked")) {
+				table2.order([5, 'asc']).draw();
+			} else {
+				table2.order([5, 'dsc']).draw();
+			}
+		} );
+
+		var table3 =  $('#example').DataTable();
+		$('#cektanaman').on('change', function () {
+			if($(this).is(":checked")) {
+				table3.columns(2).search( this.value ).draw();
+			} else {
+
+			}
 		} );
 
 
