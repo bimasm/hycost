@@ -1936,3 +1936,20 @@ div.hy-pos-view > div.owner > div.card-content > div.row > div.content-text {
 .collapsible-np ul.collection li {
 	padding: 10px 0
 }
+
+.l12.tabel-tran {
+	transition: 0.5s all;
+}
+
+.l9.tabel-tran {
+	transition: 0.5s all;
+}
+
+.l3.tabel-tran {
+	transition: 0.5s all;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}

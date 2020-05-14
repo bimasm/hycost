@@ -118,7 +118,7 @@ Label Monitoring User
 			<div class="cont-hy-dash-all animated fadeIn faster">
 				<div class="row">
 
-					<div id="fill" class="col s12 m12 l3 animated fadeIn faster filter-cont-2" style="display: none">
+					<div id="fill" class="col s12 m12 l3 tabel-tran animated fadeIn faster filter-cont-2" style="display: none">
 						<h6>Filter</h6>
 						<div class="filter-container-2">
 							<div class="row" style="margin-bottom: 0">
@@ -131,22 +131,22 @@ Label Monitoring User
 												<i class="material-icons right">keyboard_arrow_down</i>
 											</div>
 											<div class="collapsible-body collapsible-np">
-												<ul class="collection">
+												<ul id="tanamancek" class="collection">
 													<li class="collection-item">
 														<label>
-															<input id="cektanaman" name="sayur" type="checkbox" class="filled-in" value="Kangkung" />
+															<input name="sayur" type="checkbox" class="filled-in" value="Kangkung" />
 															<span>Kangkung</span>
 														</label>
 													</li>
 													<li class="collection-item">
 														<label>
-															<input id="cektanaman" name="sayur" type="checkbox" class="filled-in" value="Pakcoy" />
+															<input name="sayur" type="checkbox" class="filled-in" value="Pakcoy" />
 															<span>Pakcoy</span>
 														</label>
 													</li>
 													<li class="collection-item">
 														<label>
-															<input id="cektanaman" name="sayur" type="checkbox" class="filled-in" value="Selada" />
+															<input name="sayur" type="checkbox" class="filled-in" value="Selada" />
 															<span>Selada</span>
 														</label>
 													</li>
@@ -155,21 +155,65 @@ Label Monitoring User
 										</li>
 									</ul>
 								</div>
-								<div class="input-field col s12 center-align">
-									<select id="dropdown1">
-										<option value="">-- Semua Sayur --</option>
-										<option value="Selada">Selada</option>
-										<option value="Pakcoy">Pakcoy</option>
-										<option value="Kangkung">Kangkung</option>
-									</select>
+
+								<div class="col s12">
+									<ul class="collapsible collap2" style="box-shadow: none; border: 0">
+										<li>
+											<div class="collapsible-header collap2" style="border: 0">
+												Status
+												<i class="material-icons right">keyboard_arrow_down</i>
+											</div>
+											<div class="collapsible-body collapsible-np">
+												<ul id="statuscek" class="collection">
+													<li class="collection-item">
+														<label>
+															<input name="status" type="checkbox" class="filled-in" value="On" />
+															<span>On</span>
+														</label>
+													</li>
+													<li class="collection-item">
+														<label>
+															<input name="status" type="checkbox" class="filled-in" value="Off" />
+															<span>Off</span>
+														</label>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
 								</div>
 
-								<div class="input-field col s12 center-align">
-									<select id="status1" type="text">
-										<option value="">-- Semua Status --</option>
-										<option value="On">On</option>
-										<option value="Off">Off</option>
-									</select>
+								<div class="col s12">
+									<ul class="collapsible collap2" style="box-shadow: none; border: 0">
+										<li>
+											<div class="collapsible-header collap2" style="border: 0">
+												Author
+												<i class="material-icons right">keyboard_arrow_down</i>
+											</div>
+											<div class="collapsible-body collapsible-np">
+												<ul id="authorcek" class="collection">
+													<li class="collection-item">
+														<label>
+															<input name="status" type="checkbox" class="filled-in" value="Ivan" />
+															<span>Anda Sendiri</span>
+														</label>
+													</li>
+													<li class="collection-item">
+														<label>
+															<input name="status" type="checkbox" class="filled-in" value="Hycost Official" />
+															<span>Hycost Official</span>
+														</label>
+													</li>
+													<li class="collection-item">
+														<label>
+															<input name="status" type="checkbox" class="filled-in" value="k" />
+															<span>Akun Lain</span>
+														</label>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
 								</div>
 
 								<div class="input-field col s12 left-align">
@@ -184,7 +228,7 @@ Label Monitoring User
 						</div>
 					</div>
 
-					<div id="tabelnya" class="col s12 m12 l12">
+					<div id="tabelnya" class="col s12 m12 l12 animated fadeIn faster">
 						{{-- Start Tabel Web Version --}}
 						<div class="web-res">
 							<table id="example" class="" style="width:100%">
@@ -260,8 +304,11 @@ Label Monitoring User
 		var i = document.getElementById("btn-tofill");
 		var j = document.getElementById("btn-nofill");
 
+		$("#fill").removeClass('fadeOut');
+
 		if (x.style.display === "none" || i.style.display === "block") {
 			x.style.display = "block";
+
 
 			$("#tabelnya").removeClass('l12');
 			$("#tabelnya").addClass('tabel-w-fil');
@@ -277,15 +324,15 @@ Label Monitoring User
 		var j = document.getElementById("btn-tofill");
 		var i = document.getElementById("btn-nofill");
 
+
 		if (x.style.display === "none" || i.style.display === "block") {
-			x.style.display = "none";
 
 			$("#tabelnya").removeClass('l9');
 			$("#tabelnya").addClass('l12');
 			$("#tabelnya").removeClass('tabel-w-fil');
-
 			j.style.display = "block";
 			i.style.display = "none";
+			x.style.display = "none";
 		}
 	}
 
@@ -493,11 +540,6 @@ Label Monitoring User
 			table.columns(2).search( this.value ).draw();
 		} );
 
-		var table =  $('#example').DataTable();
-		$('#status1').on('change', function () {
-			table.columns(3).search( this.value ).draw();
-		} );
-
 		var table2 =  $('#example').DataTable();
 		$('#terbarucek').on('change', function () {
 			if($(this).is(":checked")) {
@@ -508,12 +550,97 @@ Label Monitoring User
 		} );
 
 		var table3 =  $('#example').DataTable();
-		$('#cektanaman').on('change', function () {
-			if($(this).is(":checked")) {
-				table3.columns(2).search( this.value ).draw();
-			} else {
+		var dataAll =[];
+		$('#tanamancek').on('change', 'input[type="checkbox"]', function () {
+			var dat = this.value;
 
+			if($(this).is(":checked")) {
+				dataAll.push(dat);
+			} else {
+				dataAll = jQuery.grep(dataAll, function(value) {
+					return value != dat;
+				});
 			}
+
+			table3.columns(2).search( dataAll.join('|'), true, false).draw();
+		} );
+
+		var dataAllStatus =[];
+		$('#statuscek').on('change', 'input[type="checkbox"]', function () {
+			var dat2 = this.value;
+
+			if($(this).is(":checked")) {
+				dataAllStatus.push(dat2);
+			} else {
+				dataAllStatus = jQuery.grep(dataAllStatus, function(value) {
+					return value != dat2;
+				});
+			}
+
+			console.log(dataAllStatus);
+
+			table3.columns(3).search( dataAllStatus.join('|'), true, false).draw();
+		} );
+
+		var dataAllAuth =[];
+		var dataAllAuth2 =[];
+		var dataAllAuth3 =[];
+
+		var dataAllAuth4 =[];
+		table5 = $('#example').DataTable(); ////////////////////////////////////////////////////// search @Lionel
+		$('#authorcek').on('change', 'input[type="checkbox"]', function () {
+
+			var dat3 = this.value;
+
+			if (dat3 == "k"){
+				dat = "";
+				var dataAllAuth1 =[];
+
+				table.column(0).nodes().to$().each(function(index) { 
+					var data = table5.row($(this)).data();
+					var row = data[ 'author' ];
+					dataAllAuth1.push(row);
+				});
+
+				dataAllAuth2 = dataAllAuth1;
+
+				dataAllAuth2 = jQuery.grep(dataAllAuth2, function(value) {
+					return value != "Ivan";
+				});
+				dataAllAuth2 = jQuery.grep(dataAllAuth2, function(value) {
+					return value != "Hycost Official";
+				});
+
+				dataAllAuth3 = dataAllAuth2;
+			} else {
+				dat3 = dat3;
+			}
+
+			if($(this).is(":checked")) {
+				if (dat3 == "k") {
+
+					for (var i = 0; i < dataAllAuth3.length; i++) {
+						dataAllAuth.push(dataAllAuth3[i]);
+					}
+
+				} else {
+					dataAllAuth.push(dat3);
+				}
+
+			} else {
+				if (dat3 == "k") {
+					for (var i = 0; i < dataAllAuth3.length; i++) {
+						dataAllAuth = jQuery.grep(dataAllAuth, function(value) {
+							return value != dataAllAuth3[i];
+						});
+					}
+				}
+				dataAllAuth = jQuery.grep(dataAllAuth, function(value) {
+					return value != dat3;
+				});
+			}
+
+			table3.columns(1).search( dataAllAuth.join('|'), true, false).draw();
 		} );
 
 
