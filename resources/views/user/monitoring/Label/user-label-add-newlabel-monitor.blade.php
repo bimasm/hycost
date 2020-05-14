@@ -37,13 +37,23 @@ Tambah Label Baru User
 				<div class="cont-hy-dash-all animated fadeIn faster">
 					<div class="row">
 
-						<div class="col s12 m12 l12">
-							<div class="input-field hy-infield">
+						<div class="col s12 m12 l8">
+							<div class="input-field hy-infield label-top">
 								<input placeholder="Nama Label" id="first_name" type="text" class="validate hy-input-border" name="judul">
+								<label class="hy-label-2" for="first_name">Nama Label</label>
+							</div>
+
+							<div class="input-field hy-infield label-top">
+								<input placeholder="Nama Tanaman" type="text" id="autocomplete-input" class="validate hy-input-border">
+								<label class="hy-label-2" for="first_name">Nama Tanaman</label>
+							</div>
+
+							<div class="input-field hy-infield label-top">
+								<textarea id="full-featured-non-premium" name="comment_body"></textarea>
 							</div>
 
 							<div class="row">
-								<div class="col s12 m12 l6">
+								<div class="col s12 m12 l12">
 									<div class="card card-hy-f">
 										<div class="card-content collap-card">
 											<ul class="collapsible">
@@ -72,7 +82,7 @@ Tambah Label Baru User
 									</div>
 								</div>
 
-								<div class="col s12 m12 l6">
+								<div class="col s12 m12 l12">
 									<div class="card card-hy-f">
 										<div class="card-content collap-card">
 											<ul class="collapsible">
@@ -91,10 +101,8 @@ Tambah Label Baru User
 										</div>
 									</div>
 								</div>
-							</div>	
 
-							<div class="row">
-								<div class="col s12 m12 l6">
+								<div class="col s12 m12 l12">
 									<div class="card card-hy-f">
 										<div class="card-content collap-card">
 											<ul class="collapsible">
@@ -114,7 +122,7 @@ Tambah Label Baru User
 									</div>
 								</div>
 
-								<div class="col s12 m12 l6">
+								<div class="col s12 m12 l12">
 									<div class="card card-hy-f">
 										<div class="card-content collap-card">
 											<ul class="collapsible">
@@ -133,28 +141,35 @@ Tambah Label Baru User
 										</div>
 									</div>
 								</div>
-							</div>	
+							</div>
 
+						</div>
+						<div class="col s12 m12 l4">
+							<h5>Butuh Bantuan ?</h5>
+							<p align="justify">Silahkan lihat informasi yang kami sediakan untuk pembuatan label di <a href="#!">Bantuan</a> agar service berjalan dengan lancar dan sesuai dengan mekanisme kerja, terimakasih.</p>
 						</div>
 
 						<div class="col s12 m12 l12">
-							<div class="card card-hy-f">
-								<div class="card-content">
+							{{-- <div >
+								<div class="card card-hy-f">
+									<div class="card-content">
 
-									<div class="row" style="margin:0">
-										
-										<div class="input-field col s12 m12 l12">
-											<input placeholder="Nama Tanaman" type="text" id="autocomplete-input" class="autocomplete hy-input-border">
-										</div>
+										<div class="row" style="margin:0">
 
-										<div class="input-field col s12 m12 l12">
-											<textarea placeholder="Deskripsi" id="textarea1" class="materialize-textarea hy-input-border" style="height: 150px;"></textarea>
+											<div class="input-field col s12 m12 l12">
+												<input placeholder="Nama Tanaman" type="text" id="autocomplete-input" class="autocomplete hy-input-border">
+											</div>
+
+											<div class="input-field col s12 m12 l12">
+												<textarea placeholder="Deskripsi" id="textarea1" class="materialize-textarea hy-input-border" style="height: 150px;"></textarea>
+											</div>
+
 										</div>
 
 									</div>
-
 								</div>
-							</div>
+							</div> --}}
+
 						</div>
 
 						<div class="col s12 m12 l12 center-align hy-cont-fot-add">
@@ -180,6 +195,41 @@ Tambah Label Baru User
 @endsection
 
 @section('js-plus')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.2.1/tinymce.min.js"></script>
+
+<script>
+
+	$('.chips-placeholder').chips({
+		placeholder: 'Tambahkan tag',
+		secondaryPlaceholder: '+Tag',
+	});
+
+	$('.chips-autocomplete').chips({
+		autocompleteOptions: {
+			data: {
+				'Apple': null,
+				'Microsoft': null,
+				'Google': null
+			},
+			limit: Infinity,
+			minLength: 1
+		}
+	});
+
+	tinymce.init({
+		selector: 'textarea#full-featured-non-premium',
+		height: 500,
+		menubar: false,
+
+		plugins: 'preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen link template codesample charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textpattern charmap emoticons',
+
+		toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | | charmap emoticons | preview | link',
+
+		content_css: '{{asset('asset/css/tyni.css')}}',
+	});
+
+</script>
+
 <script type="text/javascript">
 
 	jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');

@@ -86,28 +86,81 @@ Cari Label Baru User
 			<div class="cont-hy-dash-all animated fadeIn faster">
 				<div class="row">
 
-					<div id="fill" class="col s12 m12 l3 animated fadeIn faster" style="display: none">
-						<div class="filter-container">
+					<div id="fill" class="col s12 m12 l3 tabel-tran animated fadeIn faster filter-cont-2" style="display: none">
+						<h6>Filter</h6>
+						<div class="filter-container-2">
 							<div class="row" style="margin-bottom: 0">
-								<div class="input-field col s12 center-align">
-									<select id="dropdown1">
-										<option value="">Semua Sayur</option>
-										<option value="Selada">Selada</option>
-										<option value="Pakcoy">Pakcoy</option>
-										<option value="Kangkung">Kangkung</option>
-									</select>
-									<label>Jenis Sayur</label>
+
+								<div class="col s12">
+									<ul class="collapsible collap2">
+										<li>
+											<div class="collapsible-header collap2">
+												Tanaman
+												<i class="material-icons right">keyboard_arrow_down</i>
+											</div>
+											<div class="collapsible-body collapsible-np">
+												<ul id="tanamancek" class="collection">
+													<li class="collection-item">
+														<label>
+															<input name="sayur" type="checkbox" class="filled-in" value="Kangkung" />
+															<span>Kangkung</span>
+														</label>
+													</li>
+													<li class="collection-item">
+														<label>
+															<input name="sayur" type="checkbox" class="filled-in" value="Pakcoy" />
+															<span>Pakcoy</span>
+														</label>
+													</li>
+													<li class="collection-item">
+														<label>
+															<input name="sayur" type="checkbox" class="filled-in" value="Selada" />
+															<span>Selada</span>
+														</label>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
 								</div>
 
-								<div class="input-field col s12 center-align">
-									<select id="min" type="text">
-										<option value="">Semua Jumlah</option>
-										<option value="50"> >= 50</option>
-										<option value="100"> >= 100</option>
-										<option value="150"> >= 150</option>
-										<option value="200"> >= 200</option>
-									</select>
-									<label>Minimal Jumlah Pengguna</label>
+								<div class="col s12">
+									<ul class="collapsible collap2">
+										<li>
+											<div class="collapsible-header collap2">
+												Jumlah Pemakai
+												<i class="material-icons right">keyboard_arrow_down</i>
+											</div>
+											<div class="collapsible-body collapsible-np">
+												<ul id="countcek" class="collection">
+													<li class="collection-item">
+														<label>
+															<input name="jumlah" type="checkbox" class="filled-in" value="50" />
+															<span>>= 50</span>
+														</label>
+													</li>
+													<li class="collection-item">
+														<label>
+															<input name="jumlah" type="checkbox" class="filled-in" value="100" />
+															<span>>= 100</span>
+														</label>
+													</li>
+													<li class="collection-item">
+														<label>
+															<input name="jumlah" type="checkbox" class="filled-in" value="150" />
+															<span>>= 150</span>
+														</label>
+													</li>
+													<li class="collection-item">
+														<label>
+															<input name="jumlah" type="checkbox" class="filled-in" value="200" />
+															<span>>= 200</span>
+														</label>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
 								</div>
 
 								<div class="input-field col s12 left-align">
@@ -120,7 +173,6 @@ Cari Label Baru User
 								</div>
 							</div>
 						</div>
-
 					</div>
 
 					<div id="tabelnya" class="col s12 m12 l12 web-res">
@@ -551,34 +603,64 @@ Cari Label Baru User
 
 		table.buttons().container().appendTo( '#example_wrapper' );
 
-		$.fn.dataTable.ext.search.push(
-			function( settings, data, dataIndex ) {
-				var min = parseInt( $('#min').val(), 10 );
-				var max = parseInt( $('#max').val(), 10 );
-				var age = parseFloat( data[2] ) || 0;
+		// $(document).ready(function() {
+		// 	var table = $('#example').DataTable();
 
-				if ( ( isNaN( min ) && isNaN( max ) ) ||
-					( isNaN( min ) && age <= max ) ||
-					( min <= age   && isNaN( max ) ) ||
-					( min <= age   && age <= max ) )
-				{
-					return true;
-				}
-				return false;
+		// 	$('#min, #max').on('change', function () {
+		// 		table.draw();
+		// 	} );
+		// } );
+
+		var table4 =  $('#example').DataTable();
+		var dataCount =[];
+		$('#countcek').on('change', 'input[type="checkbox"]', function () {
+			var dat = this.value;
+			var dat2 = parseInt(dat);
+
+			if (dat != null) {
+				var dataAllAuth1 =[];
+				table.column(0).nodes().to$().each(function(index) { 
+					var data = table4.row($(this)).data();
+					var row = data[ 'jumlah' ];
+					dataAllAuth1.push(row);
+				});
+
+				var datafilter = dataAllAuth1.filter(function(number) {
+					return number >= dat2 ;
+				});
 			}
-			);
 
-		$(document).ready(function() {
-			var table = $('#example').DataTable();
+			console.log(dat);
 
-			$('#min, #max').on('change', function () {
-				table.draw();
-			} );
+			if($(this).is(":checked")) {
+				for (var i = 0; i < datafilter.length; i++) {
+					dataCount.push(datafilter[i]);
+				}
+			} else {
+				for (var i = 0; i < datafilter.length; i++) {
+					dataCount = jQuery.grep(dataCount, function(value) {
+						return value != datafilter[i];
+					});
+				}
+			}
+
+			table4.columns(2).search( dataCount.join('|'), true, false).draw();
 		} );
 
-		var table =  $('#example').DataTable();
-		$('#dropdown1').on('change', function () {
-			table.columns(1).search( this.value ).draw();
+		var table3 =  $('#example').DataTable();
+		var dataAll =[];
+		$('#tanamancek').on('change', 'input[type="checkbox"]', function () {
+			var dat = this.value;
+
+			if($(this).is(":checked")) {
+				dataAll.push(dat);
+			} else {
+				dataAll = jQuery.grep(dataAll, function(value) {
+					return value != dat;
+				});
+			}
+
+			table3.columns(1).search( dataAll.join('|'), true, false).draw();
 		} );
 
 		var table2 =  $('#example').DataTable();

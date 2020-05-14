@@ -887,6 +887,15 @@ textarea.materialize-textarea.hy-input-border:not(.browser-default) {
 	left: 10px;
 }
 
+.input-field> label.hy-label-2 {
+	top: -12px;
+	font-size: 1.25rem;
+}
+
+.hy-infield.label-top {
+	margin-top: 3rem
+}
+
 .input-field>label.hy-label:not(.label-icon).active {
 	background-color: #fff;
 	width: auto;
@@ -1446,19 +1455,6 @@ div.hy-modal-title > div.row > div.col > div.title {
 	height: 80%
 }
 
-/*.modal.modal-fixed-header .modal-content {
-	position: absolute;
-	height: calc(100% - 56px);
-	max-height: 100%;
-	width: 100%;
-	overflow-y: auto
-}
-
-.modal.modal-fixed-header .modal-header {
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
-	position: absolute;
-	bottom: 0
-}*/
 /*--- END ------------------------------------------------------------------------------------ MODAL ---*/
 
 .tabel-belum {
@@ -1852,31 +1848,31 @@ div.hy-pos-view > div.owner > div.card-content > div.row > div.content-text {
 }
 
 .modal.modal-fixed-header {
-    width: 70%; 
-    overflow-y: hidden
+	width: 70%; 
+	overflow-y: hidden
 }
 
 .modal.modal-fixed-header .modal-content {
-    position: absolute;
-    height: calc(100% - 56px);
-    max-height: 100%;
-    width: 100%;
-    overflow-y: auto
+	position: absolute;
+	height: calc(100% - 56px);
+	max-height: 100%;
+	width: 100%;
+	overflow-y: auto
 }
 
 .modal.modal-fixed-header .modal-header {
-    position: relative; 
-    background-color: #fff; 
-    height: auto; padding: 0;
+	position: relative; 
+	background-color: #fff; 
+	height: auto; padding: 0;
 }
 
 .modal .modal-header {
-    border-radius: 0 0 2px 2px;
-    background-color: #fff;
-    padding: 4px 6px 10px 6px;
-    height: 56px;
-    width: 100%;
-    text-align: right
+	border-radius: 0 0 2px 2px;
+	background-color: #fff;
+	padding: 4px 6px 10px 6px;
+	height: 56px;
+	width: 100%;
+	text-align: right
 }
 
 .modal-header-cont {
@@ -1915,22 +1911,28 @@ div.hy-pos-view > div.owner > div.card-content > div.row > div.content-text {
 }
 
 .collapsible.collap2 li.active i {
-  transform: rotate(180deg);
-  transition: all .5s;
+	transform: rotate(180deg);
+	transition: all .5s;
 }
 
 .collapsible.collap2 li i {
-  transform: rotate(0deg);
-  transition: all .5s;
+	transform: rotate(0deg);
+	transition: all .5s;
+}
+
+.collapsible.collap2 {
+	box-shadow: none; 
+	border: 0
 }
 
 .collapsible-header.collap2 {
-    position: relative;
+	position: relative;
+	border: 0;
 }
 
 .collapsible-header.collap2 i {
-    right: 0px;
-    position: absolute;
+	right: 0px;
+	position: absolute;
 }
 
 .collapsible-np ul.collection li {
@@ -1950,6 +1952,6 @@ div.hy-pos-view > div.owner > div.card-content > div.row > div.content-text {
 }
 
 .hidden {
-  display: none;
-  opacity: 0;
+	display: none;
+	opacity: 0;
 }

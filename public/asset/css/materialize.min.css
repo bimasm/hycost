@@ -6150,7 +6150,7 @@ input[type=tel]:not(.browser-default):focus:not([readonly])+label,
 input[type=number]:not(.browser-default):focus:not([readonly])+label,
 input[type=search]:not(.browser-default):focus:not([readonly])+label,
 textarea.materialize-textarea:focus:not([readonly])+label {
-    color: #26a69a
+    color: #4CAF50
 }
 
 input:not([type]):focus.valid ~ label,

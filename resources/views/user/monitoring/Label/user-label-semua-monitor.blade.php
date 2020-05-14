@@ -124,9 +124,9 @@ Label Monitoring User
 							<div class="row" style="margin-bottom: 0">
 
 								<div class="col s12">
-									<ul class="collapsible collap2" style="box-shadow: none; border: 0">
+									<ul class="collapsible collap2">
 										<li>
-											<div class="collapsible-header collap2" style="border: 0">
+											<div class="collapsible-header collap2">
 												Tanaman
 												<i class="material-icons right">keyboard_arrow_down</i>
 											</div>
@@ -157,9 +157,9 @@ Label Monitoring User
 								</div>
 
 								<div class="col s12">
-									<ul class="collapsible collap2" style="box-shadow: none; border: 0">
+									<ul class="collapsible collap2">
 										<li>
-											<div class="collapsible-header collap2" style="border: 0">
+											<div class="collapsible-header collap2">
 												Status
 												<i class="material-icons right">keyboard_arrow_down</i>
 											</div>
@@ -184,9 +184,9 @@ Label Monitoring User
 								</div>
 
 								<div class="col s12">
-									<ul class="collapsible collap2" style="box-shadow: none; border: 0">
+									<ul class="collapsible collap2">
 										<li>
-											<div class="collapsible-header collap2" style="border: 0">
+											<div class="collapsible-header collap2">
 												Author
 												<i class="material-icons right">keyboard_arrow_down</i>
 											</div>
@@ -511,12 +511,6 @@ Label Monitoring User
 			},
 			],
 
-			// rowCallback: function(row, data, index) {
-			// 	if (data.status == "On") {
-			// 		$(row).addClass("tabel-on-label");
-			// 	}
-			// },
-
 			select: false,
 
 			searchPane: {
@@ -527,20 +521,7 @@ Label Monitoring User
 			'order': [[1, 'dsc']]
 		} );
 
-		$(document).ready(function() {
-			var table = $('#example').DataTable();
-
-			$('#min, #max').on('change', function () {
-				table.draw();
-			} );
-		} );
-
-		var table =  $('#example').DataTable();
-		$('#dropdown1').on('change', function () {
-			table.columns(2).search( this.value ).draw();
-		} );
-
-		var table2 =  $('#example').DataTable();
+		var table2 =  $('#example').DataTable();////////////////////////////////////////////// Filter Terbaru
 		$('#terbarucek').on('change', function () {
 			if($(this).is(":checked")) {
 				table2.order([5, 'asc']).draw();
@@ -549,7 +530,7 @@ Label Monitoring User
 			}
 		} );
 
-		var table3 =  $('#example').DataTable();
+		var table3 =  $('#example').DataTable();/////////////////////////////////////////////// Filter Tanaman
 		var dataAll =[];
 		$('#tanamancek').on('change', 'input[type="checkbox"]', function () {
 			var dat = this.value;
@@ -565,7 +546,7 @@ Label Monitoring User
 			table3.columns(2).search( dataAll.join('|'), true, false).draw();
 		} );
 
-		var dataAllStatus =[];
+		var dataAllStatus =[];///////////////////////////////////////////////////////////////// Filter Status
 		$('#statuscek').on('change', 'input[type="checkbox"]', function () {
 			var dat2 = this.value;
 
@@ -582,11 +563,9 @@ Label Monitoring User
 			table3.columns(3).search( dataAllStatus.join('|'), true, false).draw();
 		} );
 
-		var dataAllAuth =[];
+		var dataAllAuth =[];///////////////////////////////////////////////////////////////// Filter Author
 		var dataAllAuth2 =[];
 		var dataAllAuth3 =[];
-
-		var dataAllAuth4 =[];
 		table5 = $('#example').DataTable(); ////////////////////////////////////////////////////// search @Lionel
 		$('#authorcek').on('change', 'input[type="checkbox"]', function () {
 
